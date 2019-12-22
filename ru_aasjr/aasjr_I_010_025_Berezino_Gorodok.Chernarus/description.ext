@@ -1,0 +1,1025 @@
+#include "Scripts\S3_HUD.h" 
+#include "Scripts\S3_HUDDefs.h"
+#include "Scripts\S3_HUD_CONSTS.h"
+#include "Rules\S3_INITJRMission.h"
+S3_MyTeamColor=[0,0,0,0.2];
+
+//loadScreen = "Images\Cerberus5.paa";
+loadScreen = "Images\AAS_Arma3.paa";
+overviewPicture ="images\aasjr.paa";
+
+//overviewPicture = "images\aasjr.jpg";
+//loadScreen = "images\aasjr.jpg";
+
+
+
+onLoadName = S3_NAME;
+onLoadMission = $STR_S3_TXT;
+overviewText = $STR_S3_OVERVIEW;
+
+disabledAI= 1;
+joinUnassigned = 0;
+aikills = 0;
+respawnDelay = 5;
+respawnDialog = 0;
+respawn=3;
+showHud=1;
+showGPS=0;
+showSquadRadar = 1;
+respawnTemplates[] = { "Counter" };
+saving = 0;
+
+//garbagecollector
+corpseManagerMode = 1;
+corpseLimit = 1;
+corpseRemovalMinTime = 5;
+corpseRemovalMaxTime = 10;
+
+//Bohemia medical system
+ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
+ReviveUnconsciousStateMode = 2;         //0: basic, 1: advanced, 2: realistic
+ReviveRequiredTrait = 1;                //0: none, 1: medic trait is required //class ver
+ReviveRequiredItems = 1;                //0: none, 1: medkit, 2: medkit or first aid kit //class ver
+ReviveRequiredItemsFakConsumed = 1;     //0: first aid kit is not consumed upon revive, 1: first aid kit is consumed
+ReviveDelay = 4;                        //time needed to revive someone (in secs)
+ReviveMedicSpeedMultiplier = 2;         //speed multiplier for revive performed by medic
+ReviveForceRespawnDelay = 1;            //time needed to perform force respawn (in secs)
+ReviveBleedOutDelay = 60;              //unconscious state duration (in secs)
+
+class Header
+{
+	gameType = "DM";
+	minPlayers = 1;
+	maxPlayers = 50;
+};
+
+
+class Params
+{ 
+
+
+class PjrAAS_time
+{
+	title = "$STR_S3_Duration";
+	values[] = {1200,1800,2700,3600};
+	texts[] = {"20","30","45","60"};
+	default = 2700;
+};
+
+class PjrAAS_hardcore
+{
+	title = "$STR_S3_Hardcore_mode";
+	values[] = {0, 1};
+	texts[] = {"$STR_S3_Off","$STR_S3_On"};	
+	default = 0; //1 on - no nametag
+};
+
+class PjrAAS_ViewDistance
+{
+	title = "$STR_S3_View_distance";
+	values[] = {S3_MISSION_VD,700,1000,1500,2000,2500};
+	texts[] = {$STR_S3_MISSION_VD,"700","1000","1500","2000","2500"};
+	default = S3_MISSION_VD;
+};
+
+class PjrAAS_rules
+	{
+		title = "$STR_S3_Rules";
+		texts[] = {"$STR_S3_Light","$STR_S3_Heavy"};
+		values[] = {0,1};
+		default = S3_MISSION_Rules;
+	};
+
+
+//>>>	AI	////////
+class PjrAAS_SUPPORT
+{
+	title = "$STR_S3_Off_when";
+	values[] = {1,2,3,4,5};
+	texts[] = {"1","2","3","4","5"};	
+	default = 3;
+};
+
+class PjrAAS_NumberOfAIgroups
+{
+	title = "$STR_S3_AI_groups";
+	values[] = {0,1,2,3,4,5};
+	texts[] = {"0","1","2","3","4","5"};	
+	default = 2;
+};
+
+class PjrAAS_NumberOfAIunitsPerGroup
+{
+    title = "$STR_S3_AI_units_per";
+	values[] = {0,1,2,3,4,5,6,7,8,9,10};
+	default = 2;
+	texts[] = {"0","1","2","3","4","5","6","7","8","9","10"};
+};
+
+};
+
+class CfgSounds
+{
+	sounds[] = {"cap_zone", "Die999"};
+	class cap_zone
+	{
+		name = "cap_zone";
+		sound[] = {"Sounds\cap.ogg", db, 1};
+		titles[] = {};
+	};
+
+	class HintS3
+	{
+		name="HintS3";
+		sound[]={"Sounds\hint1.ogg", 10, 1};
+		titles[]={};
+	};
+	
+	class S3_TK
+	{
+		sound[]={"Sounds\bc.ogg", 10, 1};
+		titles[]={};
+	};
+	
+	class AAS_X
+	{
+		sound[] = {"Sounds\X.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_A
+	{
+		sound[] = {"Sounds\A.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_B
+	{
+		sound[] = {"Sounds\B.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_C
+	{
+		sound[] = {"Sounds\C.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_D
+	{
+		sound[] = {"Sounds\D.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_E
+	{
+		sound[] = {"Sounds\E.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_F
+	{
+		sound[] = {"Sounds\F.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_G
+	{
+		sound[] = {"Sounds\G.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_H
+	{
+		sound[] = {"Sounds\H.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_I
+	{
+		sound[] = {"Sounds\I.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_J
+	{
+		sound[] = {"Sounds\J.ogg", db, 1};
+		titles[] = {};
+	};
+	class AAS_K
+	{
+		sound[] = {"Sounds\K.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_L
+	{
+		sound[] = {"Sounds\L.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_M
+	{
+		sound[] = {"Sounds\M.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	class AAS_Y
+	{
+		sound[] = {"Sounds\Y.ogg", db, 1};
+		titles[] = {};
+	};
+	
+	
+};
+
+class CfgFunctions
+{
+	#include "Scripts\Functions\jrAAS.h"
+};
+
+class CfgSFX
+{
+	class AxeDie
+	{
+		sound0[] = {"Sounds\Die.ogg", db, 1.0, 100, 0.2, 0, 15, 30};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+		sounds[] = {sound0};
+	};
+};
+
+class CfgVehicles
+{
+	class AxeDieSound // class name to be used with createSoundSource
+	{
+		sound = "AxeDie"; // reference to CfgSFX class
+	};
+};
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "$STR_S3_Red_team_Win";
+		subtitle = "jr.AAS";
+		description = "$STR_S3_You_uccessfully";
+		pictureBackground = "";
+		picture = "\A3\Data_F\Flags\Flag_red_CO.paa";
+		pictureColor[] = {1,1,1,1};
+	};
+	
+	class End2
+	{
+		title = "$STR_S3_Blue_team_Win";
+		subtitle = "jr.AAS";
+		description = "$STR_S3_You_uccessfully_blue";
+		pictureBackground = "";
+		picture = "\A3\Data_F\Flags\Flag_blue_CO.paa";
+		pictureColor[] = {1,1,1,1};
+	};
+	
+	class End3
+	{
+		title = "$STR_S3_Mission_FAILED";
+		subtitle = "jr.AAS";
+		description = "$STR_S3_All_lose";
+		pictureBackground = "";
+		picture = "A3\ui_f\data\GUI\Cfg\Debriefing\endDefault_ca.paa";
+		pictureColor[] = {1,1,1,1};
+	};
+	
+	class End4
+	{
+		title = "$STR_S3_GAME_OVER";
+		subtitle = "l2p";
+		description = "";
+		pictureBackground = "";
+		picture = "A3\ui_f\data\GUI\Cfg\Debriefing\endDefault_ca.paa";
+		pictureColor[] = {1,1,1,1};
+	};
+};
+
+class CfgMarkers 
+{
+	class Flag007 
+	{
+		name = "Flag007";
+		icon = "\A3\ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_toolbox_waypoints_ca.paa";
+		color[] = {1, 0, 0, 1};
+		size = 1;
+		shadow = true;
+		scope = private;
+	};
+};
+
+class S3MiniMapDialog {
+	idd = 15001;
+	movingEnable = 1;
+	onUnLoad= "_this call fn_isaveGPS";
+	
+	class controlsBackground {};
+	class objects {};
+	
+	controls[] = { MyHelloText }; 
+	
+	class MyHelloText {
+		idc = 15002;
+		moving = 1;
+		type = 0;
+		style = 0;
+		text = "$STR_S3_Drag_drop";
+		sizeEx = 0.04;
+		font = "RobotoCondensed";
+		
+		colorBackground[] = { 0, 1, 0, 0.5 };
+		colorText[] = { 1, 1, 0, 1 };
+		
+		x = 0.0;
+		y = 0.5;
+		w = 0.2;
+		h = 0.2;
+	};	
+};
+
+
+class S3RespawnDialog {
+	idd = RespawnDIDD;
+	movingEnable = 0;
+	access = 0;
+	//onLoad= "uiNamespace setVariable ['S3_RESPAWN_DLG', _this select 0];  (_this select 0) displaySetEventHandler ['KeyDown',' if ( (_this select 1) == 1) exitWith { }; true']";
+	onLoad= "uiNamespace setVariable ['S3_RESPAWN_DLG', _this select 0];  (_this select 0) displaySetEventHandler ['KeyDown',' _res=false;  if ( (_this select 1) in [1]) then { _res=true }; _res']";
+	
+	onUnLoad= "S3_V_ActiveRespawn= false;  vehicle player switchCamera 'Internal'; call S3_fnc_HideRespawnDialog"; 
+	class controlsBackground 
+	{
+		class RMAP1000:RscMapControl
+		{
+			idc = RespawnDMAPIDC;
+			text = "";
+			x = safeZoneX; 
+			y = safeZoneY;
+			w = safezoneW;
+			h = safezoneH;
+			onLoad= "params ['_map']; uiNamespace setVariable ['S3_Map', _map]; call S3_fnc_ShowRespawnDialog;";
+			onMouseButtonUp= "if (_this select 1 !=0) ExitWith {}; _pos = (_this select 0) ctrlMapScreenToWorld [_this select 2, _this select 3]; [_pos] call S3_fnc_MapClickRespawn";
+			//onDraw="params['_map']; _ssc= 128;  _map drawIcon ['A3\ui_f\data\Map\Markers\System\empty_ca.paa', S3_MyTeamColor, getMarkerPos format ['Respawn%1', S3_V_ZtoSpawn],_ssc, _ssc,0,'',0,	1,'TahomaB','right'	];";
+			maxSatelliteAlpha = 1;
+			fade = 0.5;
+			alphaFadeStartScale = 2;
+			alphaFadeEndScale =2;
+			colorBackground[] = {1,0,0, 1};
+		};
+		
+		class RespawnBTNHelpTXT1000: RscStructuredText
+		{
+			idc = -1;
+			x = safeZoneX; 
+			y = safeZoneY;
+			w = safezoneW/2;
+			h = safezoneW;
+			onLoad= "params['_c']; uiNamespace setVariable ['S3_HELP_CTRL', _c]; _c ctrlEnable false; _c ctrlSetFade 1; _c ctrlCommit 0";
+		};
+		
+	};
+	class objects {};
+	
+	controls[] = 
+	{ 
+	RGRAD1000, 
+	RespawnClass1000, RespawnClassLB1000,
+	RespawnPreviewG1000, RespawnPreview1000, 
+	RespawnBTN1000,RespawnApply1000,RespawnPreviewB1000, 
+	RespawnBTNHelp1000
+	}; 
+
+	class RGRAD1000: RscActivePicture 
+	{
+		idc = RespawnDIDC;
+		//moving = 1;
+		text = "\A3\ui_f\data\GUI\Rsc\RscDisplayInventory\gradient_gs.paa";
+		sizeEx = 0.04;
+		font = "RobotoCondensed";
+		
+		colorBackground[] = { 0, 1, 0, 0.5 };
+		colorText[] = { 1, 1, 0, 1 };
+		
+		x = S3_UI_R_W- S3_UI_R_W/2;
+		y = GUI_BTX-S3_UI_R_H-S3_UI_BH;
+		w = S3_UI_R_W;
+		h = S3_UI_R_H;
+		
+		onLoad= "params['_c'];  _c ctrlSetActiveColor S3_MyTeamColor; _c  ctrlSetTextColor S3_MyTeamColor;  _c ctrlEnable false; _c ctrlCommit 0;";
+	};	
+	
+	class RespawnBTN1000: RscButton
+	{
+		idc = RespawnDBtnIDC;
+		text = "$STR_S3_RESPAWN";//"RESPAWN";
+		colorBackground[] = { 0, 0, 0, 0.3 };
+		colorText[] = { 1, 1, 0, 1 };
+		sizeEx = S3_UI_BH / 1.3;
+		x = S3_UI_R_W- S3_UI_R_W/2;
+		y = GUI_BTX-S3_UI_R_H- S3_UI_BH;
+		w = S3_UI_R_W;
+		h = S3_UI_BH;
+		onLoad= "";
+		//onMouseButtonClick= "call S3_fnc_HideRespawnDialog";
+		onMouseButtonUp= "closeDialog 10050;";
+	};	
+	
+	class RespawnClass1000: RscCombo//RscXListBox
+	{
+		idc = RespawnDClassIDC;
+		
+		x = S3_UI_R_W- S3_UI_R_W/2;
+		y = (GUI_BTX-S3_UI_R_H) +S3_UI_BH/3;
+		w = S3_UI_R_W;
+		h = S3_UI_BH;
+		
+		colorSelectBackground[] = {0,0,0,0.5};
+		colorSelect[] = {1,1,0,1};
+		
+		onLoad= "params['_c']; uiNamespace setVariable ['S3_HUD_CL', _c]; call HUD_ADDCLASSES";
+		onLBSelChanged="params ['_c','_Class']; [_c,_Class] spawn S3_fnc_HUD_CLASSChange;";
+		onMouseButtonClick= "";//_this call S3_fnc_HideRespawnDialog";
+	};	
+	
+	//Preview
+	class RespawnPreviewG1000: RscActivePicture
+	{
+		idc = -1;
+		text = "\A3\ui_f\data\GUI\Rsc\RscDisplayInventory\gradient_gs.paa";
+		x = S3_UI_R_W + S3_UI_R_W/2 +0.01;
+		y = GUI_BTX-S3_UI_R_H- S3_UI_BH;
+		w = S3_UI_R_W*0.8;
+		h = S3_UI_R_H;
+		onLoad= "params['_c'];  _c ctrlSetActiveColor S3_MyTeamColor; _c  ctrlSetTextColor S3_MyTeamColor;  _c ctrlEnable false;  _c ctrlSetFade 1; _c ctrlCommit 0; uiNamespace setVariable ['S3_HUD_PREVIEWBG', _c]; ";
+		onMouseButtonClick= "";//_this call S3_fnc_HideRespawnDialog";
+	};
+	
+	class RespawnPreview1000: RscListBoxBase
+	{
+		idc = -1;
+		x = S3_UI_R_W + S3_UI_R_W/2 +0.01;
+		y = GUI_BTX-S3_UI_R_H- S3_UI_BH;
+		w = S3_UI_R_W*0.8;
+		h = S3_UI_R_H-pixelH*2;
+		itemSpacing= 0.02;
+		onLoad= "params['_c']; uiNamespace setVariable ['S3_HUD_PREVIEWLB', _c]; _c  ctrlSetTextColor S3_MyTeamColor;  _c ctrlEnable false; _c ctrlSetFade 1; _c ctrlCommit 0"; //
+	};
+	/////////////
+	
+	class RespawnClassLB1000: RscListBoxBase
+	{
+		idc = RespawnDClassLBIDC;
+		
+		x = S3_UI_R_W- S3_UI_R_W/2;
+		y = (GUI_BTX-S3_UI_R_H) +S3_UI_BH/3*2+S3_UI_BH;
+		w = S3_UI_R_W;
+		h = S3_UI_BH*2;
+		/*
+		autoScrollSpeed = -1;
+		autoScrollDelay = 0.5;
+		autoScrollRewind = 0;
+		*/
+		onLoad= "params['_c']; uiNamespace setVariable ['S3_HUD_CLASSLB', _c];";
+		onLBSelChanged="[0] spawn S3_fnc_UpdatePreview;";
+	};	
+	
+	
+	//Apply button
+	class RespawnApply1000: RscButton
+	{
+		idc = RespawnDApplyIDC;
+		text = "$STR_S3_APPLY";//"Apply";
+		x = S3_UI_R_W- S3_UI_R_W/2;
+		y = (GUI_BTX-S3_UI_R_H) +S3_UI_BH/3*3+S3_UI_BH*3;
+		w = S3_UI_R_W/2+S3_UI_R_W/4;
+		h =  S3_UI_BH;
+		colorText[] = { 0, 1, 0, 1 };
+		onMouseButtonClick= "call S3_fnc_Apply"; 
+	};	
+	
+	class RespawnPreviewB1000: RscButton
+	{
+		idc = RespawnDPreviewIDC;
+		text = "$STR_S3_Preview";//"Preview";
+		x = (S3_UI_R_W- S3_UI_R_W/2)+ (S3_UI_R_W/2+S3_UI_R_W/4);
+		y = (GUI_BTX-S3_UI_R_H) +S3_UI_BH/3*3+S3_UI_BH*3;
+		w = (S3_UI_R_W/2+S3_UI_R_W/4)- (S3_UI_R_W- S3_UI_R_W/2);
+		h =  S3_UI_BH;
+		colorText[] = { 1, 1, 0, 1 };
+		onMouseButtonClick= "call S3_fnc_HUD_PreviewShow"; 
+	};	
+	
+	class RespawnBTNHelp1000: RscButton
+	{
+		idc = -1;
+		text = "$STR_S3_Help";
+		//x =safeZoneX+SafeZoneW-0.12;
+		//y = safeZoneY+SafeZoneH- S3_UI_BH;
+		
+		x = safeZoneW+safeZoneX -0.34;
+		y = safeZoneY;//(GUI_BTX-S3_UI_R_H) +S3_UI_BH/3*3+S3_UI_BH*3;
+		
+		w = 0.32;
+		h =  S3_UI_BH;
+		colorText[] = { 1, 1, 1, 1 };
+		onMouseButtonClick= "call S3_fnc_Help"; 
+	};
+	
+};
+
+
+class S3ADMINDialog 
+{
+	idd = ADMINDialogIDD;
+	movingEnable = 1;
+	access = 0;
+	onLoad= "uiNamespace setVariable ['S3_RESPAWN_DLG', _this select 0];   "; 	//(_this select 0) displaySetEventHandler ['KeyDown',' if (_this select 1 != 1) exitWith { }; true'];
+	onUnLoad= "S3_V_ActiveRespawn= false "; 
+	class controlsBackground 
+	{
+		class BG_F: RscActivePicture 
+		{
+			idc = -1;
+			text = "\A3\ui_f\data\GUI\Cfg\Hints\Zeus_ca.paa";
+			x = 0.0125-0.0125;
+			y = 0.02;
+			w = 0.4875+0.0125*2;
+			h = 0.66;
+			color[] = {1,1,1,1};
+			colorActive[] = {1,1,1,1};
+			onLoad= "params['_c'];  _c ctrlSetActiveColor [0,0,0,0.5]; _c  ctrlSetTextColor [0,0,0,0.8];  _c ctrlEnable false; _c ctrlCommit 3;";
+		};	
+	};
+	class objects {};
+	
+	controls[] = 
+	{
+		S3_AM1, S3_AM2, S3_AM3, S3_AM4, S3_AM5, S3_AM6, S3_AM7, S3_AM8, S3_AMKICK,S3_AMLOCK,S3_AMTXT,S3_AM10, S3_AM11, S3_AM12, S3_AM13, S3_AM14, S3_AM15
+	}; 
+	
+	class S3_AM13: RscStructuredText
+	{
+		idc = -1;
+		text = "";
+		moving = 1;
+		style = ST_CENTER;
+		colorBackground[] = {0,0,0,1};
+		colorText[] = {1,0.2,0,1};
+		x = 0.0125+0.4875;
+		y = 0.02;
+		w = safeZoneW+SafeZoneX- (0.0125+0.4875)-0.06;
+		h = 0.66;
+		onLoad= "params['_c']; uiNamespace setVariable ['AE_001', _c];  _c ctrlSetStructuredText (parseText '<img size= ''2.1'' image= ''\A3\ui_f\data\gui\cfg\Hints\NormalDamage_ca.paa'' /> Info: '); _c ctrlCommit 0;";
+	};
+	
+	
+	class S3_AM1: RscText
+	{
+		idc = -1;
+		text = "$STR_S3_ADMIN_MENU";
+		moving = 1;
+		style = ST_CENTER;
+		colorBackground[] = {0,0,0,1};
+		colorText[] = {1,0.2,0,1};
+		x = 0.0125;
+		y = 0.02;
+		w = 0.4875;
+		h = 0.06;
+		//onLoad= "params['_c']; _c ctrlSetStructuredText parseText 'ADMIN'; _c ctrlCommit 0;";// parseText '<img size= ''2.1'' image= ''\A3\ui_f\data\gui\cfg\Hints\NormalDamage_ca.paa'' /> Admin menu '; _c ctrlCommit 0;";
+	};
+	
+	class S3_AM2: RscText
+	{
+		idc = 10;
+		text = "$STR_S3_Time";
+		x = 0.025;
+		y = 0.1;
+		w = 0.2;
+		h = 0.04;
+		colorBackground[] = {0,0,0,1};
+		onLoad= "params['_c'];  _m= date select 4; if (_m< 10) then { _m= '0'+str _m };	_c ctrlSetText format[Localize 'STR_S3_Time2', date select 3, _m]; uiNamespace setVariable ['AAS_timeXCtrl', _c]";
+	};
+	
+	class S3_AM3: RscXSliderH
+	{
+		idc = -1;
+		x = 0.025+0.2+0.0125;
+		y = 0.1;
+		w = 0.4875-0.0125 - (0.025+0.2+0.0125);
+		h = 0.04;
+		onLoad= "params['_c']; _c sliderSetRange [0, 1439]; _c sliderSetPosition ((date select 3)*60+ (date select 4)); _c ctrlCommit 0;";
+		onSliderPosChanged=" _this spawn f_time;";
+	};
+	
+	class S3_AM4: RscCombo
+	{
+		idc = -1;
+		text = "$STR_S3_Punisher";
+		x = 0.025;
+		y = 0.4;
+		w = 0.325;
+		h = 0.04;
+		onLoad= "params['_c'];  [_c,'Update'] call S3_fnc_AdminEye";
+		onLBSelChanged=" uiNamespace setVariable ['AAS_VCT', lbCurSel (_this select 0)];";
+	};
+	
+	class S3_AM5: RscButton
+	{
+		idc = -1;
+		text = "$STR_S3_DO";
+		x = 0.3625;
+		y = 0.4;
+		w = 0.125;
+		h = 0.04;
+		onMouseButtonClick= "[controlNull,'Do'] call S3_fnc_AdminEye";
+	};
+	
+	class S3_AM12: RscCombo
+	{
+		idc = -1;
+		text = "$STR_S3_tool";
+		x = 0.025;
+		y = 0.44+0.0125;
+		w = 0.325;
+		h = 0.04;
+		onLoad= "params['_c'];  [_c,'GIFTs'] call S3_fnc_AdminEye";
+		onLBSelChanged=" uiNamespace setVariable ['AAS_VCT_BLACKid', lbCurSel (_this select 0)];";
+	};
+	
+	class S3_AM6: RscText
+	{
+		idc = -1;
+		text = "$STR_S3_AI_settings_2";
+		shadow = 2;
+		x = 0.025;
+		y = 0.16;
+		w = 0.2;
+		h = 0.04;
+		colorBackground[] = {0,1,0,0.5};
+		colorText[] = {1,1,0,1};
+		onLoad= "params['_c'];   _c ctrlSetText format[Localize 'STR_S3_AI_settings_3', PjrAAS_NumberOfAIgroups, PjrAAS_NumberOfAIunitsPerGroup]; _c ctrlCommit 0;  uiNamespace setVariable ['AAS_AISCtrl', _c]";
+	};
+	
+	class S3_AM7: RscButton
+	{
+		idc = -1;
+		text = "$STR_S3_On";
+		x = 0.25;
+		y = 0.16;
+		w = 0.1125;
+		h = 0.04;
+		onMouseButtonClick= "[] remoteExec ['S3_fnc_CreateAI', 2, false]";
+	};
+	
+	class S3_AM8: RscButton
+	{
+		idc = -1;
+		text = "$STR_S3_Off";
+		x = 0.375;
+		y = 0.16;
+		w = 0.1125;
+		h = 0.04;
+		onMouseButtonClick= "[] remoteExec ['AAS_S_DAI', 2, false]";
+	};
+	
+	class S3_AMKICK: RscButton
+	{
+		idc = -1;
+		text = "$STR_S3_KICK";
+		x = 0.375;
+		y = 0.62;
+		w = 0.1125;
+		h = 0.04;
+		onMouseButtonClick = "systemchat Localize 'STR_S3_Kick_command'; _vct= uiNamespace getVariable ['AAS_VCT', 'FAILED']; _name= name (AllPunits select _vct); serverCommand format ['#kick ""%1""', _name]; systemchat ('BB'+ _name); ";
+	};
+	
+	class S3_AMLOCK: RscButton
+	{
+		idc = -1;
+		text = "$STR_S3_LOCK";
+		x = 0.375-0.1125;
+		y = 0.62;
+		w = 0.1125;
+		h = 0.04;
+		onMouseButtonClick = "serverCommand '#lock'; systemchat Localize 'STR_S3_Server_LOCKED'; ";
+	};
+	
+	class S3_AMTXT: RscButton
+	{
+		idc = -1;
+		text = "TXT SCR";
+		x = 0.375-0.1125*2;
+		y = 0.62;
+		w = 0.1125;
+		h = 0.04;
+		onMouseButtonClick = "createDialog 'AdminMenuDialog'; ";
+	};
+	
+	class S3_AM10: RscXSliderH	//AI groups
+	{
+		idc = -1;
+		x = 0.025;
+		y = 0.22;
+		w = 0.2;
+		h = 0.04;
+		onLoad= "params['_c']; _c ctrlSetTooltip 'AI groups';  _c sliderSetRange [1, 6]; _c sliderSetPosition 2; _c ctrlCommit 0;";
+		onSliderPosChanged="_c= uiNamespace getVariable 'AAS_AISCtrl'; _XX=round (_this select 1); PjrAAS_NumberOfAIgroups= _XX;  _c ctrlSetText format[Localize 'STR_S3_AI_settings_3', PjrAAS_NumberOfAIgroups, PjrAAS_NumberOfAIunitsPerGroup]; _c ctrlCommit 0;   [_XX] remoteExec ['AAS_S_AISG', 2, false]";
+	};
+	
+	class S3_AM14: RscText
+	{
+		idc = -1;
+		text = "$STR_S3_viewDist";
+		shadow = 2;
+		x = 0.025;
+		y = 0.22+0.04+0.02;
+		w = 0.2;
+		h = 0.04;
+		colorBackground[] = {0,1,0,0.5};
+		colorText[] = {1,1,0,1};
+		onLoad= "params['_c']; _c ctrlSetText format[Localize 'STR_S3_View_Distance_2', ViewDistance]; _c ctrlCommit 0; uiNamespace setVariable ['AAS_VDCaption', _c] ";
+	};
+	class S3_AM15: RscXSliderH	//ViewDistance
+	{
+		idc = -1;
+		x = 0.25;
+		y = 0.22+0.04+0.02;
+		w = 0.1125*2+0.0125;
+		h = 0.04;
+		onLoad= "params['_c']; _c ctrlSetTooltip 'View Distance (m)';  _c sliderSetRange [200, 10000]; _c sliderSetPosition ViewDistance; _c ctrlCommit 0;";
+		onSliderPosChanged="_c= uiNamespace getVariable 'AAS_VDCaption'; _VD= round (_this select 1);  _c ctrlSetText format[Localize 'STR_S3_View_Distance_2', _VD]; _c ctrlCommit 0; Flag1 setVariable['S3_params_VD', _VD, true]; [_VD] remoteExec ['AAS_S_PARAMS', 2, false] ";
+	};
+	
+	class S3_AM11: RscXSliderH 	//AI units PG
+	{
+		idc = -1;
+		x = 0.4875+0.0125*2 -0.025-0.2;
+		y = 0.22;
+		w = 0.2;
+		h = 0.04;
+		text = "123";
+		onLoad= "params['_c'];_c ctrlSetTooltip 'Units per groups';  _c sliderSetRange [1, 6]; _c sliderSetPosition 2; _c ctrlCommit 0;";
+		onSliderPosChanged="_c= uiNamespace getVariable 'AAS_AISCtrl'; _XX=round (_this select 1); PjrAAS_NumberOfAIunitsPerGroup= _XX;  _c ctrlSetText format[Localize 'STR_S3_AI_settings_3', PjrAAS_NumberOfAIgroups, PjrAAS_NumberOfAIunitsPerGroup]; _c ctrlCommit 0;   [_XX] remoteExec ['AAS_S_AISU', 2, false]";
+	};
+};
+
+
+class AdminMenuDialog {
+idd = 11001;
+movingEnable = 1;
+
+onLoad= "0 spawn S3UpdateAMenu";
+class controlsBackground { 
+		// define controls here
+};
+class objects { 
+		// define controls here
+};
+
+controls[]=
+{
+	IGUIBack_2200,
+	RscCombobox_1499,
+	RscListbox_1500,
+	RscButton_1600,
+	RscButton_1601,
+	RscButton_1602,
+	RscButton_1603,
+	RscText_1000
+	
+};
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Guest - ^0Sabre, v1.063, #Xyfaqu)
+////////////////////////////////////////////////////////
+
+class IGUIBack_2200: RscText
+{
+	idc = 2200;
+	x = 0.377495 * safezoneW + safezoneX;
+	y = 0.197287 * safezoneH + safezoneY;
+	w = 0.24501 * safezoneW;
+	h = 0.56006 * safezoneH;
+	colorBackground[] = {0,0,0,0.6};
+	moving = 1;
+};
+
+class RscCombobox_1499: RscCombo
+{
+	idc = 1499;
+	x = 0.377495 * safezoneW + safezoneX;
+	y = 0.247973 * safezoneH + safezoneY;
+	w = 0.24501 * safezoneW;
+	h = 0.028003 * safezoneH;
+	//colorBackground[] = {1,0,0,0.6};
+};
+
+class RscListbox_1500: RscListbox
+{
+	idc = 1500;
+	x = 0.377495 * safezoneW + safezoneX;
+	y = 0.3 * safezoneH + safezoneY;
+	w = 0.24501 * safezoneW;
+	h = 0.36205 * safezoneH;
+};
+class RscButton_1600: RscButton
+{
+	idc = 1600;
+	text = "$STR_S3_Refresh"; //--- ToDo: Localize;
+	x = 0.377495 * safezoneW + safezoneX;
+	y = 0.724024 * safezoneH + safezoneY;
+	w = 0.06 * safezoneW;
+	h = 0.028 * safezoneH;
+};
+class RscButton_1601: RscButton
+{
+	idc = 1601;
+	text = "$STR_S3_Start"; //--- ToDo: Localize;
+	x = (0.377495+0.06) * safezoneW + safezoneX;
+	y = 0.724024 * safezoneH + safezoneY;
+	w = 0.06 * safezoneW;
+	h = 0.028 * safezoneH;
+	colorBackgroundActive[] = {0,1,0,0.5};
+};
+class RscButton_1602: RscButton
+{
+	idc = 1602;
+	text = "$STR_S3_Close"; //--- ToDo: Localize;
+	x = (0.377495+0.18) * safezoneW + safezoneX;
+	y = 0.724024 * safezoneH + safezoneY;
+	w = 0.06* safezoneW;
+	h = 0.028 * safezoneH;
+};
+class RscButton_1603: RscButton
+{
+	idc = 1603;
+	text = "$STR_S3_Stop"; //--- ToDo: Localize;
+	x = (0.377495+0.12) * safezoneW + safezoneX;
+	y = 0.724024 * safezoneH + safezoneY;
+	w = 0.06 * safezoneW;
+	h = 0.028 * safezoneH;
+	colorBackgroundActive[] = {1,0,0,0.5};
+};
+class RscText_1000: RscText
+{
+	idc = 1000;
+	text = "$STR_S3_ADMIN_MENU"; //--- ToDo: Localize;
+	x = 0.377495 * safezoneW + safezoneX;
+	y = 0.21 * safezoneH + safezoneY;
+	w = 0.24501 * safezoneW;
+	h = 0.028003 * safezoneH;
+	colorText[] = {0,0,0,1};
+	colorBackground[] = {1,0,0,0.8};
+};
+
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT END
+////////////////////////////////////////////////////////
+};
+
+class AdminPreviewDialog 
+{
+	idd = 11002;
+	movingEnable = 1;
+	class controlsBackground { 
+			// define controls here
+	};
+	class objects { 
+			// define controls here
+	};
+
+	controls[]=
+	{
+		IGUIBack_2200, IGUIBack_2201
+	};
+	////////////////////////////////////////////////////////
+	// GUI EDITOR OUTPUT START (by Guest - ^0Sabre, v1.063, #Xyfaqu)
+	////////////////////////////////////////////////////////
+
+	class IGUIBack_2200: RscText
+	{
+		idc = 2200;
+		x = safezoneX;
+		y = safezoneY;
+		w = safezoneW;
+		h = safezoneH;
+		colorBackground[] = {1,0,0,0.3};
+		text = "$STR_S3_Preview";
+		moving = 1;
+	};
+	class IGUIBack_2201: RscText
+	{
+		idc = 2201;
+		x = 0.377495 * safezoneW + safezoneX;
+		y = 0 * safezoneH + safezoneY;
+		w = 0.24501 * safezoneW;
+		h = 0.028003 * safezoneH;
+		colorBackground[] = {1,0,0,0.3};
+		text = "$STR_S3_NAME>>>";// название
+		moving = 1;
+	};
+};
+
+class RscTitles
+{
+	class MyHint 
+	{
+		idd = -1;
+		fadein = 0.1;
+		fadeout = 0.5;
+		duration = 5;
+		onLoad= "uiNamespace setVariable ['s3_HintDisp', _this select 0];";
+		controls[]=
+		{
+		TXT1000,TXT1001,IGUIBack_2200
+		};
+		
+		class TXT1000:RscText
+		{
+			idc = 1000;
+			text = "";
+			//moving = 1;
+			shadow = 2;
+			style = ST_LEFT;
+			colorbackground[] = {0,1,0,1};
+			colorText[] = {1,1,1,1};
+			x = SafeZoneX+0.5;
+			y = 0.3-0.2;
+			w= 0.42;
+			sizeEx = S3_UI_BH*0.8;
+			h= S3_UI_BH*0.9;
+		};
+		
+		class IGUIBack_2200: RscActivePicture
+		{
+			idc = 1002;
+			text = "A3\ui_f\data\GUI\Rsc\RscDisplayInventory\gradient_gs.paa";
+			x = safeZoneX+0.5;
+			y = 0.3-0.2+S3_UI_BH+0.003;
+			w= 0.42;
+			h= 0.15;
+			color[] = {0,0,0,0.7};
+			colorActive[] =  {0,0,0,0.7};
+		};
+		
+		class TXT1001: RscStructuredText
+		{
+			idc = 1001;
+			text = "$STR_S3_txt"; //--- ToDo: Localize;
+			x = SafeZoneX+0.5;
+			y = 0.3-0.2+S3_UI_BH+0.006;
+			w= 0.42;
+			h= S3_UI_BH*100;
+		};
+		
+	};
+};
+
+
+class fastClassDialog {
+idd = -1;
+movingEnable = 1;
+onLoad= "[_this select 0] spawn S3_fnc_UpdateClassMenu";
+class controlsBackground 
+{ 
+	// define controls here
+	class BG_F: RscText 
+	{
+		idc = -1;
+		text = "";
+		moving= 1;
+		x = safezoneX+0.5;
+		y = 0;
+		w = 0;
+		h = 0;
+		colorbackground[] = {0,0,0,1};
+		onLoad= "params['_c'];  uiNamespace setVariable ['fastClassDialog_BG', _c];";
+	};	
+	
+	class BGP_F: RscText 
+	{
+		idc = -1;
+		text = "";
+		moving= 1;
+		x = safezoneX+0.5;
+		y = 0;
+		w = 0;
+		h = 0;
+		colorbackground[] = {0,0,0,1};
+		onLoad= "params['_c'];  uiNamespace setVariable ['fastClassDialog_BGP', _c];";
+	};	
+	
+};
+class objects { 
+	// define controls here
+};
+
+controls[]=
+{	
+};
+
+
+
+};

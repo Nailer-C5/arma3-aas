@@ -1,0 +1,1182 @@
+#include "globalDefines.hpp"
+#include "respawnDialog.hpp"
+#include "features\DOM_squad\SquadManagement.hpp"
+#define SECONDARY_FONT		"PuristaMedium"
+#define GUITEXT			0
+#define ReadAndWrite		0
+#define MAPTXTSIZE	0.02
+#define true	1
+#define false	0
+#define PLAYER(X) class Player##X:PlayerNameDisp { idc = IDCPLAYER + X; };
+
+//Virtual arsenal overrides
+#include "LARs\override_VA_templates\settings.hpp"
+class CfgFunctions
+{
+	#include "LARs\override_VA_templates\functions\functions.hpp"
+};
+//End: Virtual arsenal overrides
+
+respawn = 3;
+//NAILER[C5] - ADJUSTED ALL TITLE LINES BELOW WITH & TO USE / INSTEAD...
+respawndelay = 3;
+onLoadName = MAP_NAME;
+onLoadMission = MAP_DESCRIPTION;
+author = MAP_AUTHOR;
+//NAILER[C5] MODIFY LOADSCREEN PIC
+loadScreen =  "pictures\loadscreen.jpg";
+disabledAI=1;
+joinUnassigned = 0;//false;
+enableItemsDropping = 0;
+
+class Params
+{
+class AAS_Params_Title_RuleSettings
+{
+title = "------------------------------Clan Rule Settings------------------------------";
+values[] = {0};
+default = 0;
+texts[] = {""};
+}; 
+class AAS_Params_Rules
+{
+//NAILER[C5] - ADD C5 RULES
+title = "Rulesets";
+values[] = {SETUP_PUBLIC, SETUP_C5, SETUP_AUSARMA, SETUP_GBB};
+default = SETUP_C5;
+texts[] = {"Default Rules", "C5 Rules", "AusArma Rules", "GBB Rules"};
+};
+//END NAILER[C5] RULES MOD
+class AAS_Params_Title_GameSettings
+{
+title = "------------------------------Game Settings------------------------------";
+values[] = {0};
+default = 0;
+texts[] = {""};
+};	
+class AAS_Params_GameDuration
+{
+title = "Game Duration";
+values[] = {20,30,45,60,90,120};
+default = 45;
+texts[] = {"20m","30m","45m","60m","90m","120m"};
+};
+//NAILER[C5] - ADJUST DEFAULT HOUR AND MINUTES FOR TEMPLATE
+class AAS_Params_HourOfDay
+	{
+	title = "HourOfDay";
+	values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+	default = 0;
+	texts[] = {"Random","From Scenario Settings","01:XX","02:XX","03:XX","04:XX","05:XX","06:XX","07:XX","08:XX","09:XX","10:XX","11:XX","12:XX","13:XX","14:XX","15:XX","16:XX","17:XX","18:XX","19:XX","20:XX","21:XX","22:XX","23:XX","24:XX"};
+	};
+class AAS_Params_MinuteOfDay
+	{
+	title = "MinuteOfDay";
+	values[] = {-1,0,5,10,15,20,25,30,35,40,45,50,55,60};
+	default = 0;
+	texts[] = {"Random","From Scenario Settings","XX:05","XX:10","XX:15","XX:20","XX:25","XX:30","XX:35","XX:40","XX:45","XX:50","XX:55","XX:60"};
+	};
+//END NAILER[C5] MOD
+class AAS_Params_CameraView
+	{
+      title = "Setup 3rd Person View";
+	values[] = {0,1,2,3};
+	default = 1;
+	texts[] = {"Use Server Setting","Vehicles Only","Infantry Only","Disabled"};
+	};
+class AAS_Params_ShowHint
+	{
+      title = "Show AAS Tips";
+      values[]={0,1};
+      texts[]={"Disabled","Enabled"};
+      default = 1;
+};		
+class AAS_Params_Title_WeatherSettings
+{
+title = "------------------------------Weather Settings------------------------------";
+values[] = {0};
+default = 0;
+texts[] = {""};
+};		
+//NAILER[C5] - ADJUST WX SETTINGS FOR TEMPLATE
+class AAS_Params_Weather
+	{
+	title = "Weather";
+	values[] = {-1,0,1,2,3,4};
+	default = 0;	
+	texts[] = {"Random","From Scenario Settings","Clear","Cloudy","Light Rain","Heavy Rain"};
+	};
+class AAS_Params_Fog
+	{
+	title = "Fog";
+	values[] = {-1,0,1,2,3,4,5};
+	default = 0;
+	texts[] = {"Random","From Scenario Settings","No fog","Little fog","Foggy","Thick fog","Very thick fog"};
+	};
+//END NAILER[C5] - ADJUST WX SETTINGS FOR TEMPLATE
+class AAS_Params_Title_TerrainSettings
+{
+title = "------------------------------Terrain / View Settings------------------------------";
+values[] = {0};
+default = 0;
+texts[] = {""};
+};		
+class AAS_Params_ViewDistance
+	{
+	title = "ViewDistance";
+	values[] = {500,1000,1500,2000,2500,3000,4000,5000,10000};
+	default = 2500;
+	texts[] = {"500","1000","1500","2000","2500","3000","4000","5000","10000"};
+	};
+class AAS_Params_Grass   
+{   
+   title="Grass";
+   values[]={0,1};
+   texts[]={"No Grass", "Grass ON"};
+   default = 1;
+};
+class AAS_Params_Title_TeamSettings
+{
+title = "------------------------------Team / Gear Settings------------------------------";
+values[] = {0};
+default = 0;
+texts[] = {""};
+};
+//NAILER[C5] - ADJUST SPAWN ON SQUAD LEADER AND SASHALO FOR TEMPLATE	  
+class AAS_Params_GoToSquadLeader   
+{   
+   title="Squad Leader Spawn Type";
+   values[]={0,1,2};
+   texts[]={"Off", "Teleport", "Parachute"};
+   default = 0;
+};
+class AAS_Params_SASHALO   
+{   
+   title="Special Air Service HALO";
+   values[]={0,1};
+   texts[]={"Disabled","Enabled"};
+   default = 0;
+};
+//END NAILER[C5] - ADJUST SPAWN ON SQUAD LEADER AND SASHALO FOR TEMPLATE	  
+class AAS_Params_PunishTeamkills
+	{
+	title = "Punish teamkills";
+	values[] = {0,1};
+	default = 0;
+	texts[] = {"Disabled","Enabled"};
+	};
+class AAS_Params_DisableProfileSaveLoad
+{  
+   title="Profile Save and Load";
+   values[]={0,1};
+   texts[]={"Disabled", "Enabled"};
+   default = 0;
+};   	
+class AAS_Params_Title_AISettings
+{
+title = "------------------------------AI Settings------------------------------";
+values[] = {0};
+default = 0;
+texts[] = {""};
+};		
+//NAILER[C5] ADJUST DEFAULTS FOR AI SUPPORT
+class AAS_Params_AISupportMode
+	{
+	title = "AI Support Mode";
+	values[] = {SUPPORT_OFF,SUPPORT_LTE4,SUPPORT_LTE6,SUPPORT_LTE8,SUPPORT_LTE10,SUPPORT_LTE12,SUPPORT_EAST,SUPPORT_WEST,SUPPORT_ON};
+	default = SUPPORT_OFF;
+	texts[] = {"Always Off","On when <= 4 players","On when <= 6 players","On when <= 8 players","On when <= 10 players","On when <= 12 players","East AI Only","West AI Only","Always On"};
+	};
+class AAS_Params_RecruitAIStatusDialog   
+{   
+   title="Join AI Groups";
+   values[]={0,1};
+   texts[]={"Disabled", "Enabled"};
+   default = 0;
+};  	
+class AAS_Params_AIVehiclesUse
+	{	
+	title = "AI uses Vehicles";
+	values[] = {0,1};
+	default = 0;
+	texts[] = {"Disabled", "Enabled"};
+	};	  
+class AAS_Params_AIVehiclesUsePercentage
+	{
+	title = "AI Percentage using vehicles";
+ 	values[] = {10,20,30,40,50,60,70,80,90,100};
+ 	default = 30;
+ 	texts[] = {10,20,30,40,50,60,70,80,90,100};
+	};
+class AAS_Params_NumberOfAIgroups
+	{
+    title = "AI groups";
+	values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+	default = 5;
+	texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+	};
+class AAS_Params_NumberOfAIunitsPerGroup
+	{
+    title = "AI units per group";
+	values[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+	default = 2;
+	texts[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+	};
+class AAS_Params_AggressiveAIBehavior
+	{
+ 	title = "AI Aggressive Mode";
+ 	values[] = {0,1};
+ 	default = 1;
+ 	texts[] = {"Disabled", "Enabled"};
+ 	};
+class AAS_Params_AIDebugMode
+	{
+	title = "AI Debug Mode";
+	values[] = {0,1,2};
+	default = 0;
+	texts[] = {"Disabled","Your side","Both sides"};
+	};
+};
+//END NAILER[C5] ADJUST DEFAULTS FOR AI SUPPORT
+class Header {
+	gameType = SC;
+	minPlayers = 1;
+	maxPlayers = 100;
+	playerCountMultipleOf = 1;
+};
+class CfgMusic
+{
+//NAILER[C5] - TRIM PBO FILE SIZE - REMOVE MUSIC
+// class TheUnitCut
+// {
+//  name = "TheUnitCut";
+//  sound[] = {"music\Intro.ogg", db+0, 1.0};
+// };
+};
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "NATO VICTORY";
+		subtitle = "";
+		description = "NATO captured more bases and wins the game.";
+		backgroundPicture = "\a3\missions_f\data\img\showcase_infantry_overview_ca.paa";
+		picture = "";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class End2
+	{
+		title = "CSAT VICTORY";
+		subtitle = "";
+		description = "CSAT captured more bases and wins the game.";
+		backgroundPicture = "\a3\missions_f\data\img\showcase_infantry_overview_ca.paa";
+		picture = "";
+		pictureColor[] = {0.0,0.0,0.6,1};
+	};
+	class End3
+	{
+		title = "Stalemate";
+		subtitle = "";
+		description = "The battle has resulted into a stalemate.";
+		backgroundPicture = "\a3\missions_f\data\img\showcase_infantry_overview_ca.paa";
+		picture = "";
+		pictureColor[] = {};
+	};
+};
+class CfgSounds
+{
+class bcg_wind
+	{
+		name = "bcg_wind";
+		sound[] = {"\sound\bcg_wind.ogg", 0.3, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_1
+	{
+		name = "rafala_1";
+		sound[] = {"\sound\rafala_1.ogg", db+10, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_2
+	{
+		name = "rafala_2";
+		sound[] = {"\sound\rafala_2.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_6
+	{
+		name = "rafala_6";
+		sound[] = {"\sound\rafala_6.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_7
+	{
+		name = "rafala_7";
+		sound[] = {"\sound\rafala_7.ogg", db+10, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_8
+	{
+		name = "rafala_8";
+		sound[] = {"\sound\rafala_8.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_9
+	{
+		name = "rafala_9";
+		sound[] = {"\sound\rafala_9.ogg", db+10, 1};
+		titles[] = {1, ""};
+	};
+	class tree_crack_1
+	{
+		name = "tree_crack_1";
+		sound[] = {"\sound\tree_crack_1.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class tree_crack_2
+	{
+		name = "tree_crack_2";
+		sound[] = {"\sound\tree_crack_2.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class tree_crack_3
+	{
+		name = "tree_crack_3";
+		sound[] = {"\sound\tree_crack_3.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class tree_crack_4
+	{
+		name = "tree_crack_4";
+		sound[] = {"\sound\tree_crack_4.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class tree_crack_5
+	{
+		name = "tree_crack_5";
+		sound[] = {"\sound\tree_crack_5.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class tree_crack_6
+	{
+		name = "tree_crack_6";
+		sound[] = {"\sound\tree_crack_6.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class tree_crack_7
+	{
+		name = "tree_crack_7";
+		sound[] = {"\sound\tree_crack_7.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class tree_crack_8
+	{
+		name = "tree_crack_8";
+		sound[] = {"\sound\tree_crack_8.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class tree_crack_9
+	{
+		name = "tree_crack_9";
+		sound[] = {"\sound\tree_crack_9.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class lup_01
+	{
+		name = "lup_01";
+		sound[] = {"\sound\lup_01.ogg", 1, 1};
+		titles[] = {};
+	};
+	class lup_02
+	{
+		name = "lup_02";
+		sound[] = {"\sound\lup_02.ogg", 1, 1};
+		titles[] = {};
+	};
+	class lup_03
+	{
+		name = "lup_03";
+		sound[] = {"\sound\lup_03.ogg", 1, 1};
+		titles[] = {};
+	};
+	class tremurat_1
+	{
+		name = "tremurat_1";
+		sound[] = {"\sound\tremurat_1.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tremurat_2
+	{
+		name = "tremurat_2";
+		sound[] = {"\sound\tremurat_2.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tremurat_3
+	{
+		name = "tremurat_3";
+		sound[] = {"\sound\tremurat_3.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tremurat_4
+	{
+		name = "tremurat_4";
+		sound[] = {"\sound\tremurat_4.ogg", 1, 1};
+		titles[] = {1, ""};
+	};	
+	class NoSound 
+	{
+		name = "NoSound";
+		sound[] = {"", 0, 1};
+		titles[] = {0, ""};
+	};	
+	class tuse_1
+	{
+		name = "tuse_1";
+		sound[] = {"\sound\tuse_1.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tuse_2
+	{
+		name = "tuse_2";
+		sound[] = {"\sound\tuse_2.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tuse_3
+	{
+		name = "tuse_3";
+		sound[] = {"\sound\tuse_3.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tuse_4
+	{
+		name = "tuse_4";
+		sound[] = {"\sound\tuse_4.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tuse_5
+	{
+		name = "tuse_5";
+		sound[] = {"\sound\tuse_5.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tuse_6
+	{
+		name = "tuse_6";
+		sound[] = {"\sound\tuse_6.ogg", 1, 1};
+		titles[] = {1, ""};
+	};	
+
+	//NAILER[C5] - TRIM PBO SIZE - REMOVE SOUND 
+	//sounds[] = {BaseCaptureSnd,AASIntro};
+	sounds[] = {BaseCaptureSnd};
+	class BaseCaptureSnd{name="BaseCaptureSnd";sound[]={"\sound\bc.wav", 10, 1.0};titles[]={};};
+	//class AASIntro {name="AASIntro";sound[]={"\sound\AASIntro.ogg",10,1.0};titles[] = {};};	
+	//NAILER[C5] - END SOUND FILE MODS
+};
+class KEGsRscMapControl
+{
+	access = 0;
+	type = 101;
+	idc = 51;
+	style = 48;
+	colorBackground[] = {0.969,0.957,0.949,1};
+	colorOutside[] = {0,0,0,1};
+	colorText[] = {0,0,0,1};
+	font = "TahomaB";
+	sizeEx = 0.04;
+	colorSea[] = {0.467,0.631,0.851,0.5};
+	colorForest[] = {0.624,0.78,0.388,0.5};
+	colorRocks[] = {0,0,0,0.3};
+	colorCountlines[] = {0.572,0.354,0.188,0.25};
+	colorMainCountlines[] = {0.572,0.354,0.188,0.5};
+	colorCountlinesWater[] = {0.491,0.577,0.702,0.3};
+	colorMainCountlinesWater[] = {0.491,0.577,0.702,0.6};
+	colorForestBorder[] = {0,0,0,0};
+	colorRocksBorder[] = {0,0,0,0};
+	colorPowerLines[] = {0.1,0.1,0.1,1};
+	colorRailWay[] = {0.8,0.2,0,1};
+	colorNames[] = {0.1,0.1,0.1,0.9};
+	colorInactive[] = {1,1,1,0.5};
+	colorLevels[] = {0.286,0.177,0.094,0.5};
+	colorTracks[] = {0.84,0.76,0.65,0.15};
+	colorRoads[] = {0.7,0.7,0.7,1};
+	colorMainRoads[] = {0.9,0.5,0.3,1};
+	colorTracksFill[] = {0.84,0.76,0.65,1};
+	colorRoadsFill[] = {1,1,1,1};
+	colorMainRoadsFill[] = {1,0.6,0.4,1};
+	colorGrid[] = {0.1,0.1,0.1,0.6};
+	colorGridMap[] = {0.1,0.1,0.1,0.6};
+	stickX[] = {0.2,{"Gamma",1,1.5}};
+	stickY[] = {0.2,{"Gamma",1,1.5}};
+	class LineMarker //NAILER STOP ANNOYING DIALOG ON MISSION LOAD
+	{
+		lineDistanceMin = 3e-005;
+		lineLengthMin = 5;
+		lineWidthThick = 0.014;
+		lineWidthThin = 0.008;
+		textureComboBoxColor = "#(argb,8,8,3)color(1,1,1,1)";
+	};//END NAILER MOD
+	class Legend
+	{
+		colorBackground[] = {1,1,1,0.5};
+		color[] = {0,0,0,1};
+		x = "SafeZoneX + 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+		y = "SafeZoneY + safezoneH - 4.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		w = "10 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+		h = "3.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		font = "PuristaMedium";
+		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	};
+	class ActiveMarker
+	{
+		color[] = {0.3,0.1,0.9,1};
+		size = 50;
+	};
+	class Command
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
+		size = 18;
+		importance = 1;
+		coefMin = 1;
+		coefMax = 1;
+	};
+	class Task
+	{
+		colorCreated[] = {1,1,1,1};
+		colorCanceled[] = {0.7,0.7,0.7,1};
+		colorDone[] = {0.7,1,0.3,1};
+		colorFailed[] = {1,0.3,0.2,1};
+		color[] = {"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])","(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])","(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])","(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"};
+		icon = "\A3\ui_f\data\map\mapcontrol\taskIcon_CA.paa";
+		iconCreated = "\A3\ui_f\data\map\mapcontrol\taskIconCreated_CA.paa";
+		iconCanceled = "\A3\ui_f\data\map\mapcontrol\taskIconCanceled_CA.paa";
+		iconDone = "\A3\ui_f\data\map\mapcontrol\taskIconDone_CA.paa";
+		iconFailed = "\A3\ui_f\data\map\mapcontrol\taskIconFailed_CA.paa";
+		size = 27;
+		importance = 1;
+		coefMin = 1;
+		coefMax = 1;
+	};
+	class CustomMark
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\custommark_ca.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 1;
+		coefMax = 1;
+	};
+	class Tree
+	{
+		color[] = {0.45,0.64,0.33,0.4};
+		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
+		size = 12;
+		importance = "0.9 * 16 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class SmallTree
+	{
+		color[] = {0.45,0.64,0.33,0.4};
+		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
+		size = 12;
+		importance = "0.6 * 12 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class Bush
+	{
+		color[] = {0.45,0.64,0.33,0.4};
+		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
+		size = "14/2";
+		importance = "0.2 * 14 * 0.05 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class Church
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\church_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Chapel
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Cross
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\Cross_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Rock
+	{
+		color[] = {0.1,0.1,0.1,0.8};
+		icon = "\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
+		size = 12;
+		importance = "0.5 * 12 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class Bunker
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
+		size = 14;
+		importance = "1.5 * 14 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class Fortress
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
+		size = 16;
+		importance = "2 * 16 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class Fountain
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
+		size = 11;
+		importance = "1 * 12 * 0.05";
+		coefMin = 0.25;
+		coefMax = 4;
+	};
+	class ViewTower
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
+		size = 16;
+		importance = "2.5 * 16 * 0.05";
+		coefMin = 0.5;
+		coefMax = 4;
+	};
+	class Lighthouse
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\lighthouse_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Quay
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\quay_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Fuelstation
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\fuelstation_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Hospital
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\hospital_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class BusStop
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\busstop_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Transmitter
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\transmitter_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Stack
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
+		size = 20;
+		importance = "2 * 16 * 0.05";
+		coefMin = 0.9;
+		coefMax = 4;
+	};
+	class Ruin
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
+		size = 16;
+		importance = "1.2 * 16 * 0.05";
+		coefMin = 1;
+		coefMax = 4;
+	};
+	class Tourism
+	{
+		color[] = {0,0,0,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
+		size = 16;
+		importance = "1 * 16 * 0.05";
+		coefMin = 0.7;
+		coefMax = 4;
+	};
+	class Watertower
+	{
+		color[] = {1,1,1,1};
+		icon = "\A3\ui_f\data\map\mapcontrol\watertower_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+	};
+	class Waypoint
+	{
+		color[] = {0,0,0,1};
+		size = 24;
+		importance = 1;
+		coefMin = 1;
+		coefMax = 1;
+		icon = "\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
+	};
+	class WaypointCompleted
+	{
+		color[] = {0,0,0,1};
+		size = 24;
+		importance = 1;
+		coefMin = 1;
+		coefMax = 1;
+		icon = "\A3\ui_f\data\map\mapcontrol\waypointCompleted_ca.paa";
+	};
+	moveOnEdges = 1;
+	x = "SafeZoneXAbs";
+	y = "SafeZoneY + 1.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+	w = "SafeZoneWAbs";
+	h = "SafeZoneH - 1.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+	shadow = 0;
+	ptsPerSquareSea = 5;
+	ptsPerSquareTxt = 3;
+	ptsPerSquareCLn = 10;
+	ptsPerSquareExp = 10;
+	ptsPerSquareCost = 10;
+	ptsPerSquareFor = 9;
+	ptsPerSquareForEdge = 9;
+	ptsPerSquareRoad = 6;
+	ptsPerSquareObj = 9;
+	showCountourInterval = 0;
+	scaleMin = 0.001;
+	scaleMax = 1;
+	scaleDefault = 0.16;
+	maxSatelliteAlpha = 0.85;
+	alphaFadeStartScale = 0.35;
+	alphaFadeEndScale = 0.4;
+	fontLabel = "PuristaMedium";
+	sizeExLabel = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	fontGrid = "TahomaB";
+	sizeExGrid = 0.02;
+	fontUnits = "TahomaB";
+	sizeExUnits = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	fontNames = "PuristaMedium";
+	sizeExNames = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8) * 2";
+	fontInfo = "PuristaMedium";
+	sizeExInfo = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	fontLevel = "TahomaB";
+	sizeExLevel = 0.02;
+	text = "#(argb,8,8,3)color(1,1,1,1)";
+	//text = "\a3\ui_f\data\map_background2_co.paa";
+	class power
+	{
+		icon = "\A3\ui_f\data\map\mapcontrol\power_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+		color[] = {1,1,1,1};
+	};
+	class powersolar
+	{
+		icon = "\A3\ui_f\data\map\mapcontrol\powersolar_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+		color[] = {1,1,1,1};
+	};
+	class powerwave
+	{
+		icon = "\A3\ui_f\data\map\mapcontrol\powerwave_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+		color[] = {1,1,1,1};
+	};
+	class powerwind
+	{
+		icon = "\A3\ui_f\data\map\mapcontrol\powerwind_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+		color[] = {1,1,1,1};
+	};
+	class shipwreck
+	{
+		icon = "\A3\ui_f\data\map\mapcontrol\shipwreck_CA.paa";
+		size = 24;
+		importance = 1;
+		coefMin = 0.85;
+		coefMax = 1;
+		color[] = {1,1,1,1};		
+	};	
+};
+class GUIText
+{
+	type = GUITEXT;
+	idc = IDCUNDEFINED;
+	style = GUILEFT;
+	colorText[] = {0.75,0.75,0.75,1};
+	colorBackground[] = {0,0,0,0};
+	font = SECONDARY_FONT;
+	sizeEx = 0.025;
+	w = 0.275;
+	h = 0.04;
+	text = "";
+};
+class GUILargeText:GUIText  {   	sizeEx = 0.029; 	w = 0.275;  	h = 0.1;    };
+class GUIHugeText:GUIText   {   	sizeEx = 0.05;  	w = 0.55;   	h = 0.08;   };
+class GUISmallText:GUIText  {   	sizeEx = 0.013; 	w = 0.165;  	h = 0.018;  };
+class GUIMidText:GUIText    {   	sizeEx = 0.020; 	w = 0.165;  	h = 0.018;  };
+class BackgroundWindow:GuiText
+	{
+	colorBackground[] = {0.1,0.1,0.1,1.0};
+	text = "";
+	x = 0.325;
+	y = 0.075;
+	w = 0.4;
+	h = 0.85;
+	};
+class RscTitles
+  {
+	class DefaultMenu
+		{
+		idd = IDCDEFAULT;
+		objects[] = {};
+
+
+		class BackgroundWindowLight:BackgroundWindow
+			{
+				colorBackground[] = {0.4,0.4,0.4,1.0};
+			};
+		
+		class PlayerNameDisp:GUIMidText
+			{
+				x = 0.5;
+				y = 0.5;
+			};
+		PLAYER(0)  PLAYER(1)  PLAYER(2)  PLAYER(3)  PLAYER(4)  PLAYER(5)  PLAYER(6)  PLAYER(7)
+		PLAYER(8)  PLAYER(9)  PLAYER(10) PLAYER(11) PLAYER(12) PLAYER(13) PLAYER(14) PLAYER(15)
+		PLAYER(16) PLAYER(17) PLAYER(18) PLAYER(19) PLAYER(20) PLAYER(21) PLAYER(22) PLAYER(23)
+		PLAYER(24) PLAYER(25) PLAYER(26) PLAYER(27) PLAYER(28) PLAYER(29) PLAYER(30) PLAYER(31)
+		PLAYER(32) PLAYER(33) PLAYER(34) PLAYER(35) PLAYER(36) PLAYER(37) PLAYER(38) PLAYER(39)
+		PLAYER(40) PLAYER(41) PLAYER(42) PLAYER(43) PLAYER(44) PLAYER(45) PLAYER(46) PLAYER(47)
+		PLAYER(48) PLAYER(49)
+		class HeadingDisplay:GUILargeText
+			{
+			    idc = IDCHEADINGLABEL;
+				x = HEADINGLABEL_X;
+				y = HEADINGLABEL_Y;
+				w = 0.2;
+				h = 0.06;
+				shadow = 1;
+			};
+		class PlayerClassDisplay:GUILargeText
+			{
+			    idc = IDCPLAYERCLASSLABEL;
+				x = INFODISPLAY_X;
+				y = PLAYERCLASSLABEL_Y;
+				w = 0.2;
+				h = 0.06;
+				shadow = 1;
+			};
+		class TimerDisplay:GUILargeText
+			{
+			    idc = IDCTIMERLABEL;
+				x = INFODISPLAY_X;
+				y = TIMERLABEL_Y;
+				w = 0.2;
+				h = 0.06;
+				shadow = 1;
+			};
+		class PlayersDisplay:GUILargeText
+			{
+			    idc = IDCPLAYERSLABEL;
+				x = INFODISPLAY_X;
+				y = PLAYERSLABEL_Y;
+				w = 0.3;
+				h = 0.06;
+				shadow = 1;
+			};			
+		class ProgressBarBackground:BackgroundWindow
+			{
+				idc = IDCBASECAPBACKGROUND;
+				x = BASECAPBACKGROUND_X;
+				y = BASECAPBACKGROUND_Y;
+				w = 0.4;
+				h = 0.06;
+				colorBackground[] = {0.0,0.0,0.0,0.6};
+			};
+		class MiniMapBackground:BackgroundWindow
+			{
+				idc = IDCMINIMAPBACK;		
+				x = 0.985-MINIMAPWIDTH;
+				y =0.985-MINIMAPHEIGHT;
+				w = MINIMAPWIDTH+0.01; 
+				h = MINIMAPHEIGHT+0.01;			
+				colorBackground[] = {0, 0, 0, 0.6};
+			};
+		class map : KEGsRscMapControl
+			{
+				idc = IDC_MAP;
+				x = 0.99-MINIMAPWIDTH;y=0.99-MINIMAPHEIGHT;
+				w = MINIMAPWIDTH; h = MINIMAPHEIGHT;			
+				colorBackground[] = {0.7, 0.7, 0.7, 1};
+				sizeExLabel = MAPTXTSIZE;
+				sizeExGrid = MAPTXTSIZE;
+				sizeExUnits = MAPTXTSIZE;
+				sizeExNames = 0.05;//MAPTXTSIZE;
+				sizeExInfo = MAPTXTSIZE;
+				sizeExLevel = MAPTXTSIZE;			
+				showCountourInterval = "false";
+				widthRailWay = 1; //NAILER[C5] new option from BIS update
+								
+				class Command {
+					icon = "#(argb,8,8,3)color(1,1,1,1)";
+					color[] = {0, 0, 0, 1};
+					size = 18;
+					importance = 1;
+					coefMin = 1;
+					coefMax = 1;
+				};
+				
+				class ActiveMarker {
+					color[] = {0.3, 0.1, 0.9, 1};
+					size = 50;
+				};					
+			};
+		class BaseVersus:GUIText
+			{
+				style = GUICENTER;
+				font = "PuristaMedium";
+				x = DEFENDERNOS_VERSUS_X;
+				y = DEFENDERNOS_LOWER_Y;
+				w = 0.1;
+				h = 0.03;
+				colorText[] = {1,1,1,1};
+				text = "v";
+			};
+        class BaseBox:BackgroundWindow
+            {
+			x = BASEBACKGROUND_X;
+			w = 0.10;
+			h = 0.06;
+			colorBackground[] = {0,0,0.4,0.6};
+            }
+        class BaseNameLabel:GUIHugeText
+            {
+            style = GUICENTER;
+			font = "PuristaMedium";
+			x = BASENAME_X;
+			w = 0.2;
+			h = 0.08;
+			colorText[] = {0,0,1,1};
+			text = "X";
+            }
+            
+        class BaseDistLabel:GUISmallText
+            {
+            style = GUICENTER;
+			font = "PuristaMedium";
+			x = BASEDIST_X;
+			w = 0.36;
+			colorText[] = {0,0,1,1};
+			text = "1000m";
+            }
+        class BaseCapLevel:BackgroundWindow
+            {
+            x = BASEBAR_X;
+			w = 0.005;
+			h = 0.04;
+			colorBackground[] = {0,0,1,1.0};
+            }
+        class BaseLeftNos:GUIText
+            {
+            style = GUICENTER;
+			font = "PuristaMedium";
+			x = DEFENDERNOS_LEFT_X;
+			w = 0.1;
+			h = 0.03;
+			colorText[] = {0,0,1,1};
+			text = "-";
+            }
+        class BaseRightNos:GUIText
+            {
+            style = GUICENTER;
+			font = "PuristaMedium";
+			x = DEFENDERNOS_RIGHT_X;
+			w = 0.1;
+			h = 0.03;
+			colorText[] = {1,0,0,1};
+			text = "-";
+            }
+        class BaseExtraData:GUIText
+            {
+            style = GUICENTER;
+			font = "PuristaMedium";
+			x = BASEDIST_X;
+			w = 0.36;
+			colorText[] = {0,0,1,1};
+			text = "";
+            }
+		class GUIStructuredText
+			{
+		    type = 13; // CT_STRUCTURED_TEST
+			style = 0; // ST_LEFT
+			colorBackground[] = {0,0,0,0.5};
+			colorText[] = {0,0,1,1};
+			size = 0.038;
+			text = "";
+			};
+
+		};
+	class HudDisplay:DefaultMenu
+		{
+			duration = 15000;
+			name = "HudDisplay";
+			idd = IDD_HUD;			
+			onLoad = "_this Exec ""GUI_SetCurrentCutDisplay.sqs""";
+			controls[] = {};
+			controlsBackground[] = {ProgressBarBackground, MiniMapBackground, 
+                BB_0, BB_1, BB_2, BB_3, BB_4, BB_5,                                   
+	            Player0  , Player1  , Player2  , Player3  , Player4  , Player5  , Player6  , Player7  ,
+				Player8  , Player9  , Player10 , Player11 , Player12 , Player13 , Player14 , Player15 ,
+				Player16 , Player17 , Player18 , Player19 , Player20 , Player21 , Player22 , Player23 ,
+				Player24 , Player25 , Player26 , Player27 , Player28 , Player29 , Player30 , Player31 ,
+				Player32 , Player33 , Player34 , Player35 , Player36 , Player37 , Player38 , Player39 ,
+				Player40 , Player41 , Player42 , Player43 , Player44 , Player45 , Player46 , Player47 ,
+				Player48 , Player49 , TimerDisplay,PlayersDisplay,HeadingDisplay, PlayerNameDisplay ,
+				ProgressBar,
+                BN_0, BN_1, BN_2, BN_3, BN_4, BN_5,
+                BD_0, BD_1, BD_2, BD_3, BD_4, BD_5,
+                BC_0, BC_1, BC_2, BC_3, BC_4, BC_5,
+                BL_0, BL_1, BL_2, BL_3, BL_4, BL_5,
+                BR_0, BR_1, BR_2, BR_3, BR_4, BR_5,
+                BE_0, BE_1, BE_2, BE_3, BE_4, BE_5,
+                BV_0, BV_1, BV_2, BV_3, BV_4, BV_5,
+			    map	, PlayerClassDisplay,
+				PlayerMenuX,
+				PlayerMenuL,PlayerMenuM,PlayerMenuR, PlayerMenuT, PlayerMenuB };
+			class PlayerMenuL:GUIStructuredText	{    idc = IDCPLAYERMENUL;	x = 0.1;	y = 0.4;	w = 0.2;	h = 0.4; };			
+			class PlayerMenuM:GUIStructuredText	{    idc = IDCPLAYERMENUM;	x = 0.32;	y = 0.4;	w = 0.2;	h = 0.4; };			
+			class PlayerMenuR:GUIStructuredText	{    idc = IDCPLAYERMENUR;	x = 0.54;	y = 0.4;	w = 0.2;	h = 0.4; };			
+			class PlayerMenuT:GUIStructuredText	{    idc = IDCPLAYERMENUT;	x = 0.1;	y = 0.35;	w = 0.64;	h = 0.04; };			
+			class PlayerMenuB:GUIStructuredText	{    idc = IDCPLAYERMENUB;	x = 0.1;	y = 0.81;	w = 0.64;	h = 0.19; };						
+			class PlayerMenuX:GUIStructuredText {    idc = IDCPLAYERMENUX;	x = 0.08;	y = 0.33;	w = 0.68;	h = 0.7; };			
+			class PlayerNameDisplay:GUILargeText
+			{
+			    idc = IDCPLAYERNAMELABEL;
+				x = INFODISPLAY_X;
+				y = PLAYERNAMELABEL_Y;
+				w = 0.2;
+				h = 0.06;
+				colorText[] = {0,0,1,1};
+			};
+			class ProgressBar:BackgroundWindow
+			{
+				idc = IDCPROGRESSBAR;
+				x = PROGRESSBAR_X;
+				y = PROGRESSBAR_Y;
+				w = 0.38;
+				h = 0.04;
+
+				colorBackground[] = {1,0.0,0.0,1.0};
+			};
+		class BB_0: BaseBox        {idc = IDCBASE + BOX       + 0; y = YPOS_BB + BOX_0;};
+		class BB_1: BaseBox        {idc = IDCBASE + BOX       + 1; y = YPOS_BB + BOX_1;};
+		class BB_2: BaseBox        {idc = IDCBASE + BOX       + 2; y = YPOS_BB + BOX_2;};
+		class BB_3: BaseBox        {idc = IDCBASE + BOX       + 3; y = YPOS_BB + BOX_3;};
+		class BB_4: BaseBox        {idc = IDCBASE + BOX       + 4; y = YPOS_BB + BOX_4;};
+		class BB_5: BaseBox        {idc = IDCBASE + BOX       + 5; y = YPOS_BB + BOX_5;};  
+		class BN_0: BaseNameLabel  {idc = IDCBASE + NAMELABEL + 0; y = YPOS_BN + BOX_0;};
+		class BN_1: BaseNameLabel  {idc = IDCBASE + NAMELABEL + 1; y = YPOS_BN + BOX_1;};
+		class BN_2: BaseNameLabel  {idc = IDCBASE + NAMELABEL + 2; y = YPOS_BN + BOX_2;};
+		class BN_3: BaseNameLabel  {idc = IDCBASE + NAMELABEL + 3; y = YPOS_BN + BOX_3;};
+		class BN_4: BaseNameLabel  {idc = IDCBASE + NAMELABEL + 4; y = YPOS_BN + BOX_4;};
+		class BN_5: BaseNameLabel  {idc = IDCBASE + NAMELABEL + 5; y = YPOS_BN + BOX_5;};  
+		class BD_0: BaseDistLabel  {idc = IDCBASE + DISTLABEL + 0; y = YPOS_BD + BOX_0; sizeEx = 0.02;};
+		class BD_1: BaseDistLabel  {idc = IDCBASE + DISTLABEL + 1; y = YPOS_BD + BOX_1; sizeEx = 0.02;};
+		class BD_2: BaseDistLabel  {idc = IDCBASE + DISTLABEL + 2; y = YPOS_BD + BOX_2; sizeEx = 0.02;};
+		class BD_3: BaseDistLabel  {idc = IDCBASE + DISTLABEL + 3; y = YPOS_BD + BOX_3; sizeEx = 0.02;};
+		class BD_4: BaseDistLabel  {idc = IDCBASE + DISTLABEL + 4; y = YPOS_BD + BOX_4; sizeEx = 0.02;};
+		class BD_5: BaseDistLabel  {idc = IDCBASE + DISTLABEL + 5; y = YPOS_BD + BOX_5; sizeEx = 0.02;}; 
+		class BC_0: BaseCapLevel   {idc = IDCBASE + CAPLEVLAB + 0; y = YPOS_BC + BOX_0;};
+		class BC_1: BaseCapLevel   {idc = IDCBASE + CAPLEVLAB + 1; y = YPOS_BC + BOX_1;};
+		class BC_2: BaseCapLevel   {idc = IDCBASE + CAPLEVLAB + 2; y = YPOS_BC + BOX_2;};
+		class BC_3: BaseCapLevel   {idc = IDCBASE + CAPLEVLAB + 3; y = YPOS_BC + BOX_3;};
+		class BC_4: BaseCapLevel   {idc = IDCBASE + CAPLEVLAB + 4; y = YPOS_BC + BOX_4;};
+		class BC_5: BaseCapLevel   {idc = IDCBASE + CAPLEVLAB + 5; y = YPOS_BC + BOX_5;};
+		class BL_0: BaseLeftNos    {idc = IDCBASE + LEFTNOS   + 0; y = YPOS_BL + BOX_0;};
+		class BL_1: BaseLeftNos    {idc = IDCBASE + LEFTNOS   + 1; y = YPOS_BL + BOX_1;};
+		class BL_2: BaseLeftNos    {idc = IDCBASE + LEFTNOS   + 2; y = YPOS_BL + BOX_2;};
+		class BL_3: BaseLeftNos    {idc = IDCBASE + LEFTNOS   + 3; y = YPOS_BL + BOX_3;};
+		class BL_4: BaseLeftNos    {idc = IDCBASE + LEFTNOS   + 4; y = YPOS_BL + BOX_4;};
+		class BL_5: BaseLeftNos    {idc = IDCBASE + LEFTNOS   + 5; y = YPOS_BL + BOX_5;}; 
+		class BR_0: BaseRightNos   {idc = IDCBASE + RIGHTNOS  + 0; y = YPOS_BR + BOX_0;};
+		class BR_1: BaseRightNos   {idc = IDCBASE + RIGHTNOS  + 1; y = YPOS_BR + BOX_1;};
+		class BR_2: BaseRightNos   {idc = IDCBASE + RIGHTNOS  + 2; y = YPOS_BR + BOX_2;};
+		class BR_3: BaseRightNos   {idc = IDCBASE + RIGHTNOS  + 3; y = YPOS_BR + BOX_3;};
+		class BR_4: BaseRightNos   {idc = IDCBASE + RIGHTNOS  + 4; y = YPOS_BR + BOX_4;};
+		class BR_5: BaseRightNos   {idc = IDCBASE + RIGHTNOS  + 5; y = YPOS_BR + BOX_5;}; 
+		class BE_0: BaseExtraData  {idc = IDCBASE + EXTRADATA + 0; y = YPOS_BE + BOX_0;};
+		class BE_1: BaseExtraData  {idc = IDCBASE + EXTRADATA + 1; y = YPOS_BE + BOX_1;};
+		class BE_2: BaseExtraData  {idc = IDCBASE + EXTRADATA + 2; y = YPOS_BE + BOX_2;};
+		class BE_3: BaseExtraData  {idc = IDCBASE + EXTRADATA + 3; y = YPOS_BE + BOX_3;};
+		class BE_4: BaseExtraData  {idc = IDCBASE + EXTRADATA + 4; y = YPOS_BE + BOX_4;};
+		class BE_5: BaseExtraData  {idc = IDCBASE + EXTRADATA + 5; y = YPOS_BE + BOX_5;}; 
+		class BV_0: BaseVersus     {idc = IDCBASE + VERSUS    + 0; y = YPOS_BV + BOX_0;};
+		class BV_1: BaseVersus     {idc = IDCBASE + VERSUS    + 1; y = YPOS_BV + BOX_1;};
+		class BV_2: BaseVersus     {idc = IDCBASE + VERSUS    + 2; y = YPOS_BV + BOX_2;};
+		class BV_3: BaseVersus     {idc = IDCBASE + VERSUS    + 3; y = YPOS_BV + BOX_3;};
+		class BV_4: BaseVersus     {idc = IDCBASE + VERSUS    + 4; y = YPOS_BV + BOX_4;};
+		class BV_5: BaseVersus     {idc = IDCBASE + VERSUS    + 5; y = YPOS_BV + BOX_5;};
+		};
+
+	};
+//NAILER[C5] - NOT NEEDED   
+//#include "AAS_LoadScreen.hpp"

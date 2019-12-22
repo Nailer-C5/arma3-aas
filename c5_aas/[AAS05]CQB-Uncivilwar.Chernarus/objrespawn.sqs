@@ -1,0 +1,11 @@
+;;; objRespawn.sqs
+;;; respawn objects
+
+?(!isServer): exit
+
+_obj = _this
+
+#loop
+~5
+?(damage _obj > 0.9): _obj setDamage 0
+goto "loop"

@@ -1,0 +1,2769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="For Arma3">
+	<Package name="PvP_AAS">
+		<Container name="AAS">
+		<Package name="actionMenuHandler">
+			<Key ID="STR_AAS_Healed_to_full_health">//8str
+        		<German>Healed to full health.</German>
+				<English>Healed to full health.</English>
+				<Italian>Healed to full health.</Italian>
+				<Spanish>Healed to full health.</Spanish>
+				<French>Healed to full health.</French>
+				<Czech>Healed to full health.</Czech>
+				<Russian>Здоровье  полностью восстановлено.</Russian>
+				<Hungarian>Healed to full health.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Please_Wait">//8str
+        		<German>Please Wait Team Management Dialog is locked.</German>
+				<English>Please Wait Team Management Dialog is locked.</English>
+				<Italian>Please Wait Team Management Dialog is locked.</Italian>
+				<Spanish>Please Wait Team Management Dialog is locked.</Spanish>
+				<French>Please Wait Team Management Dialog is locked.</French>
+				<Czech>Please Wait Team Management Dialog is locked.</Czech>
+				<Russian>Ждите. Команда управления диалогом закрыта.</Russian>
+				<Hungarian>Please Wait Team Management Dialog is locked.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Applied_to_join_team">//19
+        		<German>Applied to join %1 team. Please wait.</German>
+				<English>Applied to join %1 team. Please wait.</English>
+				<Italian>Applied to join %1 team. Please wait.</Italian>
+				<Spanish>Applied to join %1 team. Please wait.</Spanish>
+				<French>Applied to join %1 team. Please wait.</French>
+				<Czech>Applied to join %1 team. Please wait.</Czech>
+				<Russian>Подана заявка на вступление в команду %1. Пожалуйста, подождите.</Russian>
+				<Hungarian>Applied to join %1 team. Please wait.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Choose_your_spawn_point">//23
+        		<German>Choose your spawn point</German>
+				<English>Choose your spawn point</English>
+				<Italian>Choose your spawn point</Italian>
+				<Spanish>Choose your spawn point</Spanish>
+				<French>Choose your spawn point</French>
+				<Czech>Choose your spawn point</Czech>
+				<Russian>Выберите зону возрождения</Russian>
+				<Hungarian>Choose your spawn point</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Respawning">//25
+        		<German>Respawning ...</German>
+				<English>Respawning ...</English>
+				<Italian>Respawning ...</Italian>
+				<Spanish>Respawning ...</Spanish>
+				<French>Respawning ...</French>
+				<Czech>Respawning ...</Czech>
+				<Russian>Возрождение...</Russian>
+				<Hungarian>Respawning ...</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_attempting_to_revive">//32
+        		<German>You are attempting to revive the player.</German>
+				<English>You are attempting to revive the player.</English>
+				<Italian>You are attempting to revive the player.</Italian>
+				<Spanish>You are attempting to revive the player.</Spanish>
+				<French>You are attempting to revive the player.</French>
+				<Czech>You are attempting to revive the player.</Czech>
+				<Russian>Вы пытаетесь реанимировать бойца.</Russian>
+				<Hungarian>You are attempting to revive the player.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_cannot_revive_class">//45
+        		<German>You cannot revive as your class is not a medic class. Change class at an armoury.</German>
+				<English>You cannot revive as your class is not a medic class. Change class at an armoury.</English>
+				<Italian>You cannot revive as your class is not a medic class. Change class at an armoury.</Italian>
+				<Spanish>You cannot revive as your class is not a medic class. Change class at an armoury.</Spanish>
+				<French>You cannot revive as your class is not a medic class. Change class at an armoury.</French>
+				<Czech>You cannot revive as your class is not a medic class. Change class at an armoury.</Czech>
+				<Russian>Реанимировать бойца может только санитар. Вы можете выбрать данный класс у ящика с оружием, находящегося рядом с флагом.</Russian>
+				<Hungarian>You cannot revive as your class is not a medic class. Change class at an armoury.</Hungarian>
+			</Key>
+		</Package>
+	    <Package name="captureBase">
+			<Key ID="STR_AAS_captured_base">//19
+				<German>%1 has captured base %2</German>
+        		<English>%1 has captured base %2</English>
+				<Italian>%1 has captured base %2</Italian>
+				<Spanish>%1 has captured base %2</Spanish>
+				<French>%1 has captured base %2</French>
+				<Czech>%1 has captured base %2</Czech>
+				<Russian>%1 захватил точку %2</Russian>
+				<Hungarian>%1 has captured base %2</Hungarian>
+			</Key>
+		</Package>
+	    <Package name="ClientMainThread">
+			<Key ID="STR_AAS_spawn_point">//21
+       			<German>Choose your initial spawn point</German>
+				<English>Choose your initial spawn point</English>
+				<Italian>Choose your initial spawn point</Italian>
+				<Spanish>Choose your initial spawn point</Spanish>
+				<French>Choose your initial spawn point</French>
+				<Czech>Choose your initial spawn point</Czech>
+				<Russian>Выберите точку возрождения</Russian>
+				<Hungarian>Choose your initial spawn point</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Clear">//21
+       			<German>Remove magazines</German>
+				<English>Remove magazines</English>
+				<Italian>Remove magazines</Italian>
+				<Spanish>Remove magazines</Spanish>
+				<French>Remove magazines</French>
+				<Czech>Remove magazines</Czech>
+				<Russian>Скинуть магазины</Russian>
+				<Hungarian>Remove magazines</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Clear_2">//21
+       			<German>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</German>
+				<English>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</English>
+				<Italian>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</French>
+				<Czech>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#ff0000'&gt;Скинуть магазины&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#ff0000'&gt;Remove magazines&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Clear_3">//21
+       			<German>Magazines removed</German>
+				<English>Magazines removed</English>
+				<Italian>Magazines removed</Italian>
+				<Spanish>Magazines removed</Spanish>
+				<French>Magazines removed</French>
+				<Czech>Magazines removed</Czech>
+				<Russian>Магазины сброшены</Russian>
+				<Hungarian>Magazines removed</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Earplugs">//21
+       			<German>Earplugs</German>
+				<English>Earplugs</English>
+				<Italian>Earplugs</Italian>
+				<Spanish>Earplugs</Spanish>
+				<French>Earplugs</French>
+				<Czech>Earplugs</Czech>
+				<Russian>Беруши</Russian>
+				<Hungarian>Earplugs</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Press_ctrl_J">//56
+        		<German>Press ctrl+J if the HUD is not displayed</German>
+				<English>Press ctrl+J if the HUD is not displayed</English>
+				<Italian>Press ctrl+J if the HUD is not displayed</Italian>
+				<Spanish>Press ctrl+J if the HUD is not displayed</Spanish>
+				<French>Press ctrl+J if the HUD is not displayed</French>
+				<Czech>Press ctrl+J if the HUD is not displayed</Czech>
+				<Russian>Нажми ctrl+J, если HUD (миникарта) не отображается.</Russian>
+				<Hungarian>Press ctrl+J if the HUD is not displayed</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Without_AGS">//56
+        		<German>AGS in this car doesn't work</German>
+				<English>AGS in this car doesn't work</English>
+				<Italian>AGS in this car doesn't work</Italian>
+				<Spanish>AGS in this car doesn't work</Spanish>
+				<French>AGS in this car doesn't work</French>
+				<Czech>AGS in this car doesn't work</Czech>
+				<Russian>АГС в этой машине не работает</Russian>
+				<Hungarian>AGS in this car doesn't work</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_FULLREP">//56
+        		<German>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</German>
+				<English>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</English>
+				<Italian>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</Italian>
+				<Spanish>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</Spanish>
+				<French>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</French>
+				<Czech>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</Czech>
+				<Russian>Только класс ремонтник может выполнять ремонт. Данная машина помогает сделать полный ремонт за короткий срок.</Russian>
+				<Hungarian>Only a class repairman can perform repairs. This machine helps to make a complete repair in a short time.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_bad_weapons">//104
+      			<German>This weapon can't save</German>
+				<English>This weapon can't save</English>
+				<Italian>This weapon can't save</Italian>
+				<Spanish>This weapon can't save</Spanish>
+				<French>This weapon can't save</French>
+				<Czech>This weapon can't save</Czech>
+				<Russian>Данное оружие не сохраняется</Russian>
+				<Hungarian>This weapon can't save</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_You_can_not_take_it">//104
+      			<German>You can not take it</German>
+				<English>You can not take it</English>
+				<Italian>You can not take it</Italian>
+				<Spanish>You can not take it</Spanish>
+				<French>You can not take it</French>
+				<Czech>You can not take it</Czech>
+				<Russian>Это нельзя брать</Russian>
+				<Hungarian>You can not take it</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_What_New">//104
+      			<German>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</German>
+				<English>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</English>
+				<Italian>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</Italian>
+				<Spanish>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</Spanish>
+				<French>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</French>
+				<Czech>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</Czech>
+				<Russian>\nОсобенности:\n* Вид от третьего лица работает только в технике\n* Безопасность в зоне X-Ray\n* Ограничение классов бойцов\n </Russian>
+				<Hungarian>\nFeatures:\n* View of a third person in the vehicle is only\n* Safety is in the area of X-Ray\n* Limit fighters classes\n</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_players_using_powerful">//105
+        		<German>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</German>
+				<English>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</English>
+				<Italian>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</Italian>
+				<Spanish>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</Spanish>
+				<French>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</French>
+				<Czech>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</Czech>
+				<Russian>В миссии ограничены классы: \n* Снайпер  -  15 процентов;\n* Разведчик - 15 процентов;\n* Боец РШГ-2 - 10 процентов;\n* Пулеметчик ПСО  -  20 процентов;\n* Боец ГП  -  20 процентов\n  от количества игроков команды.</Russian>
+				<Hungarian>The mission is limited classes: \n* Sniper - 15 per cent; \n* Recon - 15 per cent; \n* Thrower - 10 per cent;\n* Gunner ACOG - 20 per cent;\n* Grenadier - 20 per cent\n of the number of players on the team.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Welcome">//106
+        		<German>Welcome to Advance and Secure!\n%1\n\n%2\n%3</German>
+				<English>Welcome to Advance and Secure!\n%1\n\n%2\n%3</English>
+				<Italian>Welcome to Advance and Secure!\n%1\n\n%2\n%3</Italian>
+				<Spanish>Welcome to Advance and Secure!\n%1\n\n%2\n%3</Spanish>
+				<French>Welcome to Advance and Secure!\n%1\n\n%2\n%3</French>
+				<Czech>Welcome to Advance and Secure!\n%1\n\n%2\n%3</Czech>
+				<Russian>Добро пожаловать в режим 'Наступление и Защита' (AAS)\n%1\n\n%2\n%3</Russian>
+				<Hungarian>Welcome to Advance and Secure!\n%1\n\n%2\n%3</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Rules">//128
+        		<German>Rules</German>
+				<English>Rules</English>
+				<Italian>Rules</Italian>
+				<Spanish>Rules</Spanish>
+				<French>Rules</French>
+				<Czech>Rules</Czech>
+				<Russian>Правила</Russian>
+				<Hungarian>Rules</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Version">//129
+        		<German>Version</German>
+				<English>Version</English>
+				<Italian>Version</Italian>
+				<Spanish>Version</Spanish>
+				<French>Version</French>
+				<Czech>Version</Czech>
+				<Russian>Версия</Russian>
+				<Hungarian>Version</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Scoring">//130
+       			<German>Scoring</German>
+				<English>Scoring</English>
+				<Italian>Scoring</Italian>
+				<Spanish>Scoring</Spanish>
+				<French>Scoring</French>
+				<Czech>Scoring</Czech>
+				<Russian>Подсчет очков</Russian>
+				<Hungarian>Scoring</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Scoring_2">//130
+       			<German>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</German>
+       			<English>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</English>
+     			<Italian>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Italian>
+     			<Spanish>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Spanish>
+    			<French>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</French>
+        		<Czech>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Czech>
+        		<Russian>Как Вы можете заработать очки:&lt;br/&gt;> 1 очко за убийство&lt;br/&gt;> 10 очков за захват зоны&lt;br/&gt;> 1 очко каждые 30 секунд за нахождение в зоне при захвате&lt;br/&gt;> 1 очко каждую минуту за нахождение в зоне при защите&lt;br/&gt;> 15 очков за реанимацию санитару</Russian>
+       			<Hungarian>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Hungarian>
+     		</Key>
+			<Key ID="STR_AAS_HotKey">//130
+       			<German>Hot Key</German>
+				<English>Hot Key</English>
+				<Italian>Hot Key</Italian>
+				<Spanish>Hot Key</Spanish>
+				<French>Hot Key</French>
+				<Czech>Hot Key</Czech>
+				<Russian>Горячие клавиши</Russian>
+				<Hungarian>Hot Key</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_HotKey2">//130
+       			<German>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</German>
+       			<English>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</English>
+     			<Italian>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Italian>
+     			<Spanish>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Spanish>
+    			<French>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</French>
+        		<Czech>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Czech>
+        		<Russian>В игре используются следующие клавиши:&lt;br/&gt; Ctrl+Z - увеличение масштаба миникарты&lt;br/&gt; Ctrl+X - уменьшение масштаба миникарты &lt;br/&gt; Ctrl+C - при выборе класса - смена класса &lt;br/&gt; Ctrl+D - при выборе класса - смена оружия &lt;br/&gt; Ctrl+T - увеличение прорисовки дальности ника. При нуле отображаться не будут. Максимально расстояние - 1500 м &lt;br/&gt; Ctrl+J - нажать в случае пропажи HUD &lt;br/&gt; Ctrl+H - откл./вкл HUD &lt;br/&gt; Т - включает дальномер &lt;br/&gt; Ctrl+ПКМ - в РПГ-26 включает прицел &lt;br/&gt; в красных танках - X - вкл/откл механизма автозаряжания, Z - переключить снаряд, R - в случае заедания зарядить вручную. </Russian>
+       			<Hungarian>You can earn points during each game:&lt;br/&gt;> 1 point per kill&lt;br/&gt;> 10 points for capturing an objective&lt;br/&gt;> 1 point per 30 seconds attacking&lt;br/&gt;> 1 point per 60 seconds defending&lt;br/&gt;> 15 points for revive</Hungarian>
+     		</Key>
+			<Key ID="STR_AAS_Advance_and_Secure">//131
+       			<German>Advance_and_Secure</German>
+				<English>Advance_and_Secure</English>
+				<Italian>Advance_and_Secure</Italian>
+				<Spanish>Advance_and_Secure</Spanish>
+				<French>Advance_and_Secure</French>
+				<Czech>Advance_and_Secure</Czech>
+				<Russian>Суть игры режима AAS</Russian>
+				<Hungarian>Advance_and_Secure</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Advance_and_Secure_2">//131
+        		<German>&lt;b&gt;Die Offensive und Schutz (AAS)&lt;/b&gt;. Dies ist ein Kampf um die Kontrolle von Gebieten, die von Alpha zu Foxtrot (oder mehr), um in einer sequentiellen Reihenfolge eingesetzt werden. Die Anzeige auf der rechten Seite zeigt Rechtecke mit Buchstaben (rot (RF), blau (Vereinigte Staaten) und Grün (neytralnye)). Ihr Team muss ihre eigene Zone zu verteidigen und gleichzeitig den Feind anzugreifen Bereich, aber nur die Bereiche, die in den Briefen des Rechtecks ​​buchstabiert sind. Seit Beginn der Mission ist jede Mannschaft in der Position für mindestens 3 Zonen.&lt;br/&gt;&lt;br/&gt;Um den Feind Zone Protokoll zu erfassen (zu fahren, Fliegen) am Umfang der Zone, mit den Kämpfern des Teams, mehr als Soldaten des Feindes (die Zahl der Männer-Teams werden in den Kästen dargestellt) sein. Während der Aufnahme erscheint am oberen Ende der Skala, die eine Abnahme ist. Sobald die Waage geht auf Null Prozent ist erforderlich, um ein Kämpfer des Teams ging an die Fahne zu sein. Dann wird die Fläche unter Ihrer Kontrolle zu kommen, und die Skala wird die Farbe ändern und steigen. Sobald die Waage verloren - Ihr Gebiet ist vollständig unter Kontrolle - wird in diesem Bereich respawnen. Wenn Sie zu töten, können Sie entweder warten, bis der Arzt, der sie belebt, oder Sie können eine beliebige Stelle in der Wiederbelebung der Fläche unter Ihrer Kontrolle zu wählen.&lt;br/&gt;&lt;br/&gt; Je mehr Menschen wiedergeboren in der Gegend ist, desto länger wird der Ort für die Wiederbelebung bzw. warten mehr respawnen. In der Regel im Bereich der X-Ray ist eine Menge Technik, sondern um aus diesem Bereich zu bekommen, ist weit entfernt von der Kampfzone. Waffen wechseln Sie in das Feld mit der Waffe in der Mitte jeder Zone an der Flagge mit den folgenden Klassen zu gehen, und wählen Sie aus dem Menü-Option: Soldat, Soldat (SOEs), Heavy, Medic, Soldier (RPG), Fighter (MANPADS) Sniper, Scout a Výsadkář.&lt;br/&gt;&lt;br/&gt; Exportiert BBQ  und LEGYICH. Besten Dank und Kredit an CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Lenya Golikov, ASSA, JahLive, [HA]Galactic und Respekt für die ganze AAS Gemeinde&lt;br/&gt;&lt;br/&gt;Der Angriff und Verteidigung - die Taktik Glück - kein Indikator( sorry or google translit)..................................&lt;br/&gt;</German>
+				<English>This is &lt;b&gt;Advance And Secure&lt;/b&gt;. Fight for control of the string of bases, Alpha through Zulu, which must be taken sequential order. The display on the top right of your screen shows the two contested bases. You must defend your own, and simultaneously attack the enemy's. Each team starts in control of three bases.&lt;br/&gt;&lt;br/&gt;In order to seize the enemy base you must enter the outer perimeter, and outnumber the enemy until the base capture bar reaches zero. You must then get at least one soldier within 10m of the central flag to complete the capture.&lt;br/&gt;&lt;br/&gt; When you die, you can wait to be revived by a team-mate, or you can respawn at any base fully camped by your team. The more people spawning at a base, the longer you will have to queue. Your X-Ray base has the most vehicles, but is the furthest away. Visit the armoury near each base flag, to select between the &lt;b&gt;quick loadouts&lt;/b&gt; of Rifleman, Grenadier, Gunner scope, Gunner, Medic, Thrower, Mid AT, Heavy AT, Anti Air, Sniper, Recon, Sapper and Paratrooper. Alternatively, use the gear menu to choose your own loadout.&lt;br/&gt;&lt;br/&gt; Edited by BBQ and LEGYICH. Special Thanks and Credit to CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Lenya Golikov, ASSA, JahLive, [HA]Galactic and the rest of the AAS community&lt;br/&gt;&lt;br/&gt;Advance And Secure is tactical: luck is not a factor!&lt;br/&gt;</English>
+				<Italian>This is &lt;b&gt;Advance And Secure&lt;/b&gt;. Fight for control of the string of bases, Alpha through Zulu, which must be taken sequential order. The display on the top right of your screen shows the two contested bases. You must defend your own, and simultaneously attack the enemy's. Each team starts in control of three bases.&lt;br/&gt;&lt;br/&gt;In order to seize the enemy base you must enter the outer perimeter, and outnumber the enemy until the base capture bar reaches zero. You must then get at least one soldier within 10m of the central flag to complete the capture.&lt;br/&gt;&lt;br/&gt; When you die, you can wait to be revived by a team-mate, or you can respawn at any base fully camped by your team. The more people spawning at a base, the longer you will have to queue. Your X-Ray base has the most vehicles, but is the furthest away. Visit the armoury near each base flag, to select between the &lt;b&gt;quick loadouts&lt;/b&gt; of Rifleman, Grenadier, Gunner scope, Gunner, Medic, Thrower, Mid AT, Heavy AT, Anti Air, Sniper, Recon, Sapper and Paratrooper. Alternatively, use the gear menu to choose your own loadout.&lt;br/&gt;&lt;br/&gt; Edited by BBQ and LEGYICH. Special Thanks and Credit to CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Lenya Golikov, ASSA, JahLive, [HA]Galactic and the rest of the AAS community&lt;br/&gt;&lt;br/&gt;Advance And Secure is tactical: luck is not a factor!&lt;br/&gt;</Italian>
+				<Spanish>This is &lt;b&gt;Advance And Secure&lt;/b&gt;. Fight for control of the string of bases, Alpha through Zulu, which must be taken sequential order. The display on the top right of your screen shows the two contested bases. You must defend your own, and simultaneously attack the enemy's. Each team starts in control of three bases.&lt;br/&gt;&lt;br/&gt;In order to seize the enemy base you must enter the outer perimeter, and outnumber the enemy until the base capture bar reaches zero. You must then get at least one soldier within 10m of the central flag to complete the capture.&lt;br/&gt;&lt;br/&gt; When you die, you can wait to be revived by a team-mate, or you can respawn at any base fully camped by your team. The more people spawning at a base, the longer you will have to queue. Your X-Ray base has the most vehicles, but is the furthest away. Visit the armoury near each base flag, to select between the &lt;b&gt;quick loadouts&lt;/b&gt; of Rifleman, Grenadier, Gunner scope, Gunner, Medic, Thrower, Mid AT, Heavy AT, Anti Air, Sniper, Recon, Sapper and Paratrooper. Alternatively, use the gear menu to choose your own loadout.&lt;br/&gt;&lt;br/&gt; Edited by BBQ and LEGYICH. Special Thanks and Credit to CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Lenya Golikov, ASSA, JahLive, [HA]Galactic and the rest of the AAS community&lt;br/&gt;&lt;br/&gt;Advance And Secure is tactical: luck is not a factor!&lt;br/&gt;</Spanish>
+				<French>This is &lt;b&gt;Advance And Secure&lt;/b&gt;. Fight for control of the string of bases, Alpha through Zulu, which must be taken sequential order. The display on the top right of your screen shows the two contested bases. You must defend your own, and simultaneously attack the enemy's. Each team starts in control of three bases.&lt;br/&gt;&lt;br/&gt;In order to seize the enemy base you must enter the outer perimeter, and outnumber the enemy until the base capture bar reaches zero. You must then get at least one soldier within 10m of the central flag to complete the capture.&lt;br/&gt;&lt;br/&gt; When you die, you can wait to be revived by a team-mate, or you can respawn at any base fully camped by your team. The more people spawning at a base, the longer you will have to queue. Your X-Ray base has the most vehicles, but is the furthest away. Visit the armoury near each base flag, to select between the &lt;b&gt;quick loadouts&lt;/b&gt; of Rifleman, Grenadier, Gunner scope, Gunner, Medic, Thrower, Mid AT, Heavy AT, Anti Air, Sniper, Recon, Sapper and Paratrooper. Alternatively, use the gear menu to choose your own loadout.&lt;br/&gt;&lt;br/&gt; Edited by BBQ and LEGYICH. Special Thanks and Credit to CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Lenya Golikov, ASSA, JahLive, [HA]Galactic and the rest of the AAS community&lt;br/&gt;&lt;br/&gt;Advance And Secure is tactical: luck is not a factor!&lt;br/&gt;</French>
+				<Czech>Režim hry &lt;b&gt;Dobít a chránit (Advance and secure - AAS)&lt;/b&gt;. Jedná se o boj kdy musíte dobít oblast a poté jí ubránit. Oblasti Alfa až Foxtrot (nebo i více), které mají být získány v postupném pořadí. Na displeji se vpravo v obdélníku zobrazují písmena (červená (RF), modrá (USA) a zelené (neutrální). Váš tým musí hájit svou vlastní zónu a zároveň útočit a získat další nepřátelskou, ale pouze ty oblasti, které jsou zobrazeny v obdélníku.&lt;br/&gt;&lt;br/&gt;Jednoduše řečeno postupujete abecedně Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Hotel, India hrajete-li za USA (modrou), nebo v opačném pořadí pokud hrajete za RF (červená).&lt;br/&gt;&lt;br/&gt; Na začátku mise, má každý tým své pozice a začíná získáním neobsazené pozice ve středu a nebo rovnou útočením na abecedně nejbližší pozici protivníka. Pro získání sektoru nepřítale musíte zlikvidovat jeho členy, kteří jsou na pozici v kruhovém sektoru a nebo je početně přečíslit. Jakmile to dokážete, začnou se zobrazovat procenta ze 100% do 0% a pak můžete dojít k praporu a získat sektor. Tím ale nemáte vyhráno protože musíte sektor udržet dokud z 0% na 100% nenaběhne barva vašeho týmu pro kompletní získání sektoru.&lt;br/&gt;&lt;br/&gt;Nestačí tedy jen přihlížet z dálky ale je potřeba bojovat a vstoupit do sektoru! Po získání 100% sektoru barvou vašeho týmu je sektor Váš a funguje na něm RESPAWN. Když jste raněni, můžete buď počkat na lékaře, který vás ošetří, nebo si můžete vybrat libovolný sektor pro respawn. Můžete také na skladišti zbraní v sektoru (zelené bedny) otočit kolečkem myši a zvolit "Heal..." vyléčení. Respawn (oživení) probíhá v pořadí, ve kterém jste vstoupili do "fronty" pro respawn. Čím více hráčů, tam je tím déle čekáte a proto je někdy výhodnější oživit se na předchozí pozici a dojet třeba motorkou na bojiště.&lt;br/&gt;&lt;br/&gt;Nejvíce bojové techniky je v oblasti X-Ray (základna), ale ta je také nejdále od frontové linie. Chcete-li změnit zbraně, běžte k zeleným bednám uprostřed každé zóny poblíž vlajky. Tam zamiřte na zelené bedny a otáčejte kolečkem myší. To vyvolá menu pro výběr třídy bojovníka (Ctrl+C) a výběr jeho zbraně (Ctrl+D). Minimapu ovládáte Ctrl+Z a Ctrl+X. Vzdálenost, na kterou jsou viditelné jména vašich spolubojovníků upravujete Ctrl+T. Váš tým má nad sebou zeleným textem napsána jména. Do těch nestřílíme! Nestřílíme ani na nepřátelskou základnu X-Ray!&lt;br/&gt;&lt;br/&gt; Editoval BBQ a LEGYICH. Zvláštní poděkování CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, ASSA, JahLive, [HA]Galactic  A dodržování celé společenství AAS&lt;br/&gt;&lt;br/&gt;Takže útočte a chraňte svůj sektor. Hodně štěstí Vám přejí ARMAHOLICI! ps: ale štěstí Vám nepomůže k vítězství... pouze taktika a chytrost!   .............&lt;br/&gt;</Czech>
+				<Russian>&lt;b&gt;Наступление и Защита (AAS)&lt;/b&gt; - Это борьба за контроль над зонами от Alpha до  Zulu (или ранее), которые должны быть заняты в последовательном порядке. На дисплее справа показаны прямоугольники с литерами (красные (РФ), синие(США) и зеленые(нейтральные)). Ваша команда должна защищать свою собственную зону  и одновременно атаковать зону противника, но ТОЛЬКО те зоны, литеры которых прописаны в прямоугольниках. С начала миссии каждая команда имеет в расположении как минимум 3 зоны.&lt;br/&gt;&lt;br/&gt;Для того, чтобы захватить вражескую зону необходимо войти (въехать, влететь) в периметр зоны, при этом бойцов вашей команды должно быть больше, чем бойцов противника (количество бойцов команд показаны в прямоугольниках). Во время захвата вверху появляется шкала, которая идет на уменьшение. Как только шкала дойдет до нуля процентов необходимо, что бы боец вашей команды подошел к флагу. Тогда зона перейдет под ваш контроль, при этом шкала поменяет цвет и начнет увеличиваться. Как только шкала пропадет - ваша зона под полным контролем - появится точка возрождения в этой зоне.&lt;br/&gt;&lt;br/&gt; Когда Вас убьют Вы можете либо дождаться медика, который вас реанимирует, либо выбрать точку возрождения в любой зоне, находящейся под вашим контролем. Чем больше людей возрождаются в зоне, тем длиннее становится очередь на возрождение, соответственно дольше ждать респаун. Как правило в зоне X-Ray находится много техники, но добираться отсюда до мест сражений далеко. Что бы сменить вооружение вы можете подойти к ящику с оружием, находящемуся в центре каждой зоны у флага и выбрать из появившегося меню опцию со следующими классами: &lt;br/&gt; Боец, Боец (ГП), Пулеметчик ПСО, Пулеметчик, Санитар, Боец (РШГ-2/MAAWS), Боец (РПГ-7/MAAWS), Боец (ПТРК), Боец (ПЗРК), Снайпер, Разведчик, Сапер и Десантник.&lt;br/&gt;&lt;br/&gt; Экспорт и редакция в Arma'3 BBQ  и ЛЕГЫЧ. Благодарность да и уважуха CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Лёня Голиков, ASSA, JahLive, [HA]Galactic и армаголикам из AAS сообщества.&lt;br/&gt;&lt;br/&gt;Наступление и Защита - это тактика: удача - не показатель!&lt;br/&gt;</Russian>
+				<Hungarian>This is &lt;b&gt;Advance And Secure&lt;/b&gt;. Fight for control of the string of bases, Alpha through Zulu, which must be taken sequential order. The display on the top right of your screen shows the two contested bases. You must defend your own, and simultaneously attack the enemy's. Each team starts in control of three bases.&lt;br/&gt;&lt;br/&gt;In order to seize the enemy base you must enter the outer perimeter, and outnumber the enemy until the base capture bar reaches zero. You must then get at least one soldier within 10m of the central flag to complete the capture.&lt;br/&gt;&lt;br/&gt; When you die, you can wait to be revived by a team-mate, or you can respawn at any base fully camped by your team. The more people spawning at a base, the longer you will have to queue. Your X-Ray base has the most vehicles, but is the furthest away. Visit the armoury near each base flag, to select between the &lt;b&gt;quick loadouts&lt;/b&gt; of Rifleman, Grenadier, Gunner scope, Gunner, Medic, Thrower, Mid AT, Heavy AT, Anti Air, Sniper, Recon, Sapper and Paratrooper. Alternatively, use the gear menu to choose your own loadout.&lt;br/&gt;&lt;br/&gt; Edited by BBQ and LEGYICH. Special Thanks and Credit to CoolBox-SBS- [AAS Founder], Kju, Cat Toaster, Xeno, Norrin, Wormeaten, Monsada [UPSMON], Aeroson, Lenya Golikov, ASSA, JahLive, [HA]Galactic and the rest of the AAS community&lt;br/&gt;&lt;br/&gt;Advance And Secure is tactical: luck is not a factor!&lt;br/&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Podnos">//131
+       			<German>2B14-1 mines ZV018, D-832DU/ZVS25M</German>
+				<English>2B14-1 mines ZV018, D-832DU/ZVS25M</English>
+				<Italian>2B14-1 mines ZV018, D-832DU/ZVS25M</Italian>
+				<Spanish>2B14-1 mines ZV018, D-832DU/ZVS25M</Spanish>
+				<French>2B14-1 mines ZV018, D-832DU/ZVS25M</French>
+				<Czech>2B14-1 mines ZV018, D-832DU/ZVS25M</Czech>
+				<Russian>2Б14 мины ЗВ018, Д-832ДУ/ЗВС25М</Russian>
+				<Hungarian>2B14-1 mines ZV018, D-832DU/ZVS25M</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_M252">//131
+       			<German>Mortar M252</German>
+				<English>Mortar M252</English>
+				<Italian>Mortar M252</Italian>
+				<Spanish>Mortar M252</Spanish>
+				<French>Mortar M252</French>
+				<Czech>Mortar M252</Czech>
+				<Russian>Миномет M252</Russian>
+				<Hungarian>Mortar M252</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Mortar">//131
+       			<German>Mortars: introduction</German>
+				<English>Mortars: introduction</English>
+				<Italian>Mortars: introduction</Italian>
+				<Spanish>Mortars: introduction</Spanish>
+				<French>Mortars: introduction</French>
+				<Czech>Mortars: introduction</Czech>
+				<Russian>Минометы: краткое описание </Russian>
+				<Hungarian>Mortars: introduction</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Mortar2">//131
+       			<German>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</German>
+				<English>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</English>
+				<Italian>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</Italian>
+				<Spanish>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</Spanish>
+				<French>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</French>
+				<Czech>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</Czech>
+				<Russian>Для эффективного использования минометов необходимо ими пользоваться с ровной горизонтальной поверхности. Баллистический компьютер использует много параметров, такие как возвышение, поправки на угол наклона земли, высота установки миномета относительо высоты цели и проч. В нашем случае вместо азимута мы используем метку, поставленную на карту. Центр оптического прицела надо держать на ней, а возвышение брать из таблиц. Причем, надо учитывать мощность заряда (CHARGE) на разные дальности. У Красных их 3, у синих 5. Остальные параметры не учитываются, поэтому нужен хороший разведчик-наводчик, который подскажет куда корректировать огонь. Пристреленивание будет несколько дольше, но все зависит от опыта. Возвышение регулируеся кнопками Page Up/Page Down. Примечание: БЛИЗКО = CHARGE 1, СРЕДНЕ = CHARGE 2, ДАЛЕКО = CHARGE 3</Russian>
+				<Hungarian>For effective use of mortars, they must be used from an even horizontal surface. A ballistic computer uses many parameters, such as elevation, corrections for the angle of the earth's inclination, the height of the mortar setting relative to the height of the target, and so on. In our case, instead of azimuth, we use the mark placed on the map. The center of the optical sight should be kept on it, and the elevation should be taken from the tables. Moreover, we must take into account the power of the charge (CHARGE) for different ranges. The Reds have 3, the blue ones have 5. The other parameters are not taken into account, so a good scout-gunner is needed, which will prompt where to adjust the fire. The fire will be a little longer, but it all depends on the experience. Elevation can be configured with the keys Page Up/Page Down. NOTICE: CLOSED = CHARGE 1, MEDIUM = CHARGE 2, FAR = CHARGE 3</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_CHARGE">//131
+       			<German>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</German>
+				<English>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</English>
+				<Italian>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</Italian>
+				<Spanish>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</Spanish>
+				<French>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</French>
+				<Czech>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</Czech>
+				<Russian>Выберите заряд, нажав F. Заряд: %1, Азимут: %2, Возвышение: %3.</Russian>  
+				<Hungarian>Choose CHARGE to press F. CHARGE: %1 Azimuth: %2 Elevation: %3.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_CarryBothScoped">//225
+       			<German>You may not carry both scoped and heavy weapons. Removing all weapons.</German>
+				<English>You may not carry both scoped and heavy weapons. Removing all weapons.</English>
+				<Italian>You may not carry both scoped and heavy weapons. Removing all weapons.</Italian>
+				<Spanish>You may not carry both scoped and heavy weapons. Removing all weapons.</Spanish>
+				<French>You may not carry both scoped and heavy weapons. Removing all weapons.</French>
+				<Czech>You may not carry both scoped and heavy weapons. Removing all weapons.</Czech>
+				<Russian>Нельзя нести оптику и гранатомет одновременно. Разоружаем...</Russian>
+				<Hungarian>You may not carry both scoped and heavy weapons. Removing all weapons.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Spawn_Armour">//319
+       			<German>Spawn Armour Active ... %1</German>
+				<English>Spawn Armour Active ... %1</English>
+				<Italian>Spawn Armour Active ... %1</Italian>
+				<Spanish>Spawn Armour Active ... %1</Spanish>
+				<French>Spawn Armour Active ... %1</French>
+				<Czech>Spawn Armour Active ... %1</Czech>
+				<Russian>Бессмертие пропадет через...%1</Russian>
+				<Hungarian>Spawn Armour Active ... %1</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_DANGER">//334
+        		<German>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</German>
+				<English>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</English>
+				<Italian>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</French>
+				<Czech>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#ff0000' size = '.8'&gt;ОПАСНОСТЬ: Вам нельзя подходить ближе %1м к X-Ray (%2м). Ваша жизнь тает на глазах.&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#ff0000' size = '.8'&gt;DANGER: You are not allowed within %1m of enemy spawn (%2m). You are deading.&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_dead">//357
+        		<German>dead is %1</German>
+				<English>dead is %1</English>
+				<Italian>dead is %1</Italian>
+				<Spanish>dead is %1</Spanish>
+				<French>dead is %1</French>
+				<Czech>dead is %1</Czech>
+				<Russian>%1 убит</Russian>
+				<Hungarian>dead is %1</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Revive_player">//364
+        		<German>Revive player</German>
+				<English>Revive player</English>
+				<Italian>Revive player</Italian>
+				<Spanish>Revive player</Spanish>
+				<French>Revive player</French>
+				<Czech>Revive player</Czech>
+				<Russian>Реанимировать игрока</Russian>
+				<Hungarian>Revive player</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="deathHandler">
+			<Key ID="STR_AAS_waiting_revived">//29
+        		<German>You are unconscious and waiting to be revived</German>
+				<English>You are unconscious and waiting to be revived</English>
+				<Italian>You are unconscious and waiting to be revived</Italian>
+				<Spanish>You are unconscious and waiting to be revived</Spanish>
+				<French>You are unconscious and waiting to be revived</French>
+				<Czech>You are unconscious and waiting to be revived</Czech>
+				<Russian>Вы без сознания. Ожидайте реанимационных действий санитара.</Russian>
+				<Hungarian>You are unconscious and waiting to be revived</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_You_revived">//162
+        		<German>You have been revived.</German>
+				<English>You have been revived.</English>
+				<Italian>You have been revived.</Italian>
+				<Spanish>You have been revived.</Spanish>
+				<French>You have been revived.</French>
+				<Czech>You have been revived.</Czech>
+				<Russian>Вы были реанимированы.</Russian>
+				<Hungarian>You have been revived.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_You_respawned">//185
+        		<German>You have respawned at %1</German>
+				<English>You have respawned at %1</English>
+				<Italian>You have respawned at %1</Italian>
+				<Spanish>You have respawned at %1</Spanish>
+				<French>You have respawned at %1</French>
+				<Czech>You have respawned at %1</Czech>
+				<Russian>Возрождение в зоне %1</Russian>
+				<Hungarian>You have respawned at %1</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Last_life">//186
+        		<German>Last life duration %1 secs.</German>
+				<English>Last life duration %1 secs.</English>
+				<Italian>Last life duration %1 secs.</Italian>
+				<Spanish>Last life duration %1 secs.</Spanish>
+				<French>Last life duration %1 secs.</French>
+				<Czech>Last life duration %1 secs.</Czech>
+				<Russian>Бессмертие пропадет через %1 сек.</Russian>
+				<Hungarian>Last life duration %1 secs.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_randomising_spawn">//193
+        		<German>Died in last %1 secs: randomising spawn location.</German>
+				<English>Died in last %1 secs: randomising spawn location.</English>
+				<Italian>Died in last %1 secs: randomising spawn location.</Italian>
+				<Spanish>Died in last %1 secs: randomising spawn location.</Spanish>
+				<French>Died in last %1 secs: randomising spawn location.</French>
+				<Czech>Died in last %1 secs: randomising spawn location.</Czech>
+				<Russian>Вы мертвы последние %1 сек.: возрождение в случайном месте..</Russian>
+				<Hungarian>Died in last %1 secs: randomising spawn location.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_not_backpack">//59
+        		<German>For this class is not supported backpack</German>
+				<English>For this class is not supported backpack</English>
+				<Italian>For this class is not supported backpack</Italian>
+				<Spanish>For this class is not supported backpack</Spanish>
+				<French>For this class is not supported backpack</French>
+				<Czech>For this class is not supported backpack</Czech>
+				<Russian>Для данного класса рюкзак не предназначен</Russian>
+				<Hungarian>For this class is not supported backpack</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="description">
+			<Key ID="STR_AAS_Flag_Capture">//64
+       			<German>Flag Capture Bonus</German>
+				<English>Flag Capture Bonus</English>
+				<Italian>Flag Capture Bonus</Italian>
+				<Spanish>Flag Capture Bonus</Spanish>
+				<French>Flag Capture Bonus</French>
+				<Czech>Flag Capture Bonus</Czech>
+				<Russian>Награда за взятие флага</Russian>
+				<Hungarian>Flag Capture Bonus</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Clan_Rule_Settings">//57
+        		<German>------------------------------Clan Rule Settings---------------------------</German>
+        		<English>------------------------------Clan Rule Settings---------------------------</English>
+        		<Italian>------------------------------Clan Rule Settings---------------------------</Italian>
+       			<Spanish>------------------------------Clan Rule Settings---------------------------</Spanish>
+        		<French>------------------------------Clan Rule Settings---------------------------</French>
+        		<Czech>------------------------------Clan Rule Settings---------------------------</Czech>
+        		<Russian>-------------------------------Профиль настроек-------------------------</Russian>
+        		<Hungarian>------------------------------Clan Rule Settings---------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Rulesets">//64
+       			<German>Rulesets</German>
+				<English>Rulesets</English>
+				<Italian>Rulesets</Italian>
+				<Spanish>Rulesets</Spanish>
+				<French>Rulesets</French>
+				<Czech>Rulesets</Czech>
+				<Russian>Выбор правил</Russian>
+				<Hungarian>Rulesets</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Default_Rules">//69
+        		<German>Default Rules</German>
+        		<English>Default Rules</English>
+        		<Italian>Default Rules</Italian>
+        		<Spanish>Default Rules</Spanish>
+        		<French>Default Rules</French>
+        		<Czech>Default Rules</Czech>
+        		<Russian>По умолчанию</Russian>
+        		<Hungarian>Default Rules</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Disabled">//76
+        		<German>Disabled</German>
+				<English>Disabled</English>
+				<Italian>Disabled</Italian>
+				<Spanish>Disabled</Spanish>
+				<French>Disabled</French>
+				<Czech>Disabled</Czech>
+				<Russian>Выключено</Russian>
+				<Hungarian>Disabled</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Enabled">//76
+        		<German>Enabled</German>
+				<English>Enabled</English>
+				<Italian>Enabled</Italian>
+				<Spanish>Enabled</Spanish>
+				<French>Enabled</French>
+				<Czech>Enabled</Czech>
+				<Russian>Включено</Russian>
+				<Hungarian>Enabled</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Punish_teamkills">//80
+        		<German>Punish teamkills</German>
+        		<English>Punish teamkills</English>
+        		<Italian>Punish teamkills</Italian>
+        		<Spanish>Punish teamkills</Spanish>
+        		<French>Punish teamkills</French>
+        		<Czech>Punish teamkills</Czech>
+        		<Russian>Наказание за убийство своих</Russian>
+        		<Hungarian>Punish teamkills</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Game_Difficult">//87
+				<German>------------------------------Game Difficult---------------------------</German>
+				<English>------------------------------Game Difficult---------------------------</English>
+				<Italian>------------------------------Game Difficult---------------------------</Italian>
+				<Spanish>------------------------------Game Difficult---------------------------</Spanish>
+				<French>------------------------------Game Difficult---------------------------</French>
+				<Czech>------------------------------Game Difficult---------------------------</Czech>
+				<Russian>-------------------------------Сложность игры----------------------------</Russian>
+				<Hungarian>------------------------------Game Difficult---------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Enable_Difficult">//80
+        		<German>Difficult</German>
+        		<English>Difficult</English>
+        		<Italian>Difficult</Italian>
+        		<Spanish>Difficult</Spanish>
+        		<French>Difficults</French>
+        		<Czech>Difficult</Czech>
+        		<Russian>Сложность</Russian>
+        		<Hungarian>Difficult</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Setting">//80
+        		<German>Setting</German>
+        		<English>Setting</English>
+        		<Italian>Setting</Italian>
+        		<Spanish>Setting</Spanish>
+        		<French>Settings</French>
+        		<Czech>Setting</Czech>
+        		<Russian>Настраиваемая</Russian>
+        		<Hungarian>Setting</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Default">//69
+        		<German>Default</German>
+        		<English>Default</English>
+        		<Italian>Default</Italian>
+        		<Spanish>Default</Spanish>
+        		<French>Default</French>
+        		<Czech>Default</Czech>
+        		<Russian>По умолчанию</Russian>
+        		<Hungarian>Default</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Speed_run">//69
+        		<German>Running speed (in percentages)</German>
+        		<English>Running speed (in percentages)</English>
+        		<Italian>Running speed (in percentages)</Italian>
+        		<Spanish>Running speed (in percentages)</Spanish>
+        		<French>Running speed (in percentages)</French>
+        		<Czech>Running speed (in percentages)</Czech>
+        		<Russian>Скорость бега (в процентах)</Russian>
+        		<Hungarian>Running speed (in percentages)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Aim_Coef">//69
+        		<German>Aim precision (in percentages)</German>
+        		<English>Aim precision (in percentages)</English>
+        		<Italian>Aim precision (in percentages)</Italian>
+        		<Spanish>Aim precision (in percentages)</Spanish>
+        		<French>Aim precision (in percentages)</French>
+        		<Czech>Aim precision (in percentages)</Czech>
+        		<Russian>Точность стрельбы (в процентах)</Russian>
+        		<Hungarian>Aim precision (in percentages)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Recoil">//69
+        		<German>Recoil (in percentages)</German>
+        		<English>Recoil (in percentages)</English>
+        		<Italian>Recoil (in percentages)</Italian>
+        		<Spanish>Recoil (in percentages)</Spanish>
+        		<French>Recoil (in percentages)</French>
+        		<Czech>Recoil (in percentages)</Czech>
+        		<Russian>Отдача (в процентах)</Russian>
+        		<Hungarian>Recoil (in percentages)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Game_Settings">//87
+				<German>------------------------------Game Settings---------------------------</German>
+				<English>------------------------------Game Settings---------------------------</English>
+				<Italian>------------------------------Game Settings---------------------------</Italian>
+				<Spanish>------------------------------Game Settings---------------------------</Spanish>
+				<French>------------------------------Game Settings---------------------------</French>
+				<Czech>------------------------------Game Settings---------------------------</Czech>
+				<Russian>-------------------------------Настройка игры----------------------------</Russian>
+				<Hungarian>------------------------------Game Settings---------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Game_Duration">//94
+        		<German>Game Duration</German>
+				<English>Game Duration</English>
+				<Italian>Game Duration</Italian>
+				<Spanish>Game Duration</Spanish>
+				<French>Game Duration</French>
+				<Czech>Game Duration</Czech>
+				<Russian>Продолжительность игры</Russian>
+				<Hungarian>Game Duration</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_20m">//97
+        		<German>20m</German>
+				<English>20m</English>
+				<Italian>20m</Italian>
+				<Spanish>20m</Spanish>
+				<French>20m</French>
+				<Czech>20m</Czech>
+				<Russian>20 мин.</Russian>
+				<Hungarian>20m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_30m">//97
+        		<German>30m</German>
+				<English>30m</English>
+				<Italian>30m</Italian>
+				<Spanish>30m</Spanish>
+				<French>30m</French>
+				<Czech>30m</Czech>
+				<Russian>30 мин.</Russian>
+				<Hungarian>30m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_45m">//97
+        		<German>45m</German>
+				<English>45m</English>
+				<Italian>45m</Italian>
+				<Spanish>45m</Spanish>
+				<French>45m</French>
+				<Czech>45m</Czech>
+				<Russian>45 мин.</Russian>
+				<Hungarian>45m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_60m">//97
+        		<German>60m</German>
+				<English>60m</English>
+				<Italian>60m</Italian>
+				<Spanish>60m</Spanish>
+				<French>60m</French>
+				<Czech>60m</Czech>
+				<Russian>60 мин.</Russian>
+				<Hungarian>60m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_90m">//97
+        		<German>90m</German>
+				<English>90m</English>
+				<Italian>90m</Italian>
+				<Spanish>90m</Spanish>
+				<French>90m</French>
+				<Czech>90m</Czech>
+				<Russian>90 мин.</Russian>
+				<Hungarian>90m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_120m">//97
+        		<German>120m</German>
+				<English>120m</English>
+				<Italian>120m</Italian>
+				<Spanish>120m</Spanish>
+				<French>120m</French>
+				<Czech>120m</Czech>
+				<Russian>120 мин.</Russian>
+				<Hungarian>120m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_24hrs">//97
+        		<German>24hrs</German>
+        		<English>24hrs</English>
+        		<Italian>24hrs</Italian>
+        		<Spanish>24hrs</Spanish>
+        		<French>24hrs</French>
+        		<Czech>24hrs</Czech>
+        		<Russian>Целые сутки!!</Russian>
+        		<Hungarian>24hrs</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Setup_3rd">//101
+        		<German>Setup 3rd Person View</German>
+				<English>Setup 3rd Person View</English>
+				<Italian>Setup 3rd Person View</Italian>
+				<Spanish>Setup 3rd Person View</Spanish>
+				<French>Setup 3rd Person View</French>
+				<Czech>Setup 3rd Person View</Czech>
+				<Russian>Установка вида от 3-го лица</Russian>
+				<Hungarian>Setup 3rd Person View</Hungarian>
+			</Key>
+			<Key ID="$STR_AAS_Show_AAS_Tips">//101
+        		<German>Show AAS Tips</German>
+				<English>Show AAS Tips</English>
+				<Italian>Show AAS Tips</Italian>
+				<Spanish>Show AAS Tips</Spanish>
+				<French>Show AAS Tips</French>
+				<Czech>Show AAS Tips</Czech>
+				<Russian>Показ подсказок</Russian>
+				<Hungarian>Show AAS Tips</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Use_Server_Setting">//104
+        		<German>Use Server Setting</German>
+				<English>Use Server Setting</English>
+				<Italian>Use Server Setting</Italian>
+				<Spanish>Use Server Setting</Spanish>
+				<French>Use Server Setting</French>
+				<Czech>Use Server Setting</Czech>
+				<Russian>По настройкам сервера</Russian>
+				<Hungarian>Use Server Setting</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Vehicles_Only">//104
+        		<German>Vehicles Only</German>
+				<English>Vehicles Only</English>
+				<Italian>Vehicles Only</Italian>
+				<Spanish>Vehicles Only</Spanish>
+				<French>Vehicles Only</French>
+				<Czech>Vehicles Only</Czech>
+				<Russian>Только в технике</Russian>
+				<Hungarian>Vehicles Only</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Infantry_Only">//104
+        		<German>Infantry Only</German>
+				<English>Infantry Only</English>
+				<Italian>Infantry Only</Italian>
+				<Spanish>Infantry Only</Spanish>
+				<French>Infantry Only</French>
+				<Czech>Infantry Only</Czech>
+				<Russian>Только у пехоты</Russian>
+				<Hungarian>Infantry Only</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Show_AAS_Tips">//108
+        		<German>Show AAS Tips</German>
+        		<English>Show AAS Tips</English>
+        		<Italian>Show AAS Tips</Italian>
+        		<Spanish>Show AAS Tips</Spanish>
+        		<French>Show AAS Tips</French>
+        		<Czech>Show AAS Tips</Czech>
+        		<Russian>Подсказски в процессе игры</Russian>
+        		<Hungarian>Show AAS Tips</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Weather_Settings">//113
+				<German>------------------------------Weather Settings---------------------------</German>
+				<English>------------------------------Weather Settings---------------------------</English>
+				<Italian>------------------------------Weather Settings---------------------------</Italian>
+				<Spanish>------------------------------Weather Settings---------------------------</Spanish>
+				<French>------------------------------Weather Settings---------------------------</French>
+				<Czech>------------------------------Weather Settings---------------------------</Czech>
+				<Russian>-------------------------------Погода----------------------------------------</Russian>
+				<Hungarian>------------------------------Weather Settings---------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_HourOfDay">//122
+        		<German>HourOfDay</German>
+				<English>HourOfDay</English>
+				<Italian>HourOfDay</Italian>
+				<Spanish>HourOfDay</Spanish>
+				<French>HourOfDay</French>
+				<Czech>HourOfDay</Czech>
+				<Russian>Время суток (часы)</Russian>
+				<Hungarian>HourOfDay</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Random">//125
+        		<German>Random</German>
+				<English>Random</English>
+				<Italian>Random</Italian>
+				<Spanish>Random</Spanish>
+				<French>Random</French>
+				<Czech>Random</Czech>
+				<Russian>Случайная</Russian>
+				<Hungarian>Random</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_MinuteOfDay">//127
+        		<German>MinuteOfDay</German>
+				<English>MinuteOfDay</English>
+				<Italian>MinuteOfDay</Italian>
+				<Spanish>MinuteOfDay</Spanish>
+				<French>MinuteOfDay</French>
+				<Czech>MinuteOfDay</Czech>
+				<Russian>Время суток (минуты)</Russian>
+				<Hungarian>MinuteOfDay</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Weather">//134
+        		<German>Weather</German>
+				<English>Weather</English>
+				<Italian>Weather</Italian>
+				<Spanish>Weather</Spanish>
+				<French>Weather</French>
+				<Czech>Weather</Czech>
+				<Russian>Погода</Russian>
+				<Hungarian>Weather</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Clear">//139
+        		<German>Clear</German>
+				<English>Clear</English>
+				<Italian>Clear</Italian>
+				<Spanish>Clear</Spanish>
+				<French>Clear</French>
+				<Czech>Clear</Czech>
+				<Russian>Ясно</Russian>
+				<Hungarian>Clear</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Cloudy">//139
+        		<German>Cloudy</German>
+				<English>Cloudy</English>
+				<Italian>Cloudy</Italian>
+				<Spanish>Cloudy</Spanish>
+				<French>Cloudy</French>
+				<Czech>Cloudy</Czech>
+				<Russian>Переменная облачность</Russian>
+				<Hungarian>Cloudy</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Heavy_Rain">//139
+        		<German>Heavy Rain</German>
+				<English>Heavy Rain</English>
+				<Italian>Heavy Rain</Italian>
+				<Spanish>Heavy Rain</Spanish>
+				<French>Heavy Rain</French>
+				<Czech>Heavy Rain</Czech>
+				<Russian>Ливень</Russian>
+				<Hungarian>Heavy Rain</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Fog">//143
+        		<German>Fog</German>
+				<English>Fog</English>
+				<Italian>Fog</Italian>
+				<Spanish>Fog</Spanish>
+				<French>Fog</French>
+				<Czech>Fog</Czech>
+				<Russian>Установка тумана</Russian>
+				<Hungarian>Fog</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_No_fog">//146
+        		<German>No fog</German>
+				<English>No fog</English>
+				<Italian>No fog</Italian>
+				<Spanish>No fog</Spanish>
+				<French>No fog</French>
+				<Czech>No fog</Czech>
+				<Russian>Без тумана</Russian>
+				<Hungarian>No fog</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Little_fog">//75
+        		<German>Little fog</German>
+				<English>Little fog</English>
+				<Italian>Little fog</Italian>
+				<Spanish>Little fog</Spanish>
+				<French>Little fog</French>
+				<Czech>Little fog</Czech>
+				<Russian>Легкая дымка</Russian>
+				<Hungarian>Little fog</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Foggy">//75
+        		<German>Foggy</German>
+				<English>Foggy</English>
+				<Italian>Foggy</Italian>
+				<Spanish>Foggy</Spanish>
+				<French>Foggy</French>
+				<Czech>Foggy</Czech>
+				<Russian>Туманно</Russian>
+				<Hungarian>Foggy</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Thick_fog">//75
+        		<German>Thick fog</German>
+				<English>Thick fog</English>
+				<Italian>Thick fog</Italian>
+				<Spanish>Thick fog</Spanish>
+				<French>Thick fog</French>
+				<Czech>Thick fog</Czech>
+				<Russian>Плотный туман</Russian>
+				<Hungarian>Thick fog</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Very_thick_fog">//75
+        		<German>Very thick fog</German>
+				<English>Very thick fog</English>
+				<Italian>Very thick fog</Italian>
+				<Spanish>Very thick fog</Spanish>
+				<French>Very thick fog</French>
+				<Czech>Very thick fog</Czech>
+				<Russian>Очень плотный туман</Russian>
+				<Hungarian>Very thick fog</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Terrain_View_Settings">//150
+				<German>------------------------------Terrain and View Settings---------------------------</German>
+				<English>------------------------------Terrain and View Settings---------------------------</English>
+				<Italian>------------------------------Terrain and View Settings---------------------------</Italian>
+				<Spanish>------------------------------Terrain and View Settings---------------------------</Spanish>
+				<French>------------------------------Terrain and View Settings---------------------------</French>
+				<Czech>------------------------------Terrain and View Settings---------------------------</Czech>
+				<Russian>-------------------------------Трава и Видимость------------------------</Russian>
+				<Hungarian>------------------------------Terrain and View Settings---------------------------</Hungarian>
+      			</Key>
+			<Key ID="STR_AAS_ViewDistance">//157
+        		<German>ViewDistance</German>
+				<English>ViewDistance</English>
+				<Italian>ViewDistance</Italian>
+				<Spanish>ViewDistance</Spanish>
+				<French>ViewDistance</French>
+				<Czech>ViewDistance</Czech>
+				<Russian>Дистанция обзора</Russian>
+				<Hungarian>ViewDistance</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Grass">//164
+        		<German>Grass</German>
+       			<English>Grass</English>
+        		<Italian>Grass</Italian>
+        		<Spanish>Grass</Spanish>
+        		<French>Grass</French>
+        		<Czech>Grass</Czech>
+        		<Russian>Трава</Russian>
+        		<Hungarian>Grass</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_No_Grass">//166
+        		<German>No Grass</German>
+        		<English>No Grass</English>
+        		<Italian>No Grass</Italian>
+        		<Spanish>No Grass</Spanish>
+        		<French>No Grass</French>
+        		<Czech>No Grass</Czech>
+        		<Russian>Нет травы</Russian>
+        		<Hungarian>No Grass</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Grass_ON">//166
+        		<German>Grass ON</German>
+        		<English>Grass ON</English>
+        		<Italian>Grass ON</Italian>
+        		<Spanish>Grass ON</Spanish>
+        		<French>Grass ON</French>
+        		<Czech>Grass ON</Czech>
+        		<Russian>Трава включена</Russian>
+        		<Hungarian>Grass ON</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Vehicle_Respawn">//171
+				<German>------------------------------Delay Vehicle Respawn (minutes)---------------------------</German>
+				<English>------------------------------Delay Vehicle Respawn (minutes)---------------------------</English>
+				<Italian>------------------------------Delay Vehicle Respawn (minutes)---------------------------</Italian>
+				<Spanish>------------------------------Delay Vehicle Respawn (minutes)---------------------------</Spanish>
+				<French>------------------------------Delay Vehicle Respawn (minutes)---------------------------</French>
+				<Czech>------------------------------Delay Vehicle Respawn (minutes)---------------------------</Czech>
+				<Russian>-------------------------------Отсрочка респа техники (в минутах)--</Russian>
+				<Hungarian>------------------------------Delay Vehicle Respawn (minutes)---------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Vehicle_Delay">//166
+        		<German>Vehicle Delay</German>
+        		<English>Vehicle Delay</English>
+        		<Italian>Vehicle Delay</Italian>
+        		<Spanish>Vehicle Delay</Spanish>
+        		<French>Vehicle Delay</French>
+        		<Czech>Vehicle Delay</Czech>
+        		<Russian>Техника любая (исключения ниже)</Russian>
+        		<Hungarian>Vehicle Delay</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_AGS_Delay">//166
+        		<German>Mk19/AGS Delay</German>
+        		<English>Mk19/AGS Delay</English>
+        		<Italian>Mk19/AGS Delay</Italian>
+        		<Spanish>Mk19/AGS Delay</Spanish>
+        		<French>Mk19/AGS Delay</French>
+        		<Czech>Mk19/AGS Delay</Czech>
+        		<Russian>Техника с АГС + БТР80А</Russian>
+        		<Hungarian>Mk19/AGS Delay</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Tank_Delay">//166
+        		<German>Tank Delay</German>
+        		<English>Tank Delay</English>
+        		<Italian>Tank Delay</Italian>
+        		<Spanish>Tank Delay</Spanish>
+        		<French>Tank Delay</French>
+        		<Czech>Tank Delay</Czech>
+        		<Russian>Танки</Russian>
+        		<Hungarian>Tank Delay</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Chopper_Delay">//166
+        		<German>Chopper Delay</German>
+        		<English>Chopper Delay</English>
+        		<Italian>Chopper Delay</Italian>
+        		<Spanish>Chopper Delay</Spanish>
+        		<French>Chopper Delay</French>
+        		<Czech>Chopper Delay</Czech>
+        		<Russian>Вертолеты</Russian>
+        		<Hungarian>Chopper Delay</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Plane_Delay">//166
+        		<German>Plane Delay</German>
+        		<English>Plane Delay</English>
+        		<Italian>Plane Delay</Italian>
+        		<Spanish>Plane Delay</Spanish>
+        		<French>Plane Delay</French>
+        		<Czech>Plane Delay</Czech>
+        		<Russian>Самолеты</Russian>
+        		<Hungarian>Plane Delay</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_Team_Gear">//171
+				<German>------------------------------Team and Gear Settings------------------------------</German>
+				<English>------------------------------Team and Gear Settings------------------------------</English>
+				<Italian>------------------------------Team and Gear Settings------------------------------</Italian>
+				<Spanish>------------------------------Team and Gear Settings------------------------------</Spanish>
+				<French>------------------------------Team and Gear Settings------------------------------</French>
+				<Czech>------------------------------Team and Gear Settings------------------------------</Czech>
+				<Russian>------------------------------Настройка команды и снаряжения-----</Russian>
+				<Hungarian>------------------------------Team and Gear Settings------------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_AI_Settings">//171
+				<German>------------------------------AI Settings---------------------------</German>
+				<English>------------------------------AI Settings---------------------------</English>
+				<Italian>------------------------------AI Settings---------------------------</Italian>
+				<Spanish>------------------------------AI Settings---------------------------</Spanish>
+				<French>------------------------------AI Settings---------------------------</French>
+				<Czech>------------------------------AI Settings---------------------------</Czech>
+				<Russian>-------------------------------Настройка Ботов---------------------------</Russian>
+				<Hungarian>------------------------------AI Settings---------------------------</Hungarian>
+      		</Key>
+			<Key ID="STR_AAS_AI_Support_Mode">//176
+        		<German>AI Support Mode</German>
+				<English>AI Support Mode</English>
+				<Italian>AI Support Mode</Italian>
+				<Spanish>AI Support Mode</Spanish>
+				<French>AI Support Mode</French>
+				<Czech>AI Support Mode</Czech>
+				<Russian>Участие ИИ</Russian>
+				<Hungarian>AI Support Mode</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Always_Off">//181
+        		<German>Always Off</German>
+				<English>Always Off</English>
+				<Italian>Always Off</Italian>
+				<Spanish>Always Off</Spanish>
+				<French>Always Off</French>
+				<Czech>Always Off</Czech>
+				<Russian>Всегда выкл.</Russian>
+				<Hungarian>Always Off</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_On_4_players">//181
+        		<German>On when no more 4 players</German>
+				<English>On when no more 4 players</English>
+				<Italian>On when no more 4 players</Italian>
+				<Spanish>On when no more 4 players</Spanish>
+				<French>On when no more 4 players</French>
+				<Czech>On when no more 4 players</Czech>
+				<Russian>Вкл. если игроков не более 4</Russian>
+				<Hungarian>On when no more 4 players</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_On_6_players">//181
+        		<German>On when no more 6 players</German>
+				<English>On when no more 6 players</English>
+				<Italian>On when no more 6 players</Italian>
+				<Spanish>On when no more 6 players</Spanish>
+				<French>On when no more 6 players</French>
+				<Czech>On when no more 6 players</Czech>
+				<Russian>Вкл. если игроков не более 6</Russian>
+				<Hungarian>On when no more 6 players</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_On_8_players">//181
+        		<German>On when no more 8 players</German>
+				<English>On when no more 8 players</English>
+				<Italian>On when no more 8 players</Italian>
+				<Spanish>On when no more 8 players</Spanish>
+				<French>On when no more 8 players</French>
+				<Czech>On when no more 8 players</Czech>
+				<Russian>Вкл. если игроков не более 8</Russian>
+				<Hungarian>On when no more 8 players</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_On_10_players">//181
+        		<German>On when no more 10 players</German>
+				<English>On when no more 10 players</English>
+				<Italian>On when no more 10 players</Italian>
+				<Spanish>On when no more 10 players</Spanish>
+				<French>On when no more 10 players</French>
+				<Czech>On when no more 10 players</Czech>
+				<Russian>Вкл. если игроков не более 10</Russian>
+				<Hungarian>On when no more 10 players</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_On_12_players">//181
+        		<German>On when no more 12 players</German>
+				<English>On when no more 12 players</English>
+				<Italian>On when no more 12 players</Italian>
+				<Spanish>On when no more 12 players</Spanish>
+				<French>On when no more 12 players</French>
+				<Czech>On when no more 12 players</Czech>
+				<Russian>Вкл. если игроков не более 12</Russian>
+				<Hungarian>On when no more 12 players</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_East_AI_Only">//181
+        		<German>East AI Only</German>
+				<English>East AI Only</English>
+				<Italian>East AI Only</Italian>
+				<Spanish>East AI Only</Spanish>
+				<French>East AI Only</French>
+				<Czech>East AI Only</Czech>
+				<Russian>ИИ только Красные</Russian>
+				<Hungarian>East AI Only</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_West_AI_Only">//181
+        		<German>West AI Only</German>
+				<English>West AI Only</English>
+				<Italian>West AI Only</Italian>
+				<Spanish>West AI Only</Spanish>
+				<French>West AI Only</French>
+				<Czech>West AI Only</Czech>
+				<Russian>ИИ только Синие</Russian>
+				<Hungarian>West AI Only</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Always_On">//181
+        		<German>Always On</German>
+				<English>Always On</English>
+				<Italian>Always On</Italian>
+				<Spanish>Always On</Spanish>
+				<French>Always On</French>
+				<Czech>Always On</Czech>
+				<Russian>Всегда вкл.</Russian>
+				<Hungarian>Always On</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Join_AI">//185
+        		<German>Join AI Groups</German>
+				<English>Join AI Groups</English>
+				<Italian>Join AI Groups</Italian>
+				<Spanish>Join AI Groups</Spanish>
+				<French>Join AI Groups</French>
+				<Czech>Join AI Groups</Czech>
+				<Russian>ИИ задействован</Russian>
+				<Hungarian>Join AI Groups</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AI_uses_Vehicles">//185
+        		<German>AI uses Vehicles</German>
+				<English>AI uses Vehicles</English>
+				<Italian>AI uses Vehicles</Italian>
+				<Spanish>AI uses Vehicles</Spanish>
+				<French>AI uses Vehicles</French>
+				<Czech>AI uses Vehicles</Czech>
+				<Russian>ИИ использует технику</Russian>
+				<Hungarian>AI uses Vehicles</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AI_Percentage_using_vehicles">//192
+        		<German>AI Percentage using vehicles</German>
+				<English>AI Percentage using vehicles</English>
+				<Italian>AI Percentage using vehicles</Italian>
+				<Spanish>AI Percentage using vehicles</Spanish>
+				<French>AI Percentage using vehicles</French>
+				<Czech>AI Percentage using vehicles</Czech>
+				<Russian>Процент ипользуемой ИИ техники</Russian>
+				<Hungarian>AI Percentage using vehicles</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AI_groups">//199
+        		<German>AI groups</German>
+				<English>AI groups</English>
+				<Italian>AI groups</Italian>
+				<Spanish>AI groups</Spanish>
+				<French>AI groups</French>
+				<Czech>AI groups</Czech>
+				<Russian>Количество отрядов ИИ</Russian>
+				<Hungarian>AI groups</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AI_units_per_group">//206
+        		<German>AI units per group</German>
+				<English>AI units per group</English>
+				<Italian>AI units per group</Italian>
+				<Spanish>AI units per group</Spanish>
+				<French>AI units per group</French>
+				<Czech>AI units per group</Czech>
+				<Russian>Ботов в отряде</Russian>
+				<Hungarian>AI units per group</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AI_Aggressive_Mode">//213
+        		<German>AI Aggressive Mode</German>
+				<English>AI Aggressive Mode</English>
+				<Italian>AI Aggressive Mode</Italian>
+				<Spanish>AI Aggressive Mode</Spanish>
+				<French>AI Aggressive Mode</French>
+				<Czech>AI Aggressive Mode</Czech>
+				<Russian>Мод агрессии ИИ</Russian>
+				<Hungarian>AI Aggressive Mode</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AI_Debug_Mode">//220
+        		<German>AI Debug Mode</German>
+				<English>AI Debug Mode</English>
+				<Italian>AI Debug Mode</Italian>
+				<Spanish>AI Debug Mode</Spanish>
+				<French>AI Debug Mode</French>
+				<Czech>AI Debug Mode</Czech>
+				<Russian>Мод ИИ Debug</Russian>
+				<Hungarian>AI Debug Mode</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Your_side">//223
+        		<German>Your side</German>
+				<English>Your side</English>
+				<Italian>Your side</Italian>
+				<Spanish>Your side</Spanish>
+				<French>Your side</French>
+				<Czech>Your side</Czech>
+				<Russian>На Вашей стороне</Russian>
+				<Hungarian>Your side</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Both_sides">//223
+        		<German>Both sides</German>
+				<English>Both sides</English>
+				<Italian>Both sides</Italian>
+				<Spanish>Both sides</Spanish>
+				<French>Both sides</French>
+				<Czech>Both sides</Czech>
+				<Russian>На другой стороне</Russian>
+				<Hungarian>Both sides</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_NATO_VICTORY">//236
+        		<German>Blue side won</German>
+				<English>Blue side won</English>
+				<Italian>Blue side won</Italian>
+				<Spanish>Blue side won</Spanish>
+				<French>Blue side won</French>
+				<Czech>Blue side won</Czech>
+				<Russian>Победа за Синими</Russian>
+				<Hungarian>Blue side won</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_NATO_successfully">//238
+        		<German>Blue captured more Bases and Wins the Game</German>
+				<English>Blue captured more Bases and Wins the Game</English>
+				<Italian>Blue captured more Bases and Wins the Game</Italian>
+				<Spanish>Blue captured more Bases and Wins the Game</Spanish>
+				<French>Blue captured more Bases and Wins the Game</French>
+				<Czech>Blue captured more Bases and Wins the Game</Czech>
+				<Russian>Синие захватили больше баз и победили</Russian>
+				<Hungarian>Blue captured more Bases and Wins the Game</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_IRAN_VICTORY">//245
+        		<German>Red side won</German>
+				<English>Red side won</English>
+				<Italian>Red side won</Italian>
+				<Spanish>Red side won</Spanish>
+				<French>Red side won</French>
+				<Czech>Red side won</Czech>
+				<Russian>Победа за Красными</Russian>
+				<Hungarian>Red side won</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_IRAN_successfully">//247
+        		<German>Red captured more Bases and Wins the Game.</German>
+				<English>Red captured more Bases and Wins the Game.</English>
+				<Italian>Red captured more Bases and Wins the Game.</Italian>
+				<Spanish>Red captured more Bases and Wins the Game.</Spanish>
+				<French>Red captured more Bases and Wins the Game.</French>
+				<Czech>Red captured more Bases and Wins the Game.</Czech>
+				<Russian>Красные захватили больше баз и победили.</Russian>
+				<Hungarian>Red captured more Bases and Wins the Game.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Stalemate">//223
+        		<German>Stalemate</German>
+				<English>Stalemate</English>
+				<Italian>Stalemate</Italian>
+				<Spanish>Stalemate</Spanish>
+				<French>Stalemate</French>
+				<Czech>Stalemate</Czech>
+				<Russian>Ничья</Russian>
+				<Hungarian>Stalemate</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_into_Draw">//223
+        		<German>The has resulted into a Draw.</German>
+				<English>The has resulted into a Draw.</English>
+				<Italian>The has resulted into a Draw.</Italian>
+				<Spanish>The has resulted into a Draw.</Spanish>
+				<French>The has resulted into a Draw.</French>
+				<Czech>The has resulted into a Draw.</Czech>
+				<Russian>Противники оказались равными!</Russian>
+				<Hungarian>The has resulted into a Draw.</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="doQuickLoadout">
+			<Key ID="STR_AAS_such_class">//23
+        		<German>%1: There are too many units of such class!</German>
+				<English>%1: There are too many units of such class!</English>
+				<Italian>%1: There are too many units of such class!</Italian>
+				<Spanish>%1: There are too many units of such class!</Spanish>
+				<French>%1: There are too many units of such class!</French>
+				<Czech>%1: There are too many units of such class!</Czech>
+				<Russian>%1: Недоступно. Данный класс ограничен и исчерпан!</Russian>
+				<Hungarian>%1: There are too many units of such class!</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Custom_loadout">//43
+        		<German>Custom loadout</German>
+				<English>Custom loadout</English>
+				<Italian>Custom loadout</Italian>
+				<Spanish>Custom loadout</Spanish>
+				<French>Custom loadout</French>
+				<Czech>Custom loadout</Czech>
+				<Russian>Снаряжение пользователя</Russian>
+				<Hungarian>Custom loadout</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Custom_loadout_saved">//43
+        		<German>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</German>
+				<English>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</English>
+				<Italian>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</Italian>
+				<Spanish>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</Spanish>
+				<French>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</French>
+				<Czech>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</Czech>
+				<Russian>Снаряжение пользователя сохранено. Вы потеряли функции предыдущего класса (Например, если вы были медиком, то больше не сможете лечить!)</Russian>
+				<Hungarian>Custom loadout saved. You have lost the special abilities of your previous class (e.g. if you were a medic, you can no longer revive)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_loadout_selected">//55
+        		<German>%1 loadout selected.</German>
+				<English>%1 loadout selected.</English>
+				<Italian>%1 loadout selected.</Italian>
+				<Spanish>%1 loadout selected.</Spanish>
+				<French>%1 loadout selected.</French>
+				<Czech>%1 loadout selected.</Czech>
+				<Russian>Выбран класс %1.</Russian>
+				<Hungarian>%1 loadout selected.</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="fast_actions">
+			<Key ID="STR_AAS_Kickhead">//73
+				<German>You missed the kick</German>
+				<English>You missed the kick</English>
+				<Italian>You missed the kick</Italian>
+				<Spanish>You missed the kick</Spanish>
+				<French>You missed the kick</French>
+				<Czech>You missed the kick</Czech>
+				<Russian>Вы пропустили удар</Russian>
+				<Hungarian>You missed the kick</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="globalDefines">
+			<Key ID="STR_AAS_Mission_Default_h">//73
+				<German>Mission Default (h:XX)</German>
+				<English>Mission Default (h:XX)</English>
+				<Italian>Mission Default (h:XX)</Italian>
+				<Spanish>Mission Default (h:XX)</Spanish>
+				<French>Mission Default (h:XX)</French>
+				<Czech>Mission Default (h:XX)</Czech>
+				<Russian>Задано миссией (ч:XX)</Russian>
+				<Hungarian>Mission Default (h:XX)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Mission_Default_m">//73
+				<German>Mission Default (XX:m)</German>
+				<English>Mission Default (XX:m)</English>
+				<Italian>Mission Default (XX:m)</Italian>
+				<Spanish>Mission Default (XX:m)</Spanish>
+				<French>Mission Default (XX:m)</French>
+				<Czech>Mission Default (XX:m)</Czech>
+				<Russian>Задано миссией (XX:м)</Russian>
+				<Hungarian>Mission Default (XX:m)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Mission_Default_weather">//73
+				<German>Mission Default (weather)</German>
+				<English>Mission Default (weather)</English>
+				<Italian>Mission Default (weather)</Italian>
+				<Spanish>Mission Default (weather)</Spanish>
+				<French>Mission Default (weather)</French>
+				<Czech>Mission Default (weather)</Czech>
+				<Russian>Задано миссией (погода)</Russian>
+				<Hungarian>Mission Default (weather)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Mission_Default_fog">//73
+				<German>Mission Default (fog)</German>
+				<English>Mission Default (fog)</English>
+				<Italian>Mission Default (fog)</Italian>
+				<Spanish>Mission Default (fog)</Spanish>
+				<French>Mission Default (fog)</French>
+				<Czech>Mission Default (fog)</Czech>
+				<Russian>Задано миссией (туман)</Russian>
+				<Hungarian>Mission Default (fog)</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="keypress">
+			<Key ID="STR_AAS_zoomed_in">//73
+				<German>Map zoomed in.</German>
+				<English>Map zoomed in.</English>
+				<Italian>Map zoomed in.</Italian>
+				<Spanish>Map zoomed in.</Spanish>
+				<French>Map zoomed in.</French>
+				<Czech>Map zoomed in.</Czech>
+				<Russian>Карта увеличена</Russian>
+				<Hungarian>Map zoomed in.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_zoomed_out">//79
+				<German>Map zoomed out.</German>
+				<English>Map zoomed out.</English>
+				<Italian>Map zoomed out.</Italian>
+				<Spanish>Map zoomed out.</Spanish>
+				<French>Map zoomed out.</French>
+				<Czech>Map zoomed out.</Czech>
+				<Russian>Карта уменьшена</Russian>
+				<Hungarian>Map zoomed out.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_HUD_minimal">//86
+				<German>HUD set to minimal.</German>
+				<English>HUD set to minimal.</English>
+				<Italian>HUD set to minimal.</Italian>
+				<Spanish>HUD set to minimal.</Spanish>
+				<French>HUD set to minimal.</French>
+				<Czech>HUD set to minimal.</Czech>
+				<Russian>Дисплей HUD выключен.</Russian>
+				<Hungarian>HUD set to minimal.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_HUD_reduced">//87
+				<German>HUD set to reduced.</German>
+				<English>HUD set to reduced.</English>
+				<Italian>HUD set to reduced.</Italian>
+				<Spanish>HUD set to reduced.</Spanish>
+				<French>HUD set to reduced.</French>
+				<Czech>HUD set to reduced.</Czech>
+				<Russian>Дисплей HUD в режиме минимум.</Russian>
+				<Hungarian>HUD set to reduced.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_HUD_normal">//88
+				<German>HUD set to normal.</German>
+				<English>HUD set to normal.</English>
+				<Italian>HUD set to normal.</Italian>
+				<Spanish>HUD set to normal.</Spanish>
+				<French>HUD set to normal.</French>
+				<Czech>HUD set to normal.</Czech>
+				<Russian>Дисплей HUD в полноценном режиме.</Russian>
+				<Hungarian>HUD set to normal.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Tag_display">//96
+				<German>Tag display range set to %1m</German>
+				<English>Tag display range set to %1m</English>
+				<Italian>Tag display range set to %1m</Italian>
+				<Spanish>Tag display range set to %1m</Spanish>
+				<French>Tag display range set to %1m</French>
+				<Czech>Tag display range set to %1m</Czech>
+				<Russian>Дальность прорисовки ников %1м</Russian>
+				<Hungarian>Tag display range set to %1m</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_reset_HUD">//102
+				<German>Attempting to reset HUD</German>
+				<English>Attempting to reset HUD</English>
+				<Italian>Attempting to reset HUD</Italian>
+				<Spanish>Attempting to reset HUD</Spanish>
+				<French>Attempting to reset HUD</French>
+				<Czech>Attempting to reset HUD</Czech>
+				<Russian>Попытка перегрузить HUD</Russian>
+				<Hungarian>Attempting to reset HUD</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_dist_change_class">//117
+				<German>You must be within %1m of armoury to change class.</German>
+				<English>You must be within %1m of armoury to change class.</English>
+				<Italian>You must be within %1m of armoury to change class.</Italian>
+				<Spanish>You must be within %1m of armoury to change class.</Spanish>
+				<French>You must be within %1m of armoury to change class.</French>
+				<Czech>You must be within %1m of armoury to change class.</Czech>
+				<Russian>Необходимо быть в %1м от ящика с оружием для смены класс бойца.</Russian>
+				<Hungarian>You must be within %1m of armoury to change class.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_dist_change_weapon">//134
+				<German>You must be within %1m of armoury to change weapon.</German>
+				<English>You must be within %1m of armoury to change weapon.</English>
+				<Italian>You must be within %1m of armoury to change weapon.</Italian>
+				<Spanish>You must be within %1m of armoury to change weapon.</Spanish>
+				<French>You must be within %1m of armoury to change weapon.</French>
+				<Czech>You must be within %1m of armoury to change weapon.</Czech>
+				<Russian>Необходимо быть в %1м от ящика с оружием для его смены.</Russian>
+				<Hungarian>You must be within %1m of armoury to change weapon.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Applied_team">//143
+				<German>Applied to join %1 team</German>
+				<English>Applied to join %1 team</English>
+				<Italian>Applied to join %1 team</Italian>
+				<Spanish>Applied to join %1 team</Spanish>
+				<French>Applied to join %1 team</French>
+				<Czech>Applied to join %1 team</Czech>
+				<Russian>Вошел в команду %1</Russian>
+				<Hungarian>Applied to join %1 team</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="mapname">
+			<Key ID="STR_AAS_HISTORY">
+				<German>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</German>
+				<English>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</English>
+				<Italian>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</Italian>
+				<Spanish>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</Spanish>
+				<French>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</French>
+				<Czech>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</Czech>
+				<Russian>&lt;t color='#0099ee'&gt;Об AAS:&lt;/t&gt;&lt;br /&gt;Дойди до зоны X-Ray противника, захватывая зоны по пути в определенном порядке. Побеждает команда, захватившая все зоны противника до Х-Ray или захватившая больше целей за отведенное время.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;ИСТОРИЯ AAS:&lt;/t&gt;&lt;br/&gt;Advance And Secure (AAS) - Игровой режим Наступление и Защита придумал еще в Arma1 CoolBox-SBS-, а усовершенствовали Kju и Cat Toaster уже в Arma2 и OA. Экспортировали в ArmA'3 BBQ and LEGYICH!&lt;br /&gt; Редакция A2RU - LEGYICH, Леня Голиков, АSSА и ARMA2.RU сообщество</Russian>
+				<Hungarian>&lt;t color='#0099ee'&gt;AAS OBJECTIVE:&lt;/t&gt;&lt;br /&gt;Despite both X-Ray Homebases of each team, there are several objectives that need to be conquered in order. A Team wins if it captures all Objectives or owns more than the opponent at the end of a given amount of time.&lt;br/&gt;&lt;br/&gt;&lt;t color='#ff0000'&gt;AAS HISTORY:&lt;/t&gt;&lt;br/&gt;Advance And Secure was created in Arma1 by CoolBox-SBS- and perfected by Kju and Cat Toaster through to Arma2OA. Ported to ArmA'3 by BBQ and LEGYICH!&lt;br /&gt; Editing by LEGYICH, Golikov, ASSA and ARMA2.RU Community</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="populateAmmoCrate">
+			<Key ID="STR_AAS_Select_Team">//15
+				<German>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</German>
+				<English>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</English>
+				<Italian>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</French>
+				<Czech>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#ffcc66'&gt;Выбор команды&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#ffcc66'&gt;Team Select&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Load_Gear">//18
+				<German>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</German>
+				<English>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</English>
+				<Italian>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</French>
+				<Czech>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#0099ee'&gt;Загрузить снаряжение&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#0099ee'&gt;Load Gear&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Save_Loadout">//19
+				<German>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</German>
+				<English>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</English>
+				<Italian>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</French>
+				<Czech>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#d929d3'&gt;Сохранить снаряжение&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#d929d3'&gt;Save loadout&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Heal_Thyself">//23
+				<German>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</German>
+				<English>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</English>
+				<Italian>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</French>
+				<Czech>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#ff8822'&gt;Восстановить здоровье&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#ff8822'&gt;Heal Thyself&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_ARSENAL">//23
+				<German>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</German>
+				<English>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</English>
+				<Italian>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</French>
+				<Czech>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#dbdb00'&gt;АРСЕНАЛ&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#dbdb00'&gt;ARSENAL&lt;/t&gt;</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="processServerCommand">
+			<Key ID="STR_AAS_capture">//2
+				<German>capture:%1</German>
+				<English>capture:%1</English>
+				<Italian>capture:%1</Italian>
+				<Spanish>capture:%1</Spanish>
+				<French>capture:%1</French>
+				<Czech>capture:%1</Czech>
+				<Russian>Захватил:%1</Russian>
+				<Hungarian>capture:%1</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_bonus_base_capture">//5
+				<German>+10 point bonus for base capture.</German>
+				<English>+10 point bonus for base capture.</English>
+				<Italian>+10 point bonus for base capture.</Italian>
+				<Spanish>+10 point bonus for base capture.</Spanish>
+				<French>+10 point bonus for base capture.</French>
+				<Czech>+10 point bonus for base capture.</Czech>
+				<Russian>Начислено 10 очков за захват зоны.</Russian>
+				<Hungarian>+10 point bonus for base capture.</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="refreshRespawnButtons">
+			<Key ID="STR_AAS_No_medic_nearby">//10
+				<German>No medic nearby.</German>
+				<English>No medic nearby.</English>
+				<Italian>No medic nearby.</Italian>
+				<Spanish>No medic nearby.</Spanish>
+				<French>No medic nearby.</French>
+				<Czech>No medic nearby.</Czech>
+				<Russian>Санитаров рядом нет.</Russian>
+				<Hungarian>No medic nearby.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Nearest_medic">//22
+				<German>Nearest medic (%1) %2m away.</German>
+				<English>Nearest medic (%1) %2m away.</English>
+				<Italian>Nearest medic (%1) %2m away.</Italian>
+				<Spanish>Nearest medic (%1) %2m away.</Spanish>
+				<French>Nearest medic (%1) %2m away.</French>
+				<Czech>Nearest medic (%1) %2m away.</Czech>
+				<Russian>Ближайший санитар - (%1). Он в %2м.</Russian>
+				<Hungarian>Nearest medic (%1) %2m away.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Spawn_select">//29
+				<German> Spawn select in %1 sec.</German>
+				<English> Spawn select in %1 sec.</English>
+				<Italian> Spawn select in %1 sec.</Italian>
+				<Spanish> Spawn select in %1 sec.</Spanish>
+				<French> Spawn select in %1 sec.</French>
+				<Czech> Spawn select in %1 sec.</Czech>
+				<Russian> Возрождение через %1 сек.</Russian>
+				<Hungarian> Spawn select in %1 sec.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_No_Queue">//55
+				<German>No Queue</German>
+				<English>No Queue</English>
+				<Italian>No Queue</Italian>
+				<Spanish>No Queue</Spanish>
+				<French>No Queue</French>
+				<Czech>No Queue</Czech>
+				<Russian>Доступна без очереди</Russian>
+				<Hungarian>No Queue</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_delay_resp">//62
+				<German>%1 in %2 sec : </German>
+				<English>%1 in %2 sec : </English>
+				<Italian>%1 in %2 sec : </Italian>
+				<Spanish>%1 in %2 sec : </Spanish>
+				<French>%1 in %2 sec : </French>
+				<Czech>%1 in %2 sec : </Czech>
+				<Russian>%1 доступна через %2 сек. : </Russian>
+				<Hungarian>%1 in %2 sec : </Hungarian>
+			</Key>
+	    </Package>
+		<Package name="respawnDialog">
+			<Key ID="STR_AAS_Spawn_Selector">//100
+				<German>Spawn Selector</German>
+				<English>Spawn Selector</English>
+				<Italian>Spawn Selector</Italian>
+				<Spanish>Spawn Selector</Spanish>
+				<French>Spawn Selector</French>
+				<Czech>Spawn Selector</Czech>
+				<Russian>Выбор зоны возрождения</Russian>
+				<Hungarian>Spawn Selector</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Cancel">//133
+				<German>Cancel</German>
+				<English>Cancel</English>
+				<Italian>Cancel</Italian>
+				<Spanish>Cancel</Spanish>
+				<French>Cancel</French>
+				<Czech>Cancel</Czech>
+				<Russian>Отмена</Russian>
+				<Hungarian>Cancel</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Click_spawn_queue">//153
+        		<German>Click to get out of any spawn queue.</German>
+				<English>Click to get out of any spawn queue.</English>
+				<Italian>Click to get out of any spawn queue.</Italian>
+				<Spanish>Click to get out of any spawn queue.</Spanish>
+				<French>Click to get out of any spawn queue.</French>
+				<Czech>Click to get out of any spawn queue.</Czech>
+				<Russian>Нажмите, что бы отменить возрождение</Russian>
+				<Hungarian>Click to get out of any spawn queue.</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="RULES_arma2ru">
+			<Key ID="STR_AAS_Rifleman">
+				<German>Rifleman</German>
+				<English>Rifleman</English>
+				<Italian>Rifleman</Italian>
+				<Spanish>Rifleman</Spanish>
+				<French>Rifleman</French>
+				<Czech>Rifleman</Czech>
+				<Russian>Боец</Russian>
+				<Hungarian>Rifleman</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Grenadier">
+				<German>Grenadier</German>
+				<English>Grenadier</English>
+				<Italian>Grenadier</Italian>
+				<Spanish>Grenadier</Spanish>
+				<French>Grenadier</French>
+				<Czech>Grenadier</Czech>
+				<Russian>Боец (ГП)</Russian>
+				<Hungarian>Grenadier</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Gunner_scope">
+				<German>Gunner ACOG</German>
+				<English>Gunner ACOG</English>
+				<Italian>Gunner ACOG</Italian>
+				<Spanish>Gunner ACOG</Spanish>
+				<French>Gunner ACOG</French>
+				<Czech>Gunner ACOG</Czech>
+				<Russian>Пулеметчик ПСО</Russian>
+				<Hungarian>Gunner ACOG</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Gunner">
+				<German>Gunner</German>
+				<English>Gunner</English>
+				<Italian>Gunner</Italian>
+				<Spanish>Gunner</Spanish>
+				<French>Gunner</French>
+				<Czech>Gunner</Czech>
+				<Russian>Пулеметчик</Russian>
+				<Hungarian>Gunner</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Medic">
+				<German>Medic</German>
+				<English>Medic</English>
+				<Italian>Medic</Italian>
+				<Spanish>Medic</Spanish>
+				<French>Medic</French>
+				<Czech>Medic</Czech>
+				<Russian>Санитар</Russian>
+				<Hungarian>Medic</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Light AT">
+				<German>Light AT</German>
+				<English>Light AT</English>
+				<Italian>Light AT</Italian>
+				<Spanish>Light AT</Spanish>
+				<French>Light AT</French>
+				<Czech>Light AT</Czech>
+				<Russian>Боец (РПГ-26/М136)</Russian>
+				<Hungarian>Light AT</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_RSHG">
+				<German>Thrower</German>
+				<English>Thrower</English>
+				<Italian>Thrower</Italian>
+				<Spanish>Thrower</Spanish>
+				<French>Thrower</French>
+				<Czech>Thrower</Czech>
+				<Russian>Боец (РШГ-2/MAAWS)</Russian>
+				<Hungarian>Thrower</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Mid AT">
+				<German>Mid AT</German>
+				<English>Mid AT</English>
+				<Italian>Mid AT</Italian>
+				<Spanish>Mid AT</Spanish>
+				<French>Mid AT</French>
+				<Czech>Mid AT</Czech>
+				<Russian>Боец (РПГ-7/MAAWS)</Russian>
+				<Hungarian>Mid AT</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AT">
+				<German>TOW/PTRK</German>
+				<English>TOW/PTRK</English>
+				<Italian>TOW/PTRK</Italian>
+				<Spanish>TOW/PTRK</Spanish>
+				<French>TOW/PTRK</French>
+				<Czech>TOW/PTRK</Czech>
+				<Russian>TOW/ПТРК</Russian>
+				<Hungarian>TOW/PTRK</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Tripod">
+				<German>Tripods</German>
+				<English>Tripods</English>
+				<Italian>Tripods</Italian>
+				<Spanish>Tripods</Spanish>
+				<French>Tripods</French>
+				<Czech>Tripods</Czech>
+				<Russian>Станковое</Russian>
+				<Hungarian>Tripods</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AGS_Mortar">
+				<German>Mortar/AGS</German>
+				<English>Mortar/AGS</English>
+				<Italian>Mortar/AGS</Italian>
+				<Spanish>Mortar/AGS</Spanish>
+				<French>Mortar/AGS</French>
+				<Czech>Mortar/AGS</Czech>
+				<Russian>Миномет/АГС</Russian>
+				<Hungarian>Mortar/AGS</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Javelin">
+				<German>Heavy AT</German>
+				<English>Heavy AT</English>
+				<Italian>Heavy AT</Italian>
+				<Spanish>Heavy AT</Spanish>
+				<French>Heavy AT</French>
+				<Czech>Heavy AT</Czech>
+				<Russian>Метис/FGM-148</Russian>
+				<Hungarian>Heavy AT</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Anti_Air">
+				<German>Anti Air</German>
+				<English>Anti Air</English>
+				<Italian>Anti Air</Italian>
+				<Spanish>Anti Air</Spanish>
+				<French>Anti Air</French>
+				<Czech>Anti Air</Czech>
+				<Russian>Боец (ПЗРК)</Russian>
+				<Hungarian>Anti Air</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Sniper">
+				<German>Sniper</German>
+				<English>Sniper</English>
+				<Italian>Sniper</Italian>
+				<Spanish>Sniper</Spanish>
+				<French>Sniper</French>
+				<Czech>Sniper</Czech>
+				<Russian>Снайпер</Russian>
+				<Hungarian>Sniper</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Recon">
+				<German>Saboteur</German>
+				<English>Saboteur</English>
+				<Italian>Saboteur</Italian>
+				<Spanish>Saboteur</Spanish>
+				<French>Saboteur</French>
+				<Czech>Saboteur</Czech>
+				<Russian>Разведчик</Russian>
+				<Hungarian>Saboteur</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_sapper">
+				<German>Sapper</German>
+				<English>Sapper</English>
+				<Italian>Sapper</Italian>
+				<Spanish>Sapper</Spanish>
+				<French>Sapper</French>
+				<Czech>Sapper</Czech>
+				<Russian>Сапер</Russian>
+				<Hungarian>Sapper</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_paratrooper">
+				<German>Paratrooper</German>
+				<English>Paratrooper</English>
+				<Italian>Paratrooper</Italian>
+				<Spanish>Paratrooper</Spanish>
+				<French>Paratrooper</French>
+				<Czech>Paratrooper</Czech>
+				<Russian>Десантник</Russian>
+				<Hungarian>Paratrooper</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_UAV_operator">
+				<German>Operator UAV</German>
+				<English>Operator UAV</English>
+				<Italian>Operator UAV</Italian>
+				<Spanish>Operator UAV</Spanish>
+				<French>Operator UAV</French>
+				<Czech>Operator UAV</Czech>
+				<Russian>Оператор БПЛА</Russian>
+				<Hungarian>Operator UAV</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_repairman">
+				<German>Repairman</German>
+				<English>Repairman</English>
+				<Italian>Repairman</Italian>
+				<Spanish>Repairman</Spanish>
+				<French>Repairman</French>
+				<Czech>Repairman</Czech>
+				<Russian>Ремонтник</Russian>
+				<Hungarian>Repairman</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_NoTeam">
+				<German>NoTeam</German>
+				<English>NoTeam</English>
+				<Italian>NoTeam</Italian>
+				<Spanish>NoTeam</Spanish>
+				<French>NoTeam</French>
+				<Czech>NoTeam</Czech>
+				<Russian>Вне команды</Russian>
+				<Hungarian>NoTeam</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_AK103GL">
+				<English>AK103 GL Rakurs</English>
+				<Russian>АК-103 ГП Ракурс</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74MGL">
+				<English>AK74M GL PSO</English>
+				<Russian>АК-74M ГП ПСО</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKS74-GL">
+				<English>AKS74 GL</English>
+				<Russian>АКC-74 ГП</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK47-MGL">
+				<English>AK47M GL SMOKE</English>
+				<Russian>АКМС ГП ДЫМ</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK103">
+				<English>AK103</English>
+				<Russian>АK-103</Russian>
+			</Key>
+				<Key ID="STR_AAS_AK103DTK">
+				<English>AK103</English>
+				<Russian>АК-103</Russian>
+			</Key>
+				<Key ID="STR_AAS_AK1051P63">
+				<English>AK105 1P63</English>
+				<Russian>АК-105 1П63 Запев</Russian>
+			</Key>
+				<Key ID="STR_AAS_AK104PKAS">
+				<English>AK104 PK-AS</English>
+				<Russian>АК-104 ПК-АС</Russian>
+			</Key>
+				<Key ID="STR_AAS_AK105PKAS">
+				<English>AK105 1P63</English>
+				<Russian>АК-105 1П63</Russian>
+			</Key>
+			</Key>
+				<Key ID="STR_AAS_AKS74NPSO">
+				<English>AKS74N PSO</English>
+				<Russian>АКС-74Н ПСО</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M_1P63">
+				<English>AK74M 1P63</English>
+				<Russian>АК-74М 1П63 Запев</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKM_zen_EKP8">
+				<English>AKM Zenitko Cobra</English>
+				<Russian>АКМ Зенитка Кобра</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKMNGL">
+				<English>AKMN GL</English>
+				<Russian>АКМH ГП</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M_ZEN">
+				<English>AK74M Zenitko</English>
+				<Russian>АК-74М Зенитка</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKMS">
+				<English>AKMS</English>
+				<Russian>АКМС</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKS74U">
+				<English>AKS74U</English>
+				<Russian>АКС-74У</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74U">
+				<English>AK74U</English>
+				<Russian>АК-74У</Russian>
+			</Key>
+			<Key ID="STR_AAS_M21">
+				<English>M21 Zastava</English>
+				<Russian>М21 Застава</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK105_ZENITKA">
+				<English>AK105 Zenitka Rakurs</English>
+				<Russian>АК-105 Зенитка Ракурс</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK105_ZEN">
+				<English>AK105 Zenitka</English>
+				<Russian>АК-105 Зенитка</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M_SL">
+				<English>AK74M</English>
+				<Russian>АК-74М</Russian>
+			</Key>
+			<Key ID="STR_AAS_M38">
+				<English>Mosin Nagant M38</English>
+				<Russian>Винтовка Мосина М38</Russian>
+			</Key>
+			<Key ID="STR_AAS_M38_SCOPE">
+				<English>Mosin SCOPE</English>
+				<Russian>Мосинка с оптикой</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M">
+				<English>AK74M</English>
+				<Russian>АК-74М</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M_NPZ">
+				<English>AK74M Rakurs</English>
+				<Russian>АК-74М Ракурс</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKS74N">
+				<English>AKS74N</English>
+				<Russian>АКС-74Н</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M_Cobra">
+				<English>AK74M Cobra</English>
+				<Russian>АК-74М Кобра</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74M_Cobra_Camo">
+				<English>AK74M Cobra</English>
+				<Russian>АК-74М Кобра</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74N_PSO">
+				<English>AK74N PSO</English>
+				<Russian>АК-74Н ПСО</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKS74NGL_Cobra">
+				<English>AKS74N GL Cobra</English>
+				<Russian>АКС-74Н ГП Кобра</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74MRGL_MRCO">
+				<English>AK74MR GL MRCO</English>
+				<Russian>АК-74МР ГП MRCO</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74MR_MRCO">
+				<English>AK74MR MRCO</English>
+				<Russian>АК-74МР MRCO</Russian>
+			</Key>
+			<Key ID="STR_AAS_AKS74">
+				<English>AKS74</English>
+				<Russian>АКС-74</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK103SD">
+				<English>AK103 SD</English>
+				<Russian>АК-103 ПБС</Russian>
+			</Key>
+			<Key ID="STR_AAS_pp2000">
+				<English>PP2000</English>
+				<Russian>ПП-2000</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK47-M">
+				<English>AK47-M</English>
+				<Russian>АКМ</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK47-S">
+				<English>AK47-S</English>
+				<Russian>АКС</Russian>
+			</Key>
+			<Key ID="STR_AAS_pkp">
+				<English>PKP</English>
+				<Russian>Печенег</Russian>
+			</Key>
+			<Key ID="STR_AAS_PKM">
+				<English>PKM</English>
+				<Russian>ПКМ</Russian>
+			</Key>
+			<Key ID="STR_AAS_PM63">
+				<English>PM63</English>
+				<Russian>ПМ-63</Russian>
+			</Key>
+			<Key ID="STR_AAS_RPK74">
+				<English>RPK74</English>
+				<Russian>РПК-74</Russian>
+			</Key>
+			<Key ID="STR_AAS_AK74PSO1M2camo">
+				<English>AK74 PSO camo</English>
+				<Russian>АК-74 ПСO Камо</Russian>
+			</Key>
+			<Key ID="STR_AAS_Bizon_SD">
+				<English>Bizon SD</English>
+				<Russian>Бизон-2-03</Russian>
+			</Key>
+			<Key ID="STR_AAS_Bizon">
+				<English>PP10 Bizon</English>
+				<Russian>ПП-19 Бизон</Russian>
+			</Key>
+			<Key ID="STR_AAS_asval">
+				<English>AS Val</English>
+				<Russian>АС Вал</Russian>
+			</Key>
+			<Key ID="STR_AAS_KSVK">
+				<English>KSVK</English>
+				<Russian>КСВК</Russian>
+			</Key>
+			<Key ID="STR_AAS_SVD">
+				<English>SVD</English>
+				<Russian>СВД</Russian>
+			</Key>
+			<Key ID="STR_AAS_SVD_NPZ">
+				<English>SVD NPZ</English>
+				<Russian>СВД НПЗ</Russian> 
+			</Key>
+			<Key ID="STR_AAS_Izh18">
+				<English>Izh18</English>
+				<Russian>ИЖ-18</Russian> 
+			</Key>
+			<Key ID="STR_AAS_SVD_camo">
+				<English>SVD camo</English>
+				<Russian>СВД Камо</Russian>
+			</Key>
+			<Key ID="STR_AAS_VSS">
+				<English>VSS</English>
+				<Russian>Винторез</Russian>
+			</Key>
+			<Key ID="STR_AAS_Saiga12K">
+				<English>Saiga12K</English>
+				<Russian>Сайга-12К</Russian>
+			</Key>
+			<Key ID="STR_AAS_Mosin_sbr">
+				<English>Mosin SBR</English>
+				<Russian>Обрез</Russian>
+			</Key>
+	    </Package>
+		<Package name="ServerAIThread">
+			<Key ID="STR_AAS_zone">//165, 181
+				<German>zone%1</German>
+				<English>zone%1</English>
+				<Italian>zone%1</Italian>
+				<Spanish>zone%1</Spanish>
+				<French>zone%1</French>
+				<Czech>zone%1</Czech>
+				<Russian>зона%1</Russian>
+				<Hungarian>zone%1</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="ServerMainThread">
+			<Key ID="STR_AAS_minutes_left">//122
+				<German>%1 minutes left</German>
+				<English>%1 minutes left</English>
+				<Italian>%1 minutes left</Italian>
+				<Spanish>%1 minutes left</Spanish>
+				<French>%1 minutes left</French>
+				<Czech>%1 minutes left</Czech>
+				<Russian>%1 мин. до конца игры</Russian>
+				<Hungarian>%1 minutes left</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="setupControlCrate">
+			<Key ID="STR_AAS_Team">//122
+				<German>%1 Team</German>
+				<English>%1 Team</English>
+				<Italian>%1 Team</Italian>
+				<Spanish>%1 Team</Spanish>
+				<French>%1 Team</French>
+				<Czech>%1 Team</Czech>
+				<Russian>%1 команда</Russian>
+				<Hungarian>%1 Team</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="ShowHint">
+			<Key ID="STR_AAS_Hint1">
+				<German>Use the armoury near the flag to select teams, player classes and Custom classes.</German>
+				<English>Use the armoury near the flag to select teams, player classes and Custom classes.</English>
+				<Italian>Use the armoury near the flag to select teams, player classes and Custom classes.</Italian>
+				<Spanish>Use the armoury near the flag to select teams, player classes and Custom classes.</Spanish>
+				<French>Use the armoury near the flag to select teams, player classes and Custom classes.</French>
+				<Czech>Use the armoury near the flag to select teams, player classes and Custom classes.</Czech>
+				<Russian>Используй ящик рядом с флагом, для выбора класса бойца и команды.</Russian>
+				<Hungarian>Use the armoury near the flag to select teams, player classes and Custom classes.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint2">
+				<German>When you respawn you join a queue; if the queue is too long, spawn further back.</German>
+				<English>When you respawn you join a queue; if the queue is too long, spawn further back.</English>
+				<Italian>When you respawn you join a queue; if the queue is too long, spawn further back.</Italian>
+				<Spanish>When you respawn you join a queue; if the queue is too long, spawn further back.</Spanish>
+				<French>When you respawn you join a queue; if the queue is too long, spawn further back.</French>
+				<Czech>When you respawn you join a queue; if the queue is too long, spawn further back.</Czech>
+				<Russian>Возрождаясь, становишься в очередь. Если очередь слишком длинная - выбери другую зону.</Russian>
+				<Hungarian>When you respawn you join a queue; if the queue is too long, spawn further back.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint3">
+				<German>Outnumber the enemy in their zone in order to capture the flag.</German>
+				<English>Outnumber the enemy in their zone in order to capture the flag.</English>
+				<Italian>Outnumber the enemy in their zone in order to capture the flag.</Italian>
+				<Spanish>Outnumber the enemy in their zone in order to capture the flag.</Spanish>
+				<French>Outnumber the enemy in their zone in order to capture the flag.</French>
+				<Czech>Outnumber the enemy in their zone in order to capture the flag.</Czech>
+				<Russian>Для захвата зоны, игроков твоей команды в зоне должно быть больше.</Russian>
+				<Hungarian>Outnumber the enemy in their zone in order to capture the flag.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint4">
+				<German>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</German>
+				<English>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</English>
+				<Italian>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</Italian>
+				<Spanish>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</Spanish>
+				<French>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</French>
+				<Czech>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</Czech>
+				<Russian>Как только вражеская зона отжата, выйди из техники и подойди к флагу, чтобы захватить зону.</Russian>
+				<Hungarian>Once an enemy base is de-camped, get out of your vehicle and within 10m of the flag to capture it.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint5">
+				<German>You can find more vehicles and armour at X-Ray, but you have further to drive.</German>
+				<English>You can find more vehicles and armour at X-Ray, but you have further to drive.</English>
+				<Italian>You can find more vehicles and armour at X-Ray, but you have further to drive.</Italian>
+				<Spanish>You can find more vehicles and armour at X-Ray, but you have further to drive.</Spanish>
+				<French>You can find more vehicles and armour at X-Ray, but you have further to drive.</French>
+				<Czech>You can find more vehicles and armour at X-Ray, but you have further to drive.</Czech>
+				<Russian>Обычно в зоне X-Ray много техники, но оттуда далеко добираться.</Russian>
+				<Hungarian>You can find more vehicles and armour at X-Ray, but you have further to drive.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint6">
+				<German>Use the distance meters in the top right to see how close you are to a base.</German>
+				<English>Use the distance meters in the top right to see how close you are to a base.</English>
+				<Italian>Use the distance meters in the top right to see how close you are to a base.</Italian>
+				<Spanish>Use the distance meters in the top right to see how close you are to a base.</Spanish>
+				<French>Use the distance meters in the top right to see how close you are to a base.</French>
+				<Czech>Use the distance meters in the top right to see how close you are to a base.</Czech>
+				<Russian>Прямоугольники справа информируют о зонах захвата/удержания, количестве в них бойцов и расстоянии до них.</Russian>
+				<Hungarian>Use the distance meters in the top right to see how close you are to a base.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint7">
+				<German>Keep an eye on the numbers within your home base, to spot when it is attacked.</German>
+				<English>Keep an eye on the numbers within your home base, to spot when it is attacked.</English>
+				<Italian>Keep an eye on the numbers within your home base, to spot when it is attacked.</Italian>
+				<Spanish>Keep an eye on the numbers within your home base, to spot when it is attacked.</Spanish>
+				<French>Keep an eye on the numbers within your home base, to spot when it is attacked.</French>
+				<Czech>Keep an eye on the numbers within your home base, to spot when it is attacked.</Czech>
+				<Russian>Выходя с крайней зоны в атаку, убедись, что ее кто-то защищает. Иначе, оставайся в обороне.</Russian>
+				<Hungarian>Keep an eye on the numbers within your home base, to spot when it is attacked.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint8">
+				<German>Revive friendly soldiers using the 'Revive' option from the action menu.</German>
+				<English>Revive friendly soldiers using the 'Revive' option from the action menu.</English>
+				<Italian>Revive friendly soldiers using the 'Revive' option from the action menu.</Italian>
+				<Spanish>Revive friendly soldiers using the 'Revive' option from the action menu.</Spanish>
+				<French>Revive friendly soldiers using the 'Revive' option from the action menu.</French>
+				<Czech>Revive friendly soldiers using the 'Revive' option from the action menu.</Czech>
+				<Russian>Санитары могут возродить павших бойцов, с помощью опции 'Реанимировать' в меню действий.</Russian>
+				<Hungarian>Revive friendly soldiers using the 'Revive' option from the action menu.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint9">
+				<German>Try a synchronised attack on the enemy base to gain the element of surprise.</German>
+				<English>Try a synchronised attack on the enemy base to gain the element of surprise.</English>
+				<Italian>Try a synchronised attack on the enemy base to gain the element of surprise.</Italian>
+				<Spanish>Try a synchronised attack on the enemy base to gain the element of surprise.</Spanish>
+				<French>Try a synchronised attack on the enemy base to gain the element of surprise.</French>
+				<Czech>Try a synchronised attack on the enemy base to gain the element of surprise.</Czech>
+				<Russian>Захватить и удержать зону одному очень сложно, действуй совместно с игроками своей команды.</Russian>
+				<Hungarian>Try a synchronised attack on the enemy base to gain the element of surprise.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint10">
+				<German>Keep together with your team-mates to survive and revive each other.</German>
+				<English>Keep together with your team-mates to survive and revive each other.</English>
+				<Italian>Keep together with your team-mates to survive and revive each other.</Italian>
+				<Spanish>Keep together with your team-mates to survive and revive each other.</Spanish>
+				<French>Keep together with your team-mates to survive and revive each other.</French>
+				<Czech>Keep together with your team-mates to survive and revive each other.</Czech>
+				<Russian>Держись вместе с товарищами по команде на небольшом расстоянии, но берегись гранаты.</Russian>
+				<Hungarian>Keep together with your team-mates to survive and revive each other.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint11">
+				<German>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</German>
+				<English>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</English>
+				<Italian>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</Italian>
+				<Spanish>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</Spanish>
+				<French>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</French>
+				<Czech>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</Czech>
+				<Russian>Будучи санитаром и выбрав опцию 'Снаряжение пользователя' - функциия санитара пропадает.</Russian>
+				<Hungarian>If you are a medic and save a custom loadout, you lose your medic class and cannot revive.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint12">
+				<German>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</German>
+				<English>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</English>
+				<Italian>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</Italian>
+				<Spanish>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</Spanish>
+				<French>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</French>
+				<Czech>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</Czech>
+				<Russian>Если ворота по пути в зону простреливаются, проделай путь через забор взрывчаткой.</Russian>
+				<Hungarian>If you can't fight your way in through a bottleneck, a well-placed satchel can make a new entrance!</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint13">
+				<German>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</German>
+				<English>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</English>
+				<Italian>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</Italian>
+				<Spanish>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</Spanish>
+				<French>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</French>
+				<Czech>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</Czech>
+				<Russian>Для изменения масштаба миникарты пользуйся CTRL+Z и CTRL+X.</Russian>
+				<Hungarian>To zoom the minimap in and out, use CTRL+Z and CTRL+X.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint14">
+				<German>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</German>
+				<English>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</English>
+				<Italian>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</Italian>
+				<Spanish>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</Spanish>
+				<French>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</French>
+				<Czech>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</Czech>
+				<Russian>Если дисплей HUD мешает, переключи его CTRL+H.</Russian>
+				<Hungarian>If the HUD is too cluttered for you, use CTRL+H to toggle HUD display.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint15">
+				<German>Press CTRL+T to toggle the range at which green name tags display.</German>
+				<English>Press CTRL+T to toggle the range at which green name tags display.</English>
+				<Italian>Press CTRL+T to toggle the range at which green name tags display.</Italian>
+				<Spanish>Press CTRL+T to toggle the range at which green name tags display.</Spanish>
+				<French>Press CTRL+T to toggle the range at which green name tags display.</French>
+				<Czech>Press CTRL+T to toggle the range at which green name tags display.</Czech>
+				<Russian>Жми CTRL+T для изменения дальности отображения ников.</Russian>
+				<Hungarian>Press CTRL+T to toggle the range at which green name tags display.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint16">
+				<German>Keep an eye on the minimap to see where your teammates are.</German>
+				<English>Keep an eye on the minimap to see where your teammates are.</English>
+				<Italian>Keep an eye on the minimap to see where your teammates are.</Italian>
+				<Spanish>Keep an eye on the minimap to see where your teammates are.</Spanish>
+				<French>Keep an eye on the minimap to see where your teammates are.</French>
+				<Czech>Keep an eye on the minimap to see where your teammates are.</Czech>
+				<Russian>Стрелками на миникарте отображены игроки твоей команды.</Russian>
+				<Hungarian>Keep an eye on the minimap to see where your teammates are.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint17">
+				<German>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</German>
+				<English>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</English>
+				<Italian>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</Italian>
+				<Spanish>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</Spanish>
+				<French>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</French>
+				<Czech>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</Czech>
+				<Russian>Если точку респауна обстреливают, кидай дымы или укройся в бронированной технике.</Russian>
+				<Hungarian>If you are getting sniped at the spawn, pop smoke to put off the snipers, or bring up a BMP.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint18">
+				<German>Don't always attack the next base in a straight line, try flanking either side.</German>
+				<English>Don't always attack the next base in a straight line, try flanking either side.</English>
+				<Italian>Don't always attack the next base in a straight line, try flanking either side.</Italian>
+				<Spanish>Don't always attack the next base in a straight line, try flanking either side.</Spanish>
+				<French>Don't always attack the next base in a straight line, try flanking either side.</French>
+				<Czech>Don't always attack the next base in a straight line, try flanking either side.</Czech>
+				<Russian>Не атакуй всегда "в лоб", пробуй зайти с фланга.</Russian>
+				<Hungarian>Don't always attack the next base in a straight line, try flanking either side.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint19">
+				<German>You earn 10 bonus points for being the one to capture an objective.</German>
+				<English>You earn 10 bonus points for being the one to capture an objective.</English>
+				<Italian>You earn 10 bonus points for being the one to capture an objective.</Italian>
+				<Spanish>You earn 10 bonus points for being the one to capture an objective.</Spanish>
+				<French>You earn 10 bonus points for being the one to capture an objective.</French>
+				<Czech>You earn 10 bonus points for being the one to capture an objective.</Czech>
+				<Russian>За захват зоны бонус 10 очков.</Russian>
+				<Hungarian>You earn 10 bonus points for being the one to capture an objective.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint20">
+				<German>You earn 1 bonus point for every 30 seconds in the attacking zone.</German>
+				<English>You earn 1 bonus point for every 30 seconds in the attacking zone.</English>
+				<Italian>You earn 1 bonus point for every 30 seconds in the attacking zone.</Italian>
+				<Spanish>You earn 1 bonus point for every 30 seconds in the attacking zone.</Spanish>
+				<French>You earn 1 bonus point for every 30 seconds in the attacking zone.</French>
+				<Czech>You earn 1 bonus point for every 30 seconds in the attacking zone.</Czech>
+				<Russian>Каждые 30 секунд нахождения в атакуемой зоне капает 1 очко.</Russian>
+				<Hungarian>You earn 1 bonus point for every 30 seconds in the attacking zone.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint21">
+				<German>You earn 1 bonus point for every 60 seconds in the defending zone.</German>
+				<English>You earn 1 bonus point for every 60 seconds in the defending zone.</English>
+				<Italian>You earn 1 bonus point for every 60 seconds in the defending zone.</Italian>
+				<Spanish>You earn 1 bonus point for every 60 seconds in the defending zone.</Spanish>
+				<French>You earn 1 bonus point for every 60 seconds in the defending zone.</French>
+				<Czech>You earn 1 bonus point for every 60 seconds in the defending zone.</Czech>
+				<Russian>Каждую минуту нахождения в защищаемой зоне капает 1 очко.</Russian>
+				<Hungarian>You earn 1 bonus point for every 60 seconds in the defending zone.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint22">
+				<German>You earn bonus points every time you revive a friendly player.</German>
+				<English>You earn bonus points every time you revive a friendly player.</English>
+				<Italian>You earn bonus points every time you revive a friendly player.</Italian>
+				<Spanish>You earn bonus points every time you revive a friendly player.</Spanish>
+				<French>You earn bonus points every time you revive a friendly player.</French>
+				<Czech>You earn bonus points every time you revive a friendly player.</Czech>
+				<Russian>Санитары получают очки за реанимацию игроков своей команды.</Russian>
+				<Hungarian>You earn bonus points every time you revive a friendly player.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint23">
+				<German>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</German>
+				<English>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</English>
+				<Italian>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</Italian>
+				<Spanish>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</Spanish>
+				<French>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</French>
+				<Czech>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</Czech>
+				<Russian>Опция 'Сохранить снаряжение' сохраняет набранное снаряжение как класс.</Russian>
+				<Hungarian>To make a special loadout, select your kit at the armoury, then select: Save Custom Loadout.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint24">
+				<German>It is possible to punch the enemy, being near (press button 4)</German>
+				<English>It is possible to punch the enemy, being near (press button 4)</English>
+				<Italian>It is possible to punch the enemy, being near (press button 4)</Italian>
+				<Spanish>It is possible to punch the enemy, being near (press button 4)</Spanish>
+				<French>It is possible to punch the enemy, being near (press button 4)</French>
+				<Czech>It is possible to punch the enemy, being near (press button 4)</Czech>
+				<Russian>Можно нанести удар противнику, находясь рядом кнопкой 4</Russian>
+				<Hungarian>It is possible to punch the enemy, being near (press button 4)</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint25">
+				<German>You need only to capture and defend bases shown on the top right display.</German>
+				<English>You need only to capture and defend bases shown on the top right display.</English>
+				<Italian>You need only to capture and defend bases shown on the top right display.</Italian>
+				<Spanish>You need only to capture and defend bases shown on the top right display.</Spanish>
+				<French>You need only to capture and defend bases shown on the top right display.</French>
+				<Czech>You need only to capture and defend bases shown on the top right display.</Czech>
+				<Russian>Удерживай/захватывай зоны, обозначеные  ТОЛЬКО в прямоугольниках справа (синий и красный).</Russian>
+				<Hungarian>You need only to capture and defend bases shown on the top right display.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint26">
+				<German>See rules in the notebook. Questions on arma2.ru site</German>
+				<English>See rules in the notebook. Questions on arma2.ru site</English>
+				<Italian>See rules in the notebook. Questions on arma2.ru site</Italian>
+				<Spanish>See rules in the notebook. Questions on arma2.ru site</Spanish>
+				<French>See rules in the notebook. Questions on arma2.ru site</French>
+				<Czech>See rules in the notebook. Questions on arma2.ru site</Czech>
+				<Russian>Не спрашивай в чате 'ЧТО ТУТ ДЕЛАТЬ?', загляни в блокнтот. Вопросы на форуме arma2.ru.</Russian>
+				<Hungarian>See rules in the notebook. Questions on arma2.ru site</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint27">
+				<German>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</German>
+				<English>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</English>
+				<Italian>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</Italian>
+				<Spanish>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</Spanish>
+				<French>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</French>
+				<Czech>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</Czech>
+				<Russian>У ящика с оружием: Ctrl+D для смены оружия, Ctrl+C для смены класса.</Russian>
+				<Hungarian>At Armoury: Ctrl+D to change Weapons, Ctrl+C to change Classes</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint28">
+				<German>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</German>
+				<English>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</English>
+				<Italian>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</Italian>
+				<Spanish>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</Spanish>
+				<French>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</French>
+				<Czech>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</Czech>
+				<Russian>Зажмите Ctrl, при выборе класса или оружия у ящика с оружием, что бы не заблокировалось.</Russian>
+				<Hungarian>Hold Ctrl when selecting classes and weapons at Armoury, to prevent it from locking you out.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Hint29">
+				<German>Try to keep the balance. At the bottom of the screen shows the number of players.</German>
+				<English>Try to keep the balance. At the bottom of the screen shows the number of players.</English>
+				<Italian>Try to keep the balance. At the bottom of the screen shows the number of players.</Italian>
+				<Spanish>Try to keep the balance. At the bottom of the screen shows the number of players.</Spanish>
+				<French>Try to keep the balance. At the bottom of the screen shows the number of players.</French>
+				<Czech>Try to keep the balance. At the bottom of the screen shows the number of players.</Czech>
+				<Russian>Старайся деражть баланс. Внизу экрана показано количество игроков.</Russian>
+				<Hungarian>Try to keep the balance. At the bottom of the screen shows the number of players.</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Text_HINT"> //30
+				<German>HINT</German>
+				<English>HINT</English>
+				<Italian>HINT</Italian>
+				<Spanish>HINT</Spanish>
+				<French>HINT</French>
+				<Czech>HINT</Czech>
+				<Russian>На заметку</Russian>
+				<Hungarian>HINT</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="updateHUD">
+			<Key ID="STR_AAS_Dummy">//106,107
+				<German>Dummy</German>
+				<English>Dummy</English>
+				<Italian>Dummy</Italian>
+				<Spanish>Dummy</Spanish>
+				<French>Dummy</French>
+				<Czech>Dummy</Czech>
+				<Russian>Ничья</Russian>
+				<Hungarian>Dummy</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Recamping">//106,107
+				<German>Recamping</German>
+				<English>Recamping</English>
+				<Italian>Recamping</Italian>
+				<Spanish>Recamping</Spanish>
+				<French>Recamping</French>
+				<Czech>Recamping</Czech>
+				<Russian>Берем контроль над</Russian>
+				<Hungarian>Recamping</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Enemy_recamping">//106,107
+				<German>Enemy recamping</German>
+				<English>Enemy recamping</English>
+				<Italian>Enemy recamping</Italian>
+				<Spanish>Enemy recamping</Spanish>
+				<French>Enemy recamping</French>
+				<Czech>Enemy recamping</Czech>
+				<Russian>Противник отжимает</Russian>
+				<Hungarian>Enemy recamping</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Losing">//106,107
+				<German>Losing</German>
+				<English>Losing</English>
+				<Italian>Losing</Italian>
+				<Spanish>Losing</Spanish>
+				<French>Losing</French>
+				<Czech>Losing</Czech>
+				<Russian>Теряем</Russian>
+				<Hungarian>Losing</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Capturing">//106,107
+				<German>Capturing</German>
+				<English>Capturing</English>
+				<Italian>Capturing</Italian>
+				<Spanish>Capturing</Spanish>
+				<French>Capturing</French>
+				<Czech>Capturing</Czech>
+				<Russian>Захватываем</Russian>
+				<Hungarian>Capturing</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_CTRL+C">//194
+				<German>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</German>
+				<English>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
+				<Italian>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Italian>
+				<Spanish>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Spanish>
+				<French>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</French>
+				<Czech>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Czech>
+				<Russian>&lt;t size='0.6'&gt;Смена класса CTRL+C&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t size='0.6'&gt;CTRL+C to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_CTRL+D">//219
+				<German>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</German>
+				<English>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
+				<Italian>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Italian>
+				<Spanish>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Spanish>
+				<French>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</French>
+				<Czech>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Czech>
+				<Russian>&lt;t size='0.6'&gt;Смена оружия CTRL+D&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t size='0.6'&gt;CTRL+D to change&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Hungarian>
+			</Key>
+			</Key>
+			<Key ID="STR_AAS_CTRL+K">//219
+				<German>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</German>
+				<English>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
+				<Italian>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Italian>
+				<Spanish>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Spanish>
+				<French>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</French>
+				<Czech>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Czech>
+				<Russian>&lt;t size='1.0'&gt; CTRL+K Выбор команды &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t size='1.0'&gt; CTRL+K to Open Team Dialog &lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Choose_class_team">//235
+				<German>Choose your class and team</German>
+				<English>Choose your class and team</English>
+				<Italian>Choose your class and team</Italian>
+				<Spanish>Choose your class and team</Spanish>
+				<French>Choose your class and team</French>
+				<Czech>Choose your class and team</Czech>
+				<Russian>Выбери свой класс и команду</Russian>
+				<Hungarian>Choose your class and team</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Class_change_locked">//241
+				<German>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</German>
+				<English>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</English>
+				<Italian>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</Italian>
+				<Spanish>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</Spanish>
+				<French>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</French>
+				<Czech>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</Czech>
+				<Russian>&lt;t color='%1'&gt;Смена класса запрещена&lt;/t&gt; следующие %2 сек.</Russian>
+				<Hungarian>&lt;t color='%1'&gt;Class change locked&lt;/t&gt;for %2 seconds</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Shortcuts">//258
+				<German>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</German>
+				<English>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</English>
+				<Italian>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</Italian>
+				<Spanish>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</Spanish>
+				<French>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</French>
+				<Czech>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</Czech>
+				<Russian>Подсказки::&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Увеличить, уменьшить миникарту&lt;br/&gt;CTRL+T : Переключение дистанции обзора тегов игроков&lt;br/&gt;CTRL+H : Переключение видимости вспомогательного дисплея HUD&lt;br/&gt;CTRL+V : Показать это окно&lt;/t&gt;</Russian>
+				<Hungarian>Shortcuts:&lt;br/&gt;&lt;t size='0.7'&gt;&lt;br/&gt;CTRL+Z, CTRL+X : Zoom minimap in and out&lt;br/&gt;CTRL+T : Toggle name tag view range&lt;br/&gt;CTRL+H : Toggle HUD visibility&lt;br/&gt;CTRL+V : Show this window&lt;/t&gt;</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="updateSpawnQueues">
+			<Key ID="STR_AAS_update_spawn">//106,107
+				<German>update spawn queues count player_units all = %1</German>
+				<English>update spawn queues count player_units all = %1</English>
+				<Italian>update spawn queues count player_units all = %1</Italian>
+				<Spanish>update spawn queues count player_units all = %1</Spanish>
+				<French>update spawn queues count player_units all = %1</French>
+				<Czech>update spawn queues count player_units all = %1</Czech>
+				<Russian>Изменение очереди возрождения игрока player_units = %1</Russian>
+				<Hungarian>update spawn queues count player_units all = %1</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="x_uifuncs">
+			<Key ID="STR_AAS_Join">//106,107
+				<German>Join</German>
+				<English>Join</English>
+				<Italian>Join</Italian>
+				<Spanish>Join</Spanish>
+				<French>Join</French>
+				<Czech>Join</Czech>
+				<Russian>Присоединиться</Russian>
+				<Hungarian>Join</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Unlock">//106,107
+				<German>Unlock</German>
+				<English>Unlock</English>
+				<Italian>Unlock</Italian>
+				<Spanish>Unlock</Spanish>
+				<French>Unlock</French>
+				<Czech>Unlock</Czech>
+				<Russian>Открыть</Russian>
+				<Hungarian>Unlock</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Lock">//106,107
+				<German>Lock</German>
+				<English>Lock</English>
+				<Italian>Lock</Italian>
+				<Spanish>Lock</Spanish>
+				<French>Lock</French>
+				<Czech>Lock</Czech>
+				<Russian>Закрыть</Russian>
+				<Hungarian>Lock</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Leave">//106,107
+				<German>Leave</German>
+				<English>Leave</English>
+				<Italian>Leave</Italian>
+				<Spanish>Leave</Spanish>
+				<French>Leave</French>
+				<Czech>Leave</Czech>
+				<Russian>Покинуть</Russian>
+				<Hungarian>Leave</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Remove">//106,107
+				<German>Remove</German>
+				<English>Remove</English>
+				<Italian>Remove</Italian>
+				<Spanish>Remove</Spanish>
+				<French>Remove</French>
+				<Czech>Remove</Czech>
+				<Russian>Удалить</Russian>
+				<Hungarian>Remove</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="SquadManagement">
+			<Key ID="STR_AAS_TEAM_SELECT">//106,107
+				<German>TEAM SELECT</German>
+				<English>TEAM SELECT</English>
+				<Italian>TEAM SELECT</Italian>
+				<Spanish>TEAM SELECT</Spanish>
+				<French>TEAM SELECT</French>
+				<Czech>TEAM SELECT</Czech>
+				<Russian>ВЫБОР КОМАНДЫ</Russian>
+				<Hungarian>TEAM SELECT</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Groupname">//106,107
+				<German>Groupname</German>
+				<English>Groupname</English>
+				<Italian>Groupname</Italian>
+				<Spanish>Groupname</Spanish>
+				<French>Groupname</French>
+				<Czech>Groupname</Czech>
+				<Russian>Позывной группы</Russian>
+				<Hungarian>Groupname</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Close">//106,107
+				<German>Close</German>
+				<English>Close</English>
+				<Italian>Close</Italian>
+				<Spanish>Close</Spanish>
+				<French>Close</French>
+				<Czech>Close</Czech>
+				<Russian>Закрыть</Russian>
+				<Hungarian>Close</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="cPunishTeamKill">
+			<Key ID="STR_AAS_punished_for_teamkilling">//56
+        		<German>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</German>
+				<English>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</English>
+				<Italian>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Italian>
+				<Spanish>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Spanish>
+				<French>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</French>
+				<Czech>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Czech>
+				<Russian>%1 получил -5 очков за убийство товарища %2. Отрицательный счет - повод к разбирательству.</Russian>
+				<Hungarian>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="ClientMainThread">
+			<Key ID="STR_AAS_punished_for_teamkill">//56
+        		<German>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</German>
+				<English>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</English>
+				<Italian>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Italian>
+				<Spanish>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Spanish>
+				<French>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</French>
+				<Czech>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Czech>
+				<Russian>%1 получил -5 очков за убийство товарища %2. Отрицательный счет - повод к разбирательству.</Russian>
+				<Hungarian>%1 has been punished and added -5 score for teamkilling %2. The negative expense - a reason for trial</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="x_netinit">
+			<Key ID="STR_AAS_has_joined">//56
+        		<German>has joined your group</German>
+				<English>has joined your group</English>
+				<Italian>has joined your group</Italian>
+				<Spanish>has joined your group</Spanish>
+				<French>has joined your group</French>
+				<Czech>has joined your group</Czech>
+				<Russian>присоединился к отряду</Russian>
+				<Hungarian>has joined your group</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_has_left">//56
+        		<German>has left your group</German>
+				<English>has left your group</English>
+				<Italian>has left your group</Italian>
+				<Spanish>has left your group</Spanish>
+				<French>has left your group</French>
+				<Czech>has left your group</Czech>
+				<Russian>покинул отряд</Russian>
+				<Hungarian>has left your group</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="zlt_fieldrepair">
+			<Key ID="STR_AAS_Field_repair">
+        		<German>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</German>
+				<English>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</English>
+				<Italian>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</French>
+				<Czech>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#0099ee'&gt;Ремонтировать&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#0099ee'&gt;Repair&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Cancel_action">
+        		<German>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</German>
+				<English>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</English>
+				<Italian>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</French>
+				<Czech>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#ff0000'&gt;Отменить действие&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#ff0000'&gt;Cancel action&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Full_repair">
+        		<German>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</German>
+				<English>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</English>
+				<Italian>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</French>
+				<Czech>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#0099ee'&gt;Полный ремонт&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#0099ee'&gt;Full repair&lt;/t&gt;</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Bad_conditions">
+        		<German>Bad conditions for repair</German>
+				<English>Bad conditions for repair</English>
+				<Italian>Bad conditions for repair</Italian>
+				<Spanish>Bad conditions for repair</Spanish>
+				<French>Bad conditions for repair</French>
+				<Czech>Bad conditions for repair</Czech>
+				<Russian>Не подходящие условия для ремонта</Russian>
+				<Hungarian>Bad conditions for repair</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Another_action">
+        		<German>Another action in progress</German>
+				<English>Another action in progress</English>
+				<Italian>Another action in progress</Italian>
+				<Spanish>Another action in progress</Spanish>
+				<French>Another action in progress</French>
+				<Czech>Another action in progress</Czech>
+				<Russian>Выполняется другое действие</Russian>
+				<Hungarian>Another action in progress</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Need_ToolKit">
+        		<German>Need ToolKit in inventory yours or vehicle</German>
+				<English>Need ToolKit in inventory yours or vehicle</English>
+				<Italian>Need ToolKit in inventory yours or vehicle</Italian>
+				<Spanish>Need ToolKit in inventory yours or vehicle</Spanish>
+				<French>Need ToolKit in inventory yours or vehicle</French>
+				<Czech>Need ToolKit in inventory yours or vehicle</Czech>
+				<Russian>Без инструментов тут не справиться</Russian>
+				<Hungarian>Need ToolKit in inventory yours or vehicle</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Repair_interrupted">
+        		<German>Repair interrupted</German>
+				<English>Repair interrupted</English>
+				<Italian>Repair interrupted</Italian>
+				<Spanish>Repair interrupted</Spanish>
+				<French>Repair interrupted</French>
+				<Czech>Repair interrupted</Czech>
+				<Russian>Ремонт прерван</Russian>
+				<Hungarian>Repair interrupted</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Repair_finished">
+        		<German>Repair finished</German>
+				<English>Repair finished</English>
+				<Italian>Repair finished</Italian>
+				<Spanish>Repair finished</Spanish>
+				<French>Repair finished</French>
+				<Czech>Repair finished</Czech>
+				<Russian>Ремонт закончен</Russian>
+				<Hungarian>Repair finished</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_will_be_repaired">
+        		<German>%2 will be repaired in %1 sec</German>
+				<English>%2 will be repaired in %1 sec</English>
+				<Italian>%2 will be repaired in %1 sec</Italian>
+				<Spanish>%2 will be repaired in %1 sec</Spanish>
+				<French>%2 will be repaired in %1 sec</French>
+				<Czech>%2 will be repaired in %1 sec</Czech>
+				<Russian>%2 отремонтируется через %1 сек.</Russian>
+				<Hungarian>%2 will be repaired in %1 sec</Hungarian>
+			</Key>
+			<Key ID="STR_AAS_Push_vehicle">
+        		<German>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</German>
+				<English>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</English>
+				<Italian>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</Italian>
+				<Spanish>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</Spanish>
+				<French>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</French>
+				<Czech>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</Czech>
+				<Russian>&lt;t color='#FF9900'&gt;Толкать технику&lt;/t&gt;</Russian>
+				<Hungarian>&lt;t color='#FF9900'&gt;Push vehicle&lt;/t&gt;</Hungarian>
+			</Key>
+	    </Package>
+		<Package name="zlt_fieldrepair">
+			<Key ID="STR_RIP_LOWGEARON"> 
+				<Original>High-climbing gear (on)</Original> 
+				<Russian>Включить пониженную</Russian> 
+			</Key> 
+			<Key ID="STR_RIP_LOWGEAROFF"> 
+				<Original>High-climbing gear (off)</Original> 
+				<Russian>Включить стандартную</Russian> 
+			</Key>
+			<Key ID="STR_AAS_Domkrat"> 
+				<Original>Upend Vehicle</Original> 
+				<Russian>Перевернуть технику</Russian> 
+			</Key>
+	    </Package>
+		</Container>
+	</Package>
+</Project>

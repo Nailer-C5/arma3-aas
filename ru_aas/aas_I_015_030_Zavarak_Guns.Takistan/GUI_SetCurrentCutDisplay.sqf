@@ -1,0 +1,1 @@
+﻿uiNamespace setVariable [ "curdisp" , _this Select 0 ];

@@ -1,0 +1,33 @@
+﻿#include "globalDefines.hpp"
+array _hints = [
+localize "STR_AAS_Hint1",
+localize "STR_AAS_Hint2",
+localize "STR_AAS_Hint3",
+localize "STR_AAS_Hint4",
+localize "STR_AAS_Hint5",
+localize "STR_AAS_Hint6",
+localize "STR_AAS_Hint7",
+localize "STR_AAS_Hint8",
+localize "STR_AAS_Hint9",
+localize "STR_AAS_Hint10",
+localize "STR_AAS_Hint11",
+localize "STR_AAS_Hint12",
+localize "STR_AAS_Hint13",
+localize "STR_AAS_Hint14",
+localize "STR_AAS_Hint15",
+localize "STR_AAS_Hint16",
+localize "STR_AAS_Hint17",
+localize "STR_AAS_Hint18",
+localize "STR_AAS_Hint19",
+localize "STR_AAS_Hint20",
+localize "STR_AAS_Hint21",
+localize "STR_AAS_Hint22",
+localize "STR_AAS_Hint23",
+localize "STR_AAS_Hint24",
+localize "STR_AAS_Hint25",
+localize "STR_AAS_Hint26",
+localize "STR_AAS_Hint27",
+localize "STR_AAS_Hint28",
+localize "STR_AAS_Hint29" 
+];
+hintSilent format[ localize "STR_AAS_Text_HINT" + ": %1", _hints select (floor random (count _hints)) ];
