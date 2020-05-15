@@ -8,6 +8,8 @@ if( isServer ) then
 //0 fadeMusic 1;
 //playMusic "TheUnitCut";
 
+if (isDedicated) exitWith {};
+
 waitUntil { player == player };
 if( local player ) then
 {
