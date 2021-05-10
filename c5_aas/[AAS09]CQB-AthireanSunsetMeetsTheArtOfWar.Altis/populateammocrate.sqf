@@ -42,8 +42,8 @@ int _qlctr=0;
 
 if (RULES_canCustomiseLoadout) then {
 //diag_log "C5_DEBUG: populateammocrate.sqf about to addAction";
-	_vec addAction ["<t color='#ff1111'>Save loadout</t>", "doQuickLoadout.sqf", [true,LOADOUT_SAVE], 3, false, true, "", "true", 2];
-	_vec addAction ["<t color='#0099ee'>Load Gear</t>", "fnc_loadGear.sqf", [true,LOADOUT_CUSTOM], 4, false, true, "", "true", 2];
+    _vec addAction ["<t color='#ff1111'>Save loadout</t>", "doQuickLoadout.sqf", [true,LOADOUT_SAVE], 3, false, true, "", "true", 2];
+    _vec addAction ["<t color='#0099ee'>Load Gear</t>", "doQuickLoadout.sqf", [true,LOADOUT_CUSTOM], 4, false, true, "", "true", 2];
 	//NAILER[C5] - use virtual arsenal
 	_vec addAction["Virtual Arsenal", "VirtualArsenal.sqf", nil, 6, true, true, "", "true", 2];
 //diag_log "C5_DEBUG: populateammocrate.sqf finished with addAction";

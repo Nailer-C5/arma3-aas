@@ -1,6 +1,7 @@
 #include "globalDefines.hpp"
 int _loadoutType = (_this select 3) select 1;
 string _displayHint = (_this select 3) select 0;		// bool to say if player class hint should be displayed
+
 code _magAndQtyAdd =
 	{
 	int _lpct=0;
@@ -8,27 +9,26 @@ code _magAndQtyAdd =
 		{
 		player addMagazine (_this select 0);
 		};
-	};	
+	};
+	
 if(( _loadoutType != LOADOUT_SAVE ) && (_loadoutType != LOADOUT_CUSTOM)) then
 {
 	showChooserTime=CHOOSER_DURATION;
 };
+
 lastChooserPos = getPos player;
+
+
 if( !classChangeLocked ) then
-	{
+{
 	if( _loadoutType == LOADOUT_SAVE ) then
 		{
 		playerClass = LOADOUT_CUSTOM;
 		_loadoutType = LOADOUT_CUSTOM;
-            call saveLoadout;
-   sleep 1;
-		hint "Gear Saved.";
-		}
-	else
-		{
-		playerClass = _loadoutType;
-		};
-	if( _displayHint ) then
+        call saveLoadout;
+		sleep 1;
+		
+		if( _displayHint ) then
 		{
 		if( playerClass != LOADOUT_CUSTOM ) then
 			{
@@ -38,16 +38,22 @@ if( !classChangeLocked ) then
 			{
 			hint "Custom Loadout Saved";
 			};
-		nameClassMap = [ myPlayerQID , playerClass ];
-		publicVariable "nameClassMap";
 		};
+		nameClassMap = [ myPlayerQID , playerClass ];
+		publicVariable "nameClassMap";	
+		}
+	else
+		{
+		playerClass = _loadoutType;
+		};
+
 	removeAllPrimaryWeaponItems player;
-      removeAllWeapons player;
-      removeAllItems player;
-      removeUniform player;
-      removeVest player;
-      removeBackpack player;
-      removeHeadgear player;
+    removeAllWeapons player;
+    removeAllItems player;
+    removeUniform player;
+    removeVest player;
+    removeBackpack player;
+    removeHeadgear player;
       
 	if( playerClass == LOADOUT_CUSTOM ) then
 		{
@@ -104,6 +110,7 @@ if( !classChangeLocked ) then
 			player selectWeapon _curRifle;		
 			};
 		};
+
 	if( _displayHint ) then
 		{
 		lastClassChangeTime=time;
@@ -112,8 +119,9 @@ if( !classChangeLocked ) then
 		{
 		lastClassChangeTime=time-(CLASS_CHANGE_SETTLE_TIME*2);
 		};
-	if ((daytime < 4) || (daytime > 23)) then
-	{
-		player action ["GunLightOn",player];
-	};
-	};
+
+	//if ((daytime < 4) || (daytime > 23)) then
+	//{
+	//	player action ["GunLightOn",player];
+	//};
+};

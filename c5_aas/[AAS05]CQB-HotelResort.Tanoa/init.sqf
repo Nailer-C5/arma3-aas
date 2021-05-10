@@ -387,28 +387,6 @@ TAGS = addMissionEventHandler ["Draw3D", {
 }];
 //END NAILER[C5] - ADD NAME TAGS FOR YOUR OWN TEAM...
 
-//NAILER[C5]... TWEAK FATIGUE SYSTEM...
-//TODO: ADD AN AAS_PARAM TO ALLOW ENABLE/DISABLE OF FATIGUE
-if (local player) then { 
-   player enableFatigue true;
-   player setFatigue 0.4;
-   player setCustomAimCoef 0.5;
-   player setUnitRecoilCoefficient 0.65;
-
-   player addMPEventhandler ["MPRespawn", {	player enableFatigue true;
-											player setFatigue 0.4;
-											player setCustomAimCoef 0.5;
-											player setUnitRecoilCoefficient 0.65; } ]; 
-
-  [] spawn { 
-    while {true} do {
-      if (getFatigue player > 0.4) then { player setFatigue 0.4; };
-      sleep 0.1;
-    };
-  };
-}; 
-//END NAILER[C5]... END TWEAK FATIGUE SYSTEM...
-
 //NAILER[C5] - WE USE BULLETS TO LEAVE AN IMPRINT...
 //PrintingPress =  { 
 //private["_blocks","_block","_blockCount","_blockNr","_blockArray","_blockText","_blockTextF","_blockTextF_","_blockFormat","_formats","_inputData","_processedTextF","_char","_cursorBlinks","_cursorInvis"]; 
