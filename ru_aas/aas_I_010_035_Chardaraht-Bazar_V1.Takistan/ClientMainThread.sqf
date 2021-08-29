@@ -142,7 +142,7 @@ VIRTUAL_BOX= "rhs_weapon_crate" createVehicleLocal  [0,0,0];
 	_c ctrlRemoveAllEventHandlers "buttonclick";	
 	_c ctrlSetBackgroundColor [1, 0, 0, 0.5 ];
 	_c ctrlAddEventHandler ["buttonclick", { {player removeMagazines _x} forEach (magazines player); player removePrimaryWeaponItem currentMagazine player;}];
-	_c ctrlSetText Localize 'STR_AAS_Clear'; 
+	_c ctrlSetText Localize 'STR_AAS_Clear_1'; 
 	
 	
 	(_display displayctrl IDC_RSCDISPLAYARSENAL_CONTROLSBAR_BUTTONRANDOM) ctrlEnable  false;
