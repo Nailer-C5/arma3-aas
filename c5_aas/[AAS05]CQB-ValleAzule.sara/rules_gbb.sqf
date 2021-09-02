@@ -1,49 +1,48 @@
 #include "globalDefines.hpp"
-RULES_ruleSetName = "AUSARMA";
+RULES_ruleSetName = "German Ballerbude";
 RULES_debugPasswordHash = "FD1878C23FAC954A966D3DF2F8DC18716D304E7FFDD833734980707A51C9BC9F";   //  password to gain access to debugging commands (teleport, debug etc)
 RULES_adminPasswordHash = "FB8193DD10FD704D72F3280EF521B36F54287FADF95D1038ECE532BBD6A6F030";   //  password to gain access to admin commands (weather, time etc)
-RULES_riflesEast = [];
-RULES_riflesWest = [];
-RULES_WepsQtyDefault = [40, 20, 40, 20];
-RULES_AmmoQtyDefault = [ 40, 20, 20, 20, 40, 20, 40 ];
+RULES_WepsQtyDefault =[10, 0, 40, 0];
+RULES_AmmoQtyDefault = [ 40, 0, 0, 10, 40, 20, 40 ];
 RULES_allowDamageToAmmoCrates = false;
-RULES_canCustomiseLoadout = true;    
+RULES_canCustomiseLoadout = false;    
 RULES_customClassCanRevive = true;
 RULES_everyoneCanRevive = true;
-RULES_armouryUseRange = 10;
-RULES_classChangeDelay = 35;
+RULES_armouryUseRange = 5;
+RULES_classChangeDelay = 60;
 RULES_banScopedWithHeavy = false;
-RULES_defaultTagDisplayRange = 500;   // range at which green player tags disppear (too far away to show)
+RULES_defaultTagDisplayRange = 1000;   // range at which green player tags disppear (too far away to show)
 RULES_maxTagDisplayRange     = 1000;  // range at which tag distance selector loops round back to zero
 RULES_hudMaxLevel = 2;                // the best available hud display level (0 = minimal, 1 = no minimap, 2 = full)
-RULES_captureRadius = 10;      //the radius of the flag that you need to get within to capture fully decamped base
-RULES_captureSpeedFactor = 50;  //the capture speed factor multiplier (1=normal speed, 2=double speed, 0.5=half speed etc...)
+RULES_captureRadius = 7;      //the radius of the flag that you need to get within to capture fully decamped base
+RULES_captureSpeedFactor = 1;  //the capture speed factor multiplier (1=normal speed, 2=double speed, 0.5=half speed etc...)
 RULES_enableProportionalCaptureSpeed = true;    // enable changing of capture speed depending on player numbers
 RULES_captureSpeedMinCapacity = 2;               // maximum rate of capture (when there is one player in server)
 RULES_captureSpeedMaxCapacity = 0.25;            // minimum rate of capture (when server is full)
 RULES_baseQueueInterval = 10;		// how long you have to wait between each player spawning (strongly recommend not to change this)
-RULES_spawnArmourDuration = 10;     // how long does spawn armour last (if you go below 5secs armour will disable or when you pull your gun trigger)
-RULES_spawnElevation = 0; //Null elevation
+RULES_minSpawnDelay = 15;			// minimum time you must wait, regardless of there being a queue
+RULES_spawnArmourDuration = 6;     // how long does spawn armour last (if you go below 5secs armour will disable or when you pull your gun trigger)
 RULES_spawncampRadius         = 150	; 	// defines the allowed range to walk within enemy base without punishment
 RULES_spawncampMinLifespan    = 20 	;  // minimum lifespan under which assumed spawncamper has killed you
-RULES_spawncampRandomiseBound = 30	;  // X or Y dist from flag to be relocated (maximum) if randomised spawning used
+RULES_spawncampRandomiseBound = 50	;  // X or Y dist from flag to be relocated (maximum) if randomised spawning used
 RULES_spawncampProtectDefault = 1	;	// by default anti-spawncamp protection is on
 RULES_overrideVehicleSpawnTimes = true;  // determines whether or not we should use rule settings for vehicle respawn
-RULES_abandonedVehicleTimeLimit = 30;   // determines how long a vehicle must be left before considered abandoned
-RULES_vehicleRespawnDelay       = 30;    // how long should a vehicle take to respawn once destroyed or abandoned
-RULES_tankRespawnDelay          = 120;    // how long should a tank take to respawn
-RULES_chopperRespawnDelay       = 60;    // how long should a chopper take to respawn
-RULES_planeRespawnDelay         = 100;   // how long should a plane take to respawn
+RULES_abandonedVehicleTimeLimit = 120;   // determines how long a vehicle must be left before considered abandoned
+RULES_vehicleRespawnDelay       = 120;    // how long should a vehicle take to respawn once destroyed or abandoned
+RULES_tankRespawnDelay          = 300;    // how long should a tank take to respawn
+RULES_chopperRespawnDelay       = 240;    // how long should a chopper take to respawn
+RULES_planeRespawnDelay         = 300;   // how long should a plane take to respawn
 RULES_points                 = 1  ;       // points won per time period in an attacking zone
 RULES_pointsDefzonePerPeriod = 1  ;       // points won per time period in a defending zone
-RULES_secondsDefzoneToScore  = 60 ;      // time period for defending zone
-RULES_secondsAttzoneToScore  = 30 ;     // time period for attacking zone
-RULES_medicHealAmount     = 0.1 ;    // the amount of damage (on a scale of 0--1) that the medic heals you by randomly when in proximity
-RULES_medicHealRange      = 30   ;    // range within which medic automatically heals injured players
+RULES_secondsDefzoneToScore  = 60 ;       // time period for defending zone
+RULES_secondsAttzoneToScore  = 30 ;       // time period for attacking zone
+RULES_reviveScore            = 1  ;       // points you get for reviving divided by 3 (so if reviveScore=1 you get 3 points probably)
+RULES_medicHealAmount     = 0.2 ;    // the amount of damage (on a scale of 0--1) that the medic heals you by randomly when in proximity
+RULES_medicHealRange      = 5   ;    // range within which medic automatically heals injured players
 RULES_nearbyMedicDistance = 250  ;    // range within which nearby medics are visible on respawn screen
-RULES_canHealAtArmoury = true;        // sets whether you can heal yourself to 100% at the armoury or not
-RULES_guiBaseDisplayed = false; //Turn GUI BASE display ON/OFF
-RULES_SquadLeaderToFlagDist = 90;
+RULES_canHealAtArmoury = false;        // sets whether you can heal yourself to 100% at the armoury or not
+RULES_guiBaseDisplayed = false; //Turn GUI BASE display (ie.1 v 2) ON/OFF
+RULES_SquadLeaderToFlagDist = 150;
 RULES_wepsList = [
 [ "MXM 7.62 SOS"     , "arifle_MXM_SOS_pointer_F"           , [ ["30Rnd_65x39_caseless_mag"    , 6]                      ] ],
 [ "MXM 7.62 RCO"      , "arifle_MXM_Hamr_pointer_F"          , [ ["30Rnd_65x39_caseless_mag"        , 6]                      ] ],

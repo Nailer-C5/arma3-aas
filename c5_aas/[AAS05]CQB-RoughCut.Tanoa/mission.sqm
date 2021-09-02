@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=274;
+		nextID=280;
 	};
 	class Camera
 	{
-		pos[]={6342.3477,130.13181,9743.2256};
-		dir[]={-0.8163507,-0.46520281,-0.34228337};
-		up[]={-0.42901814,0.88520414,-0.17988075};
-		aside[]={-0.38667166,0,0.92221743};
+		pos[]={6343.4263,94.878609,9729.5186};
+		dir[]={0.096710369,-0.67430818,0.73208988};
+		up[]={0.088310093,0.73845005,0.66850042};
+		aside[]={0.99138713,0,-0.130964};
 	};
 };
 binarizationWanted=0;
-sourceName="[AAS05]CQB-Rough_Cut";
+sourceName="[AAS05]CQB-RoughCut";
 addons[]=
 {
 	"A3_Ui_F",
@@ -173,7 +173,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=145;
+		items=148;
 		class Item0
 		{
 			dataType="Marker";
@@ -688,8 +688,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6202.3364,70.396675,9667.2881};
-						angles[]={6.1297345,3.9104784,0.14823751};
+						position[]={6202.3359,70.396606,9667.2881};
+						angles[]={6.1297359,3.91048,0.14823081};
 					};
 					side="East";
 					flags=6;
@@ -697,11 +697,52 @@ class Mission
 					{
 						skill=0.60000002;
 						name="playerEast49";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=36;
 					type="O_sniper_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
@@ -4070,23 +4111,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6308.8672,72.3461,9711.666};
-				angles[]={0,0,1.5707964};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=258;
-			type="Land_RailwayCar_01_tank_F";
-			atlOffset=0.15060425;
-		};
-		class Item135
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={6318.7363,72.401176,9716.6465};
 				angles[]={0,0,4.5378561};
 			};
@@ -4099,23 +4123,7 @@ class Mission
 			type="Land_RailwayCar_01_passenger_F";
 			atlOffset=-7.6293945e-006;
 		};
-		class Item136
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6340.438,72.661186,9755.1582};
-				angles[]={1.5707964,1.5707964,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=261;
-			type="Land_RailwayCar_01_passenger_F";
-		};
-		class Item137
+		class Item135
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4132,7 +4140,7 @@ class Mission
 			type="Land_RailwayCar_01_passenger_F";
 			atlOffset=7.6293945e-006;
 		};
-		class Item138
+		class Item136
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4148,7 +4156,7 @@ class Mission
 			id=265;
 			type="Land_RailwayCar_01_passenger_F";
 		};
-		class Item139
+		class Item137
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4164,7 +4172,7 @@ class Mission
 			id=266;
 			type="Land_SharpStone_02";
 		};
-		class Item140
+		class Item138
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4180,7 +4188,7 @@ class Mission
 			id=269;
 			type="Land_Wreck_AFV_Wheeled_01_F";
 		};
-		class Item141
+		class Item139
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4196,7 +4204,7 @@ class Mission
 			id=270;
 			type="Land_SharpRock_apart";
 		};
-		class Item142
+		class Item140
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4212,7 +4220,7 @@ class Mission
 			id=271;
 			type="Land_RailwayCar_01_passenger_F";
 		};
-		class Item143
+		class Item141
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4228,7 +4236,7 @@ class Mission
 			id=272;
 			type="Land_Locomotive_01_v1_F";
 		};
-		class Item144
+		class Item142
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4243,6 +4251,87 @@ class Mission
 			};
 			id=273;
 			type="Land_Locomotive_01_v1_F";
+		};
+		class Item143
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6307.854,72.404396,9712.5361};
+				angles[]={5.497787,5.5699568,1.5707964};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=274;
+			type="Land_RailwayCar_01_passenger_F";
+		};
+		class Item144
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6319.1763,73.738754,9729.3662};
+				angles[]={0,0,6.213963};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=276;
+			type="Land_SharpRock_apart";
+		};
+		class Item145
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6315.9536,74.000542,9708.6816};
+				angles[]={0.88040692,5.392858,0.30485752};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=277;
+			type="Land_SharpRock_apart";
+		};
+		class Item146
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6336.8066,72.590942,9734.9268};
+				angles[]={0.52202797,2.389251,1.5533431};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=278;
+			type="Land_RailwayCar_01_passenger_F";
+			atlOffset=0.14091492;
+		};
+		class Item147
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6339.5596,73.768333,9760.958};
+				angles[]={0,2.011584,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=279;
+			type="Land_SharpRock_apart";
 		};
 	};
 };

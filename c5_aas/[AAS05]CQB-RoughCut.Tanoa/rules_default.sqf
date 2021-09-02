@@ -15,7 +15,7 @@ RULES_defaultTagDisplayRange = 1000;   // range at which green player tags dispp
 RULES_maxTagDisplayRange     = 1000;  // range at which tag distance selector loops round back to zero
 RULES_hudMaxLevel = 2;                // the best available hud display level (0 = minimal, 1 = no minimap, 2 = full)
 RULES_captureRadius = 15;      //the radius of the flag that you need to get within to capture fully decamped base
-RULES_captureSpeedFactor = 1;  //the capture speed factor multiplier (1=normal speed, 2=double speed, 0.5=half speed etc...)
+RULES_captureSpeedFactor = 5;  //the capture speed factor multiplier (1=normal speed, 2=double speed, 0.5=half speed etc...)
 RULES_enableProportionalCaptureSpeed = true;    // enable changing of capture speed depending on player numbers
 RULES_captureSpeedMinCapacity = 2;               // maximum rate of capture (when there is one player in server)
 RULES_captureSpeedMaxCapacity = 0.25;            // minimum rate of capture (when server is full)
