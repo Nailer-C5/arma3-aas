@@ -1,0 +1,1 @@
+[player, [missionNamespace, "C5_inv"]] call BIS_fnc_loadInventory;

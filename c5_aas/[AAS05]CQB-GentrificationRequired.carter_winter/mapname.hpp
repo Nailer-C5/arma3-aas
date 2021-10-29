@@ -14,7 +14,7 @@
 
 #define MAP_NAME "[AAS05]CQB Gentrification Required" //Match with intel title from editor
 #define MAP_DESCRIPTION "Advance and Secure" //Leave this as is here and in intel
-#define MAP_AUTHOR "Mopit[C5] " //Put your name here and take mine out
+#define MAP_AUTHOR "Mopit [C5]  Where trouble begins..." //Put your name here and take mine out
 
 
 
