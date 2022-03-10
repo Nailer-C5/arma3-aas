@@ -1,16 +1,55 @@
 
 
-class Params {
+#include "LARs\override_VA_templates\settings.hpp"
+#include "bon_recruit_units\dialog\common.hpp"
+#include "bon_recruit_units\dialog\recruitment.hpp"
 
-#define DAYTIMEHOUR_DEFAULT 7
-#include "\a3\functions_f\Params\paramDayTimeHour.hpp"
 
 
-#include "\a3\functions_f\Params\paramWeather.hpp"
-#define WEATHER_DEFAULT 100
 
+class CfgFunctions
+{
+	#include "LARs\override_VA_templates\functions\functions.hpp"
 };
 
 
-#include "bon_recruit_units\dialog\common.hpp"
-#include "bon_recruit_units\dialog\recruitment.hpp"
+
+author			= "Mopit";
+onLoadName		= "Comms Station Bravo";
+onLoadMission	= "Made from Mopit's Madness";
+
+
+class Header
+{
+	gameType =  SC;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 100;	// maximum number of players the mission supports
+};
+
+class Params {
+
+
+class ParamsUnitLimit
+{
+title = "Unit Size";
+values[] = {1,2,3,4,5,6,7,8,9,10};
+default = 1;
+texts[] = {"No AI","2","3","4","5","6","7","8","9","10"};
+};
+
+#define DAYTIMEHOUR_DEFAULT 18
+#include "\a3\functions_f\Params\paramDayTimeHour.hpp"
+
+#define WEATHER_DEFAULT 25
+#include "\a3\functions_f\Params\paramWeather.hpp"
+
+class ParamsSetFog
+{
+title = "Mess with fog";
+values[] = {1,2,3,4,5,6};
+default = 1;
+texts[] = {"No Fog", "Ground Fog", "Coastal/Valley Fog", "Mountain Top Fog", "A little foggy", "Pea Soup"};
+};
+
+};
+
