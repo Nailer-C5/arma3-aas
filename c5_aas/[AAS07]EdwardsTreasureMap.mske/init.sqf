@@ -354,4 +354,75 @@ for "_i" from 1 to _cursorBlinks do { [_processedTextF + _blockTextF_, 0, 0.15, 
     ["", 0, 0.5, 15, 0, 1, 90] spawn BIS_fnc_dynamicText; 
 };
 
+//NAILER[C5] - ADD NAME TAGS FOR YOUR OWN TEAM...
+TAGS = addMissionEventHandler ["Draw3D", {
+    {
+        if (side _x == side player && {alive _x }) then {;
+            _dist = (player distance _x) / 3000;
+            _color = getArray (configFile/'CfgInGameUI'/'SideColors'/'colorFriendly');
+            if (cursorTarget != _x) then {
+                _color set [3, 1 - _dist]
+            };
+            drawIcon3D [
+                '',
+                _color,
+                [
+                    visiblePosition _x select 0,
+                    visiblePosition _x select 1,
+                    (visiblePosition _x select 2) +
+                    ((_x modelToWorld (
+                        _x selectionPosition 'head'
+                    )) select 2) + 0.4 + _dist / 1.5
+                ],
+                0,
+                0,
+                0,
+                name _x,
+                2,
+                0.03,
+                'PuristaMedium'
+            ];
+        };
+    } count allUnits - [player];
+}];
+//END NAILER[C5] - ADD NAME TAGS FOR YOUR OWN TEAM...
 
+//NAILER[C5] - WE USE BULLETS TO LEAVE AN IMPRINT...
+//PrintingPress =  { 
+//private["_blocks","_block","_blockCount","_blockNr","_blockArray","_blockText","_blockTextF","_blockTextF_","_blockFormat","_formats","_inputData","_processedTextF","_char","_cursorBlinks","_cursorInvis"]; 
+//_blockCount = count _this; 
+//_invisCursor = "<t color ='#00000000' shadow = '0'>_</t>"; 
+//_blocks = []; 
+//_formats = []; 
+//{  _inputData = _x; 
+//_block     = [_inputData, 0, "", [""]] call BIS_fnc_param; 
+//_format = [_inputData, 1, "<t align = 'center' shadow = '1' size = '0.7'>%1</t><br/>", [""]] call BIS_fnc_param; 
+// _blockArray = toArray _block; 
+// {_blockArray set [_forEachIndex, toString [_x]]} forEach _blockArray; 
+//_blocks  = _blocks + [_blockArray]; 
+//_formats = _formats + [_format]; } forEach _this; 
+//_processedTextF  = ""; 
+//{  _blockArray  = _x; 
+//   _blockNr      = _forEachIndex; 
+//   _blockFormat = _formats select _blockNr; 
+//   _blockText   = ""; 
+//   _blockTextF  = ""; 
+//   _blockTextF_ = ""; 
+//{ _char = _x; 
+//  _blockText = _blockText + _char; 
+//  _blockTextF  = format[_blockFormat, _blockText + _invisCursor]; 
+//  _blockTextF_ = format[_blockFormat, _blockText + "_"]; 
+//[(_processedTextF + _blockTextF_), 0, 0.6, 5, 0, 0, 90] spawn BIS_fnc_dynamicText; 
+//playSound "click"; 
+//sleep 0.05; 
+//[(_processedTextF + _blockTextF), 0, 0.6, 5, 0, 0, 90] spawn BIS_fnc_dynamicText; 
+//sleep 0.02; } forEach _blockArray; 
+// if (_blockNr + 1 < _blockCount) then { _cursorBlinks = 4; }  else { _cursorBlinks = 8; }; 
+//for "_i" from 1 to _cursorBlinks do { [_processedTextF + _blockTextF_, 0, 0.6, 5, 0, 0, 90] spawn BIS_fnc_dynamicText; 
+//            sleep 0.08; 
+//            [_processedTextF + _blockTextF, 0, 0.6, 5, 0, 0, 90] spawn BIS_fnc_dynamicText; 
+//            sleep 0.02; }; 
+//        _processedTextF  = _processedTextF + _blockTextF; } forEach _blocks; 
+//    ["", 0, 0.6, 5, 0, 1, 90] spawn BIS_fnc_dynamicText; 
+//};
+//END MOD BY NAILER[C5]
