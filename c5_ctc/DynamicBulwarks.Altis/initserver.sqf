@@ -1,0 +1,1 @@
+0 spawn buls_fnc_init;

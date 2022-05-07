@@ -1,0 +1,1 @@
+0 spawn bulc_fnc_initPlayerLocal;

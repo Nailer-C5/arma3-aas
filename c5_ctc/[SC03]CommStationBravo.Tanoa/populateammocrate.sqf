@@ -48,3 +48,13 @@ _vec addAction["Virtual Arsenal", "VirtualArsenal.sqf", nil, 6, true, true, "", 
 
 _vec addAction["<t color='#ff9900'>Recruit Infantry</t>", "bon_recruit_units\open_dialog.sqf", nil, 6, true, true, "", "true", 2];
 
+_vec addAction["Spawn a Buggy HMG (LIMIT 3)", "mopit_vehicles\SpawnBuggyHMG.sqf", nil, 6, true, true, "", "true", 2];              
+
+_vec addAction["Spawn an APC (LIMIT 1)", "mopit_vehicles\SpawnAPC.sqf", nil, 6, true, true, "", "true", 2];					
+
+_vec addAction["Spawn a Transport Helicopter (LIMIT 2)", "mopit_vehicles\SpawnTHelicopter.sqf", nil, 6, true, true, "", "true", 2];
+
+_vec addAction["Spawn an Attack Helicopter (LIMIT 1)", "mopit_vehicles\SpawnAHelicopter.sqf", nil, 6, true, true, "", "true", 2];
+
+_vec addAction["Spawn a UAV (LIMIT1)", "mopit_vehicles\SpawnUAV.sqf", nil, 6, true, true, "", "true", 2];
+

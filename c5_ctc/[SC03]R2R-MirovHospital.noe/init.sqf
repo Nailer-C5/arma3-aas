@@ -11,5 +11,9 @@ arsenalItems = compileFinal preprocessFileLineNumbers "VirtualArsenalItems.sqf";
 //Set Fog
 [] execVM "Fog.sqf";
 
+//Set Time
+
+[] execVM "minutes.sqf";
+
 
 		

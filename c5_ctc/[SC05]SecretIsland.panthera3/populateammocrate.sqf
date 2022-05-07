@@ -48,3 +48,6 @@ _vec addAction["Virtual Arsenal", "VirtualArsenal.sqf", nil, 6, true, true, "", 
 
 _vec addAction["<t color='#ff9900'>Recruit Infantry</t>", "bon_recruit_units\open_dialog.sqf", nil, 6, true, true, "", "true", 2];
 
+_vec addAction["Spawn an MRAP with HMG (LIMIT 6)", "mopit_vehicles\spawncarHMG.sqf", nil, 6, true, true, "", "true", 2];
+
+

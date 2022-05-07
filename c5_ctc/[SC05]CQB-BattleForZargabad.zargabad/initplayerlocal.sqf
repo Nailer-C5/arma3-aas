@@ -16,6 +16,16 @@ player setUnitRecoilCoefficient 0.65;
 	titletext ["Arsenal loadout saved.", "PLAIN DOWN"];
 	playSound "click";}] call bis_fnc_addScriptedEventhandler;
 
+player addEventHandler ["getInMan",{
+  params ["_plyr","","_veh"];
+  [_plyr,_veh] spawn {
+    params ["_plyr","_veh"];
+    waitUntil {uiSleep 180; !alive _plyr && count crew _veh <= 1 || (_veh != objectParent _plyr && _veh distance2D _plyr > 120 &&  ((crew _veh) isequalto []))};
+    deleteVehicle _veh
+  }
+}];
+
+
 
 
 Call
@@ -23,8 +33,11 @@ Call
 		while {(true)} do
 		{ 
 
-			if((driver (vehicle player) != player) || ((vehicle player) == player) && ((cameraView  == "EXTERNAL") || (cameraView == "GROUP" ))) then {player switchCamera "Internal"};  
-			sleep 0.1;
+			if (cameraview == "EXTERNAL") then
+				{
+				if((driver (vehicle player) != player) || ((vehicle player) == player)) then {player switchCamera "Internal"};  
+				sleep 0.1;
+				};
 		};
 
 
