@@ -2,10 +2,6 @@
 if (AAS_Params_AISupportMode == SUPPORT_OFF) exitWith {};
 array AAS_WestAIsquads = [];
 array AAS_EastAIsquads = [];
-//TODO: spawn some code that cleans up these DUI arrays periodically.
-array _west_dui_special_track = [];
-array _east_dui_special_track = [];
-
 for "_i" from (1) to (AAS_Params_NumberOfAIgroups) do
 {
 	call compile format
@@ -467,16 +463,6 @@ while {true} do
 								};
 								sleep 0.1;
 								if (((getPosATL _unit) select 2) > 2) then {_unit setPos [(getPos _unit) select 0,(getPos _unit) select 1,0.3];};
-
-								//NAILER PUT AI ON DUI SQUAD RADAR
-								if (side _unit == west) then {
-								  _west_dui_special_track pushBackUnique _unit;
-								  missionNamespace setVariable ["west_diwako_dui_special_track", _west_dui_special_track, true];
-								};
-								if (side _unit == east) then {
-								  _east_dui_special_track pushBackUnique _unit;
-								  missionNamespace setVariable ["east_diwako_dui_special_track", _east_dui_special_track, true];
-								};
 							};
 							_currentAIgroup setBehaviour "AWARE";//STEALTH
 							_currentAIgroup setSpeedMode "FULL";//NORMAL
